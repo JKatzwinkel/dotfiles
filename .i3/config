@@ -86,7 +86,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+z focus child
 
 
 # switch to workspace
@@ -102,7 +102,7 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # ws bck forth
-bindsym $mod+b workspace back_and_forth
+bindsym $mod+Tab workspace back_and_forth
 
 # numpad keys for workspace switching
 bindsym KP_Left workspace prev
@@ -160,11 +160,38 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+				binding_mode_indicator yes
+				colors {
+					background #534636
+					focused_workspace #534696 #3b3228 #e0d8d6
+					active_workspace #534666 #5f676a #e0d8d6
+					inactive_workspace #4b4026 #534636 #947b5b
+					urgent_workspace #534636 #dc322f #e9e1dd
+				}
 }
 
+
+# appearance
+# Color Schema
+							# Border Background Text Indicator
+client.focused #5346a6 #534686 #f5eeeb #f5eeeb
+client.focused_inactive #16110e #120d10 #7e705a #7e705a
+client.unfocused #0b0905 #0b0905  #7e705a #7e705a
+client.urgent #ff3300 #222222 #cccccc #f5eeeb
+# windows
+hide_edge_borders vertical
+new_window pixel 1
+# show window title
+bindsym $mod+t border normal
+bindsym $mod+y border 1pixel
+
+# workspace assignments
 assign [class="Firefox"] 1
 assign [class="Navigator"] 1
 assign [class="Dwb"] 1
-assign [class="subl"] 2
+assign [class="Subl"] 2
 assign [class="Eclipse"] 4
+# jump to specific window keybinds
+# jump to sublime editor instance
+bindsym $mod+Shift+s [class="Subl"] focus
 

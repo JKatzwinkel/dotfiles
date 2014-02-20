@@ -196,6 +196,7 @@ assign [class="Navigator"] 1
 assign [class="Dwb"] 1
 assign [class="Subl"] 2
 assign [class="Eclipse"] 4
+assign [class="Clementine"] 10
 # jump to specific window keybinds
 # jump to sublime editor instance
 bindsym $mod+Shift+s [class="Subl"] focus

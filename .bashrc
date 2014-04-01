@@ -115,4 +115,6 @@ PS1='\[\033[0;33m\]\t\342\200\224\[\033[1;32m\]\u\[\033[0m\]@\[\033[36m\]\h\342\
 #export CLASSPATH=$CLASSPATH:/usr/lib/jvm/java-6-sun-1.6.0.20/lib/jar/jdom.jar:/usr/share/maven-repo/junit/junit/4.8.2/junit-4.8.2.jar:/usr/local/share/java/
 #export PAGER='most'
 export PAGER=most
+export EDITOR=vim
+export GIT_EDITOR=vim
 #JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::") 

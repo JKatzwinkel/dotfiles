@@ -61,6 +61,8 @@
 # firefox
 "firefox"
 	XF86HomePage
+"firefox"
+	XF86WWW
 
 
 # audio player: cmus
@@ -70,6 +72,8 @@
 # skip track
 "cmus-remote -n"
 	XF86AudioStop
+"cmus-remote -n"
+	XF86AudioNext
 
 
 

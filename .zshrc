@@ -23,8 +23,8 @@ colors
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=15000
+SAVEHIST=15000
 setopt appendhistory autocd extendedglob notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -129,6 +129,11 @@ fi
 
 # hard-coded keybindings, which is not best practice, but binds Ctrl+arrow
 # for wordwise movement
-bindkey "ee[C" forward-word
-bindkey "ee[D" backward-word
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
 #bindkey "^H" backward-delete-word
+
+# alias for running skype as separate skype user
+alias skype='xhost +local: && su skype -c skype'
+
+eval "$(fasd --init auto)"

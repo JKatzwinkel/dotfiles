@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -19,7 +19,7 @@ set $mod Mod1
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 #font pango:DejaVu Sans Mono 10
-font pango:Ubuntu Sans 10
+font pango:Ubuntu Sans 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -27,14 +27,15 @@ floating_modifier $mod
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xterm -rw
+bindsym Mod1+Ctrl+t exec xterm -rw
 
 # kill focused window
 bindsym $mod+Shift+q kill
-bindsym $mod+F4 kill
+bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
-bindsym $mod+F2 exec dmenu_run
+bindsym Mod1+F2 exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -111,7 +112,9 @@ bindsym $mod+Tab workspace back_and_forth
 
 # numpad keys for workspace switching
 bindsym KP_Left workspace prev
+bindsym Mod1+Ctrl+Left workspace prev
 bindsym KP_Right workspace next
+bindsym Mod1+Ctrl+Right workspace next
 
 bindsym Shift+KP_Left move container to workspace prev
 bindsym ShiftKP_Right move container to workspace next
@@ -170,6 +173,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 				binding_mode_indicator yes
+				position top
 				colors {
 					background #534636
 					focused_workspace #534696 #3b3228 #e0d8d6
@@ -208,3 +212,5 @@ bindsym $mod+Shift+s [class="Subl"] focus
 #TODO: indicate split mode in i3status bar
 # i3-msg -t get_workspaces, extract active workspace num
 # i3-msg -t get_tree, search for orientation in active workspace
+
+exec conky -d

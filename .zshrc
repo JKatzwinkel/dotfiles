@@ -29,7 +29,6 @@ setopt appendhistory autocd extendedglob notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-
 # taken from .bashrc:
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -57,9 +56,30 @@ PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
 PROMPT="%{$fg[yellow]%}%*-%{$fg[green]%}%n%{$reset_color%}@%{$fg[cyan]%}%M-%{$fg_no_bold[green]%}%3~ %{$reset_color%}% "
 RPROMPT="[%h%{$fg[yellow]%}:%?%{$reset_color%}]"
 
+
+# oh-my-zsh:
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="random"
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git nyan archlinux thor python fasd)
+
+source $ZSH/oh-my-zsh.sh
+
+
+# set editors, pager, ...
 export PAGER=most
 export EDITOR=vim
 export GIT_EDITOR=vim
+export GOPATH=~/tx/go
+export PATH=$PATH:$GOPATH/bin
 #
 
 # added keybindings previously being defined in .inputrc [which is not

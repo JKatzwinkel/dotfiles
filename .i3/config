@@ -199,10 +199,10 @@ bindsym $mod+t border normal
 bindsym $mod+y border 1pixel
 
 # workspace assignments
-assign [class="Firefox"] 1
-assign [class="Navigator"] 1
-assign [class="Dwb"] 1
-assign [class="Subl"] 2
+assign [class="Firefox"] 2
+assign [class="Navigator"] 2
+assign [class="Dwb"] 2
+assign [class="Subl"] 3
 assign [class="Eclipse"] 4
 assign [class="Clementine"] 10
 # jump to specific window keybinds

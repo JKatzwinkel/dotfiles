@@ -6,7 +6,7 @@ zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' list-suffixes true
 zstyle ':completion:*' matcher-list '' '+m:{[:lower:]}={[:upper:]} m:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
-zstyle ':completion:*' max-errors 4 numeric
+zstyle ':completion:*' max-errors 2 numeric
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' prompt 'errors: %e'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
@@ -157,3 +157,8 @@ bindkey "\e[1;5D" backward-word
 alias skype='xhost +local: && su skype -c skype'
 
 eval "$(fasd --init auto)"
+
+
+# RVM
+[[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
+

@@ -1,0 +1,83 @@
+alignment bottom_right
+background yes
+border_width 1
+cpu_avg_samples 2
+color1 404858 #8090b0 		# blue
+color2 50607c #a0b0f9 		# bright blue
+color3 705028 #e0a050 		# red-ish
+color4 7f3850 #ff70a0			# violet-ish
+color5 7f4040 #ff8080			# signal red
+color6 050512 # shadow?
+default_color white
+default_outline_color white
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades yes
+default_shade_color darkgrey
+use_xft yes
+xftfont Bitstream Mono Sans:size=8
+gap_x 5
+gap_y 8
+short_units yes
+minimum_size 5 650
+maximum_width 280
+net_avg_samples 2
+no_buffers yes 
+out_to_console no
+own_window no
+own_window_transparent yes
+own_window_hints undecorated, below, sticky, skip_taskbar, skip_pager
+own_window_class Conky
+own_window_type override
+own_window_argb_visual yes
+double_buffer yes
+update_interval 3
+uppercase no
+use_spacer none
+show_graph_scale yes
+show_graph_range no
+default_bar_size 0 6
+if_up_strictness address
+
+TEXT
+${font Ubuntu:bold:size=14}${color orange}${alignr}${color orange}Uptime:$color2 $uptime
+${font Ubuntu:size=12}${alignr} $sysname $kernel on $machine
+#$hr
+${alignr}${color orange}Users:$color2 $user_number: $user_names
+${alignr}${color orange}using:$color2 $user_terms
+${font Ubuntu:bold:size=14}${color orange}RAM:$color2 $mem/$memmax - $memperc% $color3 ${membar 6}
+${color orange}Swap:$color2 $swap/$swapmax - $swapperc% $color3 ${swapbar 6}
+${color orange}CPU: $color2 ${cpu cpu0}% $color3 ${cpubar cpu0 6}
+$color2 ${cpu cpu1}% $color3 ${cpubar cpu1 6}
+$color2 ${cpu cpu2}% $color3 ${cpubar cpu2 6}$font
+${cpugraph cpu1 20,130 ae6c46 ffaaee}${offset 20}${cpugraph cpu2 20,130 ffaaee ae6c46}
+# ${freq 0} MHz${alignc} ${head /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor 1}${alignr}${head /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor 1}   ${freq 1} Mhz
+$color$hr
+${color orange}${font Cambria:bold:size=8}File systems:$font
+ / $color4${fs_free /}/${fs_size /} $color3${fs_bar 6 /}
+ ${if_mounted /mnt/data}${color orange}data $color4${fs_free /mnt/data}/${fs_size /mnt/data} $color3${fs_bar 6 /mnt/data}${endif}
+ ${if_mounted /mnt/mint}${color orange}mint $color4${fs_free /mnt/mint}/${fs_size /mnt/mint} $color3${fs_bar 6 /mnt/mint}${endif}
+${color orange}${font Cambria:bold:size=8}Networking:${font}${if_up elp1s7}elp1s7 Up: $color${upspeed elp1s7} ${color orange} ${alignr}Down:$color ${downspeed elp1s7} ${color orange}
+ ${font Times:size=8}$color${totalup elp1s7} ${upspeedgraph elp1s7 18,100 ceac76 ffffff 30}${offset 20}${alignr}${downspeedgraph elp1s7 18,100 ffffff ceac76 1000}$color${totaldown elp1s7}$endif 
+ $font${if_up wlp4s0}${color orange}wlp4s0 Up:$color ${upspeed wlp4s0} ${color orange}${alignr}Down:$color ${downspeed wlp4s0} ${color orange} 
+ ${font Times:size=8}$color${totalup wlp4s0}${upspeedgraph wlp4s0 18,90 ceac76 ffffff 30}${offset 10}${alignr}${downspeedgraph wlp4s0 18,90 ffffff ceac76 720}$color${totaldown wlp4s0}
+$font${wireless_essid wlp4s0}: ${wireless_link_qual_perc wlp4s0}% ${color orange}with $color${wireless_ap wlp4s0}
+${color3}${wireless_link_bar wlp4s0}$endif 
+#$hr
+${font Cambria:bold:size=8}
+${color orange}Processes:$color $processes  ${color orange}Running:$color $running_processes
+${color}${top name 1}${color orange}(${top pid 1}) ${alignr} $color${top cpu 1}${color orange} /${top mem 1}
+${color}${top name 2}${color orange}(${top pid 2}) ${alignr} $color${top cpu 2}${color orange} /${top mem 2}
+${color}${top name 3}${color orange}(${top pid 3}) ${alignr} $color${top cpu 3}${color orange} /${top mem 3}
+${color}${top name 4}${color orange}(${top pid 4}) ${alignr} $color${top cpu 4}${color orange} /${top mem 4}
+${color}${top name 5}${color orange}(${top pid 5}) ${alignr} $color${top cpu 5}${color orange} /${top mem 5}
+$hr $font
+#${color2}Battery Status:${color3} ${battery_time BAT0}${battery_percent BAT0}% ${battery_bar BAT0 4}
+#${color2}HDD:  ${color}${hddtemp /dev/sda}${color2}°C $alignr ACPI: ${color}$acpitemp${color2}°C
+${color2}/dev/sda6 $color${diskio /dev/sda6} ${color2}/dev/sda7 $color${diskio /dev/sda7} $alignr${diskio /dev/sda8} ${color2}/dev/sda8
+$color${diskiograph /dev/sda6 8,80 ffffff}${diskiograph /dev/sda7 8,80 ffffff}$alignr${diskiograph /dev/sda8 8,80 ffffff}
+$hr
+${color2}indymedia:
+$font $color${rss http://de.indymedia.org/RSS/openposting.xml 600 item_titles 6}
+$hr

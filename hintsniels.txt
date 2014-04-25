@@ -1,0 +1,15 @@
+fugitive: vim plugin for git [tim pope]
+voom: folds document structure of md, ... [latex?]
+pathogen: takes care of plugin enabling regardless of installation location [.vim/bundle]
+foldsearch: 
+vim collaborative: covim!
+vim there is some plugin that emulates multiple selection like in sublime
+
+udiskctl -b
+systemctl list-units
+netctl-auto
+systemd-analyze critical-chain
+yaourt -Qi rxvt-unicode-patched
+
+sublime: floobit
+

@@ -79,5 +79,5 @@ ${color2}/dev/sda6 $color${diskio /dev/sda6} ${color2}/dev/sda7 $color${diskio /
 $color${diskiograph /dev/sda6 8,80 ffffff}${diskiograph /dev/sda7 8,80 ffffff}$alignr${diskiograph /dev/sda8 8,80 ffffff}
 $hr
 ${color2}indymedia:
-$font $color${rss http://de.indymedia.org/RSS/openposting.xml 600 item_titles 6}
+$font $color${rss http://de.indymedia.org/rss/openposting 600 item_titles 6}
 $hr

@@ -13,3 +13,13 @@ yaourt -Qi rxvt-unicode-patched
 
 sublime: floobit
 
+owncloud + vdirsync + khal
+
+zsh: dirs
+zsh-syntax-highlighting (clone repo in oh-my-zsh plugin directory)
+
+fasd: z ..., d <Tab>
+
+i3: y not fire notifications with libnotity!
+
+.vim/after/syntax

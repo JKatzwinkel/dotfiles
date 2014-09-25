@@ -1,0 +1,9 @@
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[user]
+	name = J. Katzwinkel
+	email = jkatzwinkel@git.hub
+[alias]
+	graph = log --graph --decorate --all --name-status

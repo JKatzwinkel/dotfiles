@@ -69,6 +69,9 @@ wenns denn sein musz:
 	pacman -S os-prober
 	grub-mkconfig -o /boot/grub/grub.cfg 
 
+bei BIOS-gesteuertem booten musz man natuerlich darauf achten, dasz man eine partition mit boot-flag hat:
+https://bbs.archlinux.org/viewtopic.php?id=180549
+
 ### exit chroot & reboot
 	exit
 	reboot

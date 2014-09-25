@@ -16,6 +16,11 @@ Bei `invalid or corrupted package`:
 	pacman-key --init
 	pacman-key --populate archlinux
 
+Bei `key could not be imported`:
+
+	pacman -S archlinux-keyring
+	pacman -Su
+
 ### fstab
 	genfstab -U -p /mnt >> /mnt/etc/fstab
 	nano /mnt/etc/fstab
@@ -27,15 +32,18 @@ Bei `invalid or corrupted package`:
 eintrag `en_US.UTF-8 UTF-8` in `/etc/locale.gen` uncommenten.
 Locales generaten:
 	locale-gen
-`locale.conf` erzeugen:
+locale.conf` erzeugen:
+
 	echo LANG=en_US.UTF-8 > /etc/locale.conf
 exportieren:
+
 	export LANG=en_US.UTF-8
 
 ### time zone
 	ln -s /usr/share/zoneinfo/<zone>/<subzone> /etc/localtime
 
-hardware clock;
+hardware clock:
+
 	hwclock --systohc --utc
 
 ### host name
@@ -46,15 +54,20 @@ dann denselben hostname in `/etc/hosts` an den localhost eintrag hintenranhaenge
 
 
 ### password & user
-	passwd
+	passwd # wenn wir root pw wollen
 	useradd -m -G wheel -s /bin/zsh <user>
+	passwd <user>
+	su
+	visudo # /etc/sudoers file, darin uncommenten:
+		%wheel      ALL=(ALL) ALL
 
 ### bootloader
 wenns denn sein musz:
+
 	pacman -S grub
 	grub-install --target=i386-pc --recheck /dev/sda
 	pacman -S os-prober
-	grub-mkconfig -o /boot/grub/grub.cfg # bzw. /boot/grub2/ wegen fedora?
+	grub-mkconfig -o /boot/grub/grub.cfg 
 
 ### exit chroot & reboot
 	exit

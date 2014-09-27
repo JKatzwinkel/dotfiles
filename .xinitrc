@@ -26,6 +26,8 @@ setxkbmap -option terminate:ctrl_alt_bksp
 #conky -d
 xbindkeys
 
+#xmodmap ~/.Xmodmap
+
 eval $(cat ~/.fehbg)
 
 # exec gnome-session

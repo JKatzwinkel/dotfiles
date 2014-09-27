@@ -46,13 +46,14 @@ $if mode=emacs
 "\e[1;5D": backward-word
 "\e[5C": forward-word
 "\e[5D": backward-word
-"\e\e[C": forward-word
-"\e\e[D": backward-word
 
 $if term=rxvt
 "\e[8~": end-of-line
 "\eOc": forward-word
 "\eOd": backward-word
+"\e[7~":beginning-of-line
+#"\e[1;3C": forward-word
+#"\e[1;3D": backward-word
 $endif
 
 # for non RH/Debian xterm, can't hurt for RH/Debian xterm

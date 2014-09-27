@@ -85,6 +85,7 @@ export EDITOR=vim
 export GIT_EDITOR=vim
 export GOPATH=~/tx/go
 export PATH=$PATH:$GOPATH/bin
+export MPD_HOST=192.168.0.8
 #
 
 # added keybindings previously being defined in .inputrc [which is not

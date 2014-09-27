@@ -135,9 +135,9 @@ default sound card in `/usr/share/alsa/alsa.conf` schreiben:
 ### urxvt 
 
 #### keybindings:
-a terminal has no knowledge of a Ctrl-Arrow keypress, BUT if you use a terminal emulator 
-(like xterm or rxvt under X11) you can assign an X keyboard event to a string sequence like '^[[5D' that 
-you then use in bindkey. Here is a line I have in my .Xresources 
+"a terminal has no knowledge of a Ctrl-Arrow keypress, BUT if you use a terminal emulator 
+(like xterm or rxvt under X11) you can assign an X keyboard event to a string sequence like `^[[5D` that 
+you then use in bindkey..."
 http://zshwiki.org/home/zle/bindkeys
 useful:
 
@@ -146,3 +146,23 @@ useful:
 but keep in mind: `xmodmap` overwrites `setxkbmap` and is generally not recommended. To make
 keybindings work in urxvt, it seems sufficient to map keys as required in `.Xresources` and
 then bind the mapped input in `.xinitrc` or the shell's rc (*e.g. `\033[1;5D` as `"\e[1;5D"`*).
+
+
+### fonts
+	fc-list -v # show verbose fonts info
+	fc-cache  -fv # whenever new fonts have been put in /usr/share/fonts/...
+
+#### infinality
+[Infinality][https://wiki.archlinux.org/index.php/font_configuration#Infinality] is a patchset
+improving `freetype2` font rendering: `freetype2-infinality-git`.  Available also, already with 
+configurations via AUR is
+`fontconfig-infinality-ultimate-git` (might be necessary to edit dependencies). It is also 
+recommended to install and `grip-git` (AUR) for live fonts preview.
+
+	$ fc-presets sets # select e.g. "combi"
+	$ fc-presets check
+	$ fc-cache -fv
+
+Yay! Way better looking fonts in firefox and such!
+
+

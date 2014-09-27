@@ -18,16 +18,18 @@ set $mod Mod4
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-#font pango:DejaVu Sans Mono 10
-font pango:Ubuntu Sans 8
+#font pango:DejaVu Sans 10
+font pango:Liberation Bold 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec xterm -rw
-bindsym Mod1+Ctrl+t exec xterm -rw
+#bindsym $mod+Return exec xterm -rw
+#bindsym Mod1+Ctrl+t exec xterm -rw
+bindsym $mod+Return exec urxvt
+bindsym Mod1+Ctrl+t exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -214,3 +216,5 @@ bindsym $mod+Shift+s [class="Subl"] focus
 # i3-msg -t get_tree, search for orientation in active workspace
 
 exec conky -d
+
+

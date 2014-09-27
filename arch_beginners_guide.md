@@ -97,4 +97,52 @@ Bei trouble mapping keys:
 	xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
 
 
+### alsa:
+https://bbs.archlinux.org/viewtopic.php?id=125092
+https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card
 
+default sound card in `/usr/share/alsa/alsa.conf` schreiben:
+
+	pcm.!default {
+				type hw
+				card PCH
+	}
+
+	ctl.!default {
+				type hw
+				card PCH
+	}
+
+`PCH` ist der name der karte, den man mithilfe von `aplay -l` herausbekommt:
+
+	**** List of PLAYBACK Hardware Devices ****
+	card 0: HDMI [HDA Intel HDMI], device 3: HDMI 0 [HDMI 0]
+		Subdevices: 1/1
+		Subdevice #0: subdevice #0
+	card 0: HDMI [HDA Intel HDMI], device 7: HDMI 1 [HDMI 1]
+		Subdevices: 1/1
+		Subdevice #0: subdevice #0
+	card 0: HDMI [HDA Intel HDMI], device 8: HDMI 2 [HDMI 2]
+		Subdevices: 1/1
+		Subdevice #0: subdevice #0
+	card 1: PCH [HDA Intel PCH], device 0: ALC3232 Analog [ALC3232 Analog]
+		Subdevices: 0/1
+		Subdevice #0: subdevice #0
+
+
+
+
+### urxvt 
+
+#### keybindings:
+a terminal has no knowledge of a Ctrl-Arrow keypress, BUT if you use a terminal emulator 
+(like xterm or rxvt under X11) you can assign an X keyboard event to a string sequence like '^[[5D' that 
+you then use in bindkey. Here is a line I have in my .Xresources 
+http://zshwiki.org/home/zle/bindkeys
+useful:
+
+    xmodmap -pk
+
+but keep in mind: `xmodmap` overwrites `setxkbmap` and is generally not recommended. To make
+keybindings work in urxvt, it seems sufficient to map keys as required in `.Xresources` and
+then bind the mapped input in `.xinitrc` or the shell's rc (*e.g. `\033[1;5D` as `"\e[1;5D"`*).

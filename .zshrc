@@ -73,6 +73,11 @@ plugins=(git nyan archlinux thor python fasd)
 
 source $ZSH/oh-my-zsh.sh
 
+#PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
+#PROMPT='\[\033[0;33m\]\t\342\200\224\[\033[1;32m\]\u\[\033[0m\]@\[\033[36m\]\h\342\200\224\[\033[32m\]$(_pwd "$PWD") \[\033[0m\]'
+#PROMPT="%{$fg[yellow]%}%*-%{$fg[green]%}%n%{$reset_color%}@%{$fg[cyan]%}%M-%{$fg_no_bold[green]%}%3~ %{$reset_color%}% "
+#RPROMPT="[%h%{$fg[yellow]%}:%?%{$reset_color%}]"
+
 
 # set editors, pager, ...
 export PAGER=most
@@ -149,8 +154,10 @@ fi
 
 # hard-coded keybindings, which is not best practice, but binds Ctrl+arrow
 # for wordwise movement
-bindkey "\e[1;5C" forward-word
-bindkey "\e[1;5D" backward-word
+bindkey "\e[1;5C" emacs-forward-word
+bindkey "\e[1;5D" emacs-backward-word
+#bindkey "\e[0C" emacs-forward-word
+#bindkey "\e[0D" emacs-backward-word 
 #bindkey "^H" backward-delete-word
 
 # alias for running skype as separate skype user
@@ -161,4 +168,7 @@ eval "$(fasd --init auto)"
 
 # RVM
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
+
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

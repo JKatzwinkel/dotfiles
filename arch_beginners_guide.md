@@ -86,6 +86,12 @@ https://bbs.archlinux.org/viewtopic.php?id=180549
 	pacman -S wpa_actiond
 	systemctl enable netctl-auto@wlpXXX.service
 
+Now, provided a known wifi is in range at boot time, we can connect to whatever known wifi
+in range using
+
+	netctl-auto switch-to <profile>
+
+See netctl-auto --help for more options. 
 
 ## yay!
 
@@ -153,7 +159,7 @@ then bind the mapped input in `.xinitrc` or the shell's rc (*e.g. `\033[1;5D` as
 	fc-cache  -fv # whenever new fonts have been put in /usr/share/fonts/...
 
 #### infinality
-[Infinality][https://wiki.archlinux.org/index.php/font_configuration#Infinality] is a patchset
+[Infinality](https://wiki.archlinux.org/index.php/font_configuration#Infinality) is a patchset
 improving `freetype2` font rendering: `freetype2-infinality-git`.  Available also, already with 
 configurations via AUR is
 `fontconfig-infinality-ultimate-git` (might be necessary to edit dependencies). It is also 

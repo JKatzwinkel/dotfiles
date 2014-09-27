@@ -2,7 +2,7 @@ set gui=nonavigation
 set hintchars=fjdkslagvnrucmeixwqz
 
 # autocomplete: longest match, not first match
-set wildmode=list:longest
+set wildmode=list:full
 
 # link font
 highlight Hint font:"DejaVu Sans Mono";font-size:120%;color:red;font-weight:bold;background-color:yellow;padding:2px;font-variant:small-caps;

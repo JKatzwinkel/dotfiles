@@ -19,7 +19,7 @@ set $mod Mod4
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 #font pango:DejaVu Sans 10
-font pango:Liberation Bold 10
+font pango:Ubuntu Bold 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -57,6 +57,10 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 #bindsym Ctrl+Alt+Right focus right
+
+# move focus up/down with numpad keys:
+bindsym KP_Up focus up
+bindsym KP_Down focus down
 
 # move focused window
 bindsym $mod+Shift+j move left

@@ -43,8 +43,9 @@
   control+shift + q
 
 # set directly keycode (here control + f with my keyboard)
-"xterm"
-  c:41 + m:0x4
+# conflicts with search keybinding in sublime
+#"xterm"
+  #c:41 + m:0x4
 
 # specify a mouse button
 "xterm"

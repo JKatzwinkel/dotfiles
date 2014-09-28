@@ -51,11 +51,6 @@ _pwd () {
 }
 
 
-PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
-#PROMPT='\[\033[0;33m\]\t\342\200\224\[\033[1;32m\]\u\[\033[0m\]@\[\033[36m\]\h\342\200\224\[\033[32m\]$(_pwd "$PWD") \[\033[0m\]'
-PROMPT="%{$fg[yellow]%}%*-%{$fg[green]%}%n%{$reset_color%}@%{$fg[cyan]%}%M-%{$fg_no_bold[green]%}%3~ %{$reset_color%}% "
-RPROMPT="[%h%{$fg[yellow]%}:%?%{$reset_color%}]"
-
 
 # oh-my-zsh:
 # Path to your oh-my-zsh installation.
@@ -73,10 +68,47 @@ plugins=(git nyan archlinux thor python fasd battery zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-#PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
-#PROMPT='\[\033[0;33m\]\t\342\200\224\[\033[1;32m\]\u\[\033[0m\]@\[\033[36m\]\h\342\200\224\[\033[32m\]$(_pwd "$PWD") \[\033[0m\]'
-#PROMPT="%{$fg[yellow]%}%*-%{$fg[green]%}%n%{$reset_color%}@%{$fg[cyan]%}%M-%{$fg_no_bold[green]%}%3~ %{$reset_color%}% "
-#RPROMPT="[%h%{$fg[yellow]%}:%?%{$reset_color%}]"
+
+# zsh-syntax-highlighting
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets)
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow,bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[command]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=blue,bold'
+ZSH_HIGHLIGHT_STYLES[default]='fg=white'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=white'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='fg=cyan,bold,bg=blue'
+ZSH_HIGHLIGHT_STYLES[bracket-error]='fg=red'
+ZSH_HIGHLIGHT_STYLES[bracket-level-1]='fg=white'
+ZSH_HIGHLIGHT_STYLES[bracket-level-2]='fg=white'
+ZSH_HIGHLIGHT_STYLES[bracket-level-3]='fg=white'
+ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=white'
+
+
+
+
+
+
+
+local git_info='$(git_prompt_info)'
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}[%{$fg_bold[green]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%}:%{$fg[red]%}x%{$reset_color%}]"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$reset_color%}:%{$fg[green]%}o%{$reset_color%}]"
+
+local battery_info='$(battery_pct)'
+PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
+RPROMPT="${git_info}[%h%{$fg[yellow]%}:%?%{$reset_color%}][${battery_info}]"
+PROMPT="%{$fg[yellow]%}%*-\
+%{$fg_bold[green]%}%n\
+%{$reset_color%}@\
+%{$fg[cyan]%}%M-\
+%{$fg_bold[white]%}%3~\
+%{$reset_color%}$ "
+
+
+
 
 
 # set editors, pager, ...

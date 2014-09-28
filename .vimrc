@@ -56,11 +56,18 @@ set history=700
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = ";"
+let g:mapleader = ";"
 
-" Fast saving
+" Fast saving (<cr>: carriage return)
 nmap <leader>w :w!<cr>
+
+" after compiling vim with support for +xterm_clipboard, we can directly copy to both of 
+" the clipboard available to X11, by putting them into the "* and "+ registers.
+" Yanking to the outside world should be even more comfortable than that:
+vnoremap <leader>y "+y
+" same goes for pasting from outside into vim
+nnoremap <leader>p "+p
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -192,8 +199,8 @@ map j gj
 map k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+"map <space> /
+"map <c-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
@@ -305,12 +312,12 @@ vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 "   <leader>n
 "
 " To go to the previous search results do:
-"   <leader>p
+"   <leader>N
 "
 map <leader>cc :botright cope<cr>
 map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
-map <leader>p :cp<cr>
+map <leader>N :cp<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

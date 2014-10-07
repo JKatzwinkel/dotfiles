@@ -5,4 +5,4 @@ set hintchars=fjdkslagvnrucmeixwqz
 set wildmode=list:full
 
 # link font
-highlight Hint font:"DejaVu Sans Mono";font-size:120%;color:red;font-weight:bold;background-color:yellow;padding:2px;font-variant:small-caps;
+highlight Hint font:"DejaVu Sans Mono";font-size:110%;color:red;font-weight:bold;background-color:yellow;padding:2px;font-variant:small-caps;

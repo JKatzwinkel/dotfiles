@@ -208,9 +208,8 @@ bindsym $mod+y border 1pixel
 assign [class="Firefox"] 2
 assign [class="Navigator"] 2
 assign [class="Dwb"] 2
-assign [class="Subl"] 3
+#assign [class="Subl"] 3
 assign [class="Eclipse"] 4
-assign [class="Clementine"] 10
 # jump to specific window keybinds
 # jump to sublime editor instance
 bindsym $mod+Shift+s [class="Subl"] focus

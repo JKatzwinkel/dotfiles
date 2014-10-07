@@ -24,6 +24,63 @@ xterm*alwaysUseMods: true
 xterm*autowrap: false
 xterm*selectToClipboard: true
 
+
+#define base00 #272822
+#define base01 #383830
+#define base02 #49483e
+#define base03 #75715e
+#define base04 #8979e3
+#define base05 #f8f8f2
+#define base06 #d574b1
+#define base07 #f9f8f5
+#define base08 #d46852
+#define base09 #fd971f
+#define base0A #f4bf75
+#define base0B #a6922e
+#define base0C #a1efe4
+#define base0D #46599f
+#define base0E #ae81ff
+#define base0F #cc6633
+
+!URxvt*foreground:   base05
+!URxvt*background:   base00
+!URxvt*cursorColor:  base05
+!black
+!URxvt*color0:       base00
+! red
+URxvt*color1:       base08
+! green
+!URxvt*color2:       base0B
+! yellow
+!URxvt*color3:       base0A
+! blue
+URxvt*color4:       base0D
+! magenta
+!URxvt*color5:       base0E
+! cyan
+!URxvt*color6:       base0C
+! white
+!URxvt*color7:       base05
+! birght black
+!URxvt*color8:       base03
+! bright red
+!URxvt*color9:       base09
+! bright green
+!URxvt*color10:      base01
+! bright yellow
+!URxvt*color11:      base02 
+! bright blue
+URxvt*color12:      base04
+! bright magenta
+!URxvt*color13:      base06
+! bright cyan
+!URxvt*color14:      base0F
+! bright white
+!URxvt*color15:      base07
+
+
+
+
 ! URxvt*termName:                       string
 ! URxvt*geometry:                       geometry
 ! URxvt*chdir:                          string
@@ -168,7 +225,7 @@ URxvt*transparent: True
 ! URxvt*geometry: geom
 
 ! Use the specified colour as the windows background colour [default White]; option -bg.
-URxvt*background: rgba:1000/1000/1000/cccc
+URxvt*background: rgba:1000/1000/1000/eeee
 
 ! Use the specified colour as the windows foreground colour [default Black]; option -fg.
 URxvt*foreground: #e0d0b0
@@ -229,16 +286,16 @@ URxvt*fading: 50
 
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when
 !URxvt*font: xft:DejaVu Sans Mono for Powerline:size=10
-URxvt*font: xft:DejaVu Sans Mono:size=10
+URxvt*font: xft:DejaVu Sans Mono:size=11
 
 !
-URxvt*boldFont: xft:DejaVu Sans Mono:size=10:bold
+URxvt*boldFont: xft:DejaVu Sans Mono:size=11:bold
 
 ! 
-URxvt*italicFont: xft:DejaVu Sans Mono:size=10:italic
+URxvt*italicFont: xft:DejaVu Sans Mono:size=11:italic
 
 ! The font list to use for displaying bold, italic or bold italic characters, respectively.
-URxvt*boldItalicFont: xft:DejaVu Sans Mono:size=10:bold:italic
+URxvt*boldItalicFont: xft:DejaVu Sans Mono:size=11:bold:italic
 
 ! When font styles are not enabled, or this option is enabled (True, option -is, the default), bold/blink
 ! URxvt*intensityStyles: boolean

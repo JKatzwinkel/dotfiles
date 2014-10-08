@@ -172,3 +172,7 @@ recommended to install and `grip-git` (AUR) for live fonts preview.
 Yay! Way better looking fonts in firefox and such!
 
 
+
+### gfx
+
+backlight: package `xorg-xbacklight`, usage: `xbacklight -inc/dec 10`.

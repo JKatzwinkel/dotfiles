@@ -93,6 +93,11 @@ in range using
 
 See netctl-auto --help for more options. 
 
+Apparently, for `netctl-auto` to not fail starting profiles on boot,
+those profiles must not be enabled by `systemctl` or `netctl` or whatever:
+https://bbs.archlinux.org/viewtopic.php?id=164189
+https://wiki.archlinux.org/index.php/Netctl
+
 ## yay!
 
 ### graphical user interface
@@ -176,3 +181,6 @@ Yay! Way better looking fonts in firefox and such!
 ### gfx
 
 backlight: package `xorg-xbacklight`, usage: `xbacklight -inc/dec 10`.
+
+
+### 

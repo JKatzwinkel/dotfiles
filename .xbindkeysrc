@@ -59,6 +59,11 @@
 "amixer -D default -- set Master 5%-"
   XF86AudioLowerVolume
 
+# mute/unmute
+"amixer -D default -- set Master toggle"
+  XF86AudioLowerVolume
+
+
 # firefox
 "firefox"
 	XF86HomePage

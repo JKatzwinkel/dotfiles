@@ -101,9 +101,9 @@ URxvt*color12:      base04
 ! URxvt*inheritPixmap:                  boolean
 urxvt*depth:32
 URxvt*transparent: True
-# URxvt*tintColor:	White
-#URxvt*shading: 60
-#URxvt*blurRadius: 5
+! URxvt*tintColor:	White
+!URxvt*shading: 60
+!URxvt*blurRadius: 5
 ! URxvt*fading:                         number
 ! URxvt*fadeColor:                      color
 ! URxvt*utmpInhibit:                    boolean
@@ -311,6 +311,8 @@ URxvt*boldItalicFont: xft:DejaVu Sans Mono:size=11:bold:italic
 
 ! True: set the urgency hint for the wm on receipt of a bell character.  False: do not set the urgency hint
 ! URxvt*urgentOnBell: boolean
+XTerm*bellIsUrgent: true
+URxvt.urgentOnBell: true
 
 ! True: use visual bell on receipt of a bell character; option -vb.  False: no visual bell [default];
 ! URxvt*visualBell: boolean

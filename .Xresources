@@ -286,16 +286,16 @@ URxvt*fading: 50
 
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when
 !URxvt*font: xft:DejaVu Sans Mono for Powerline:size=10
-URxvt*font: xft:DejaVu Sans Mono:size=11
+URxvt*font: xft:DejaVu Sans Mono:size=10
 
 !
-URxvt*boldFont: xft:DejaVu Sans Mono:size=11:bold
+URxvt*boldFont: xft:DejaVu Sans Mono:size=10:bold
 
 ! 
-URxvt*italicFont: xft:DejaVu Sans Mono:size=11:italic
+URxvt*italicFont: xft:DejaVu Sans Mono:size=10:italic
 
 ! The font list to use for displaying bold, italic or bold italic characters, respectively.
-URxvt*boldItalicFont: xft:DejaVu Sans Mono:size=11:bold:italic
+URxvt*boldItalicFont: xft:DejaVu Sans Mono:size=10:bold:italic
 
 ! When font styles are not enabled, or this option is enabled (True, option -is, the default), bold/blink
 ! URxvt*intensityStyles: boolean
@@ -506,8 +506,8 @@ URxvt.keysym.M-a:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
 !URxvt.keysym.Control-a:           perl:keyboard-select:activate
 URxvt.keysym.Control-S-c:           perl:clipboard:copy
-URxvt.keysym.Control-v:           perl:clipboard:paste
-URxvt.keysym.Control-S-v:         perl:clipboard:paste_escaped
+URxvt.keysym.Control-S-v:           perl:clipboard:paste
+#URxvt.keysym.Control-S-v:         perl:clipboard:paste_escaped
 
 URxvt*keysym.Home: \033[7~
 URxvt*keysym.End: \033[8~

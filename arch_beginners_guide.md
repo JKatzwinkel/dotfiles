@@ -97,6 +97,7 @@ Apparently, for `netctl-auto` to not fail starting profiles on boot,
 those profiles must not be enabled by `systemctl` or `netctl` or whatever:
 https://bbs.archlinux.org/viewtopic.php?id=164189
 https://wiki.archlinux.org/index.php/Netctl
+hence, `netctl disable <profile>` for every profile `netctl-auto` is supposed to take care of.
 
 ## yay!
 
@@ -141,6 +142,12 @@ default sound card in `/usr/share/alsa/alsa.conf` schreiben:
 		Subdevice #0: subdevice #0
 
 
+#### Software-mixing in alsa aktivieren
+
+https://bbs.archlinux.org/viewtopic.php?id=145505url
+http://superuser.com/questions/461405/why-cant-i-play-audio-from-two-or-more-sources
+https://bbs.archlinux.org/viewtopic.php?id=142657
+https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture
 
 
 ### urxvt 
@@ -156,7 +163,7 @@ useful:
 
 but keep in mind: `xmodmap` overwrites `setxkbmap` and is generally not recommended. To make
 keybindings work in urxvt, it seems sufficient to map keys as required in `.Xresources` and
-then bind the mapped input in `.xinitrc` or the shell's rc (*e.g. `\033[1;5D` as `"\e[1;5D"`*).
+then bind the mapped input in `.xinitrc` or the shell''s rc (*e.g. `\033[1;5D` as `"\e[1;5D"`*).
 
 
 ### fonts
@@ -183,4 +190,20 @@ Yay! Way better looking fonts in firefox and such!
 backlight: package `xorg-xbacklight`, usage: `xbacklight -inc/dec 10`.
 
 
-### 
+### input devices
+
+	xinput list
+
+touchpad, wacom etc.
+
+
+### CUPS
+
+Arch cups is way newer than debian cups etc. So in order to talk to your debian printing server, add
+
+   ServerName HOSTNAME-OR-IP-ADDRESS[:PORT]/version=1.1
+
+to `/etc/cups/client.conf`. Also, in `/etc/cups/cups-files.conf`, add `printadmin` to `SystemGroup`
+and then add yourself to that group (`gpasswd -a username printadmin`) and group `lp`.
+
+

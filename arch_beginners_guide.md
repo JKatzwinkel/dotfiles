@@ -207,3 +207,13 @@ to `/etc/cups/client.conf`. Also, in `/etc/cups/cups-files.conf`, add `printadmi
 and then add yourself to that group (`gpasswd -a username printadmin`) and group `lp`.
 
 
+### for convenience
+
+#### keychain
+package `keychain`. Add to shell profile:
+
+    eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa)
+
+
+
+

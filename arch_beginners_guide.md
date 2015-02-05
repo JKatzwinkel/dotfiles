@@ -183,4 +183,13 @@ Yay! Way better looking fonts in firefox and such!
 backlight: package `xorg-xbacklight`, usage: `xbacklight -inc/dec 10`.
 
 
-### 
+### for convenience
+
+#### keychain
+package `keychain`. Add to shell profile:
+
+    eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa)
+
+
+
+

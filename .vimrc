@@ -65,9 +65,9 @@ nmap <leader>w :w!<cr>
 " after compiling vim with support for +xterm_clipboard, we can directly copy to both of 
 " the clipboard available to X11, by putting them into the "* and "+ registers.
 " Yanking to the outside world should be even more comfortable than that:
-vnoremap <leader>y "+y
+vnoremap <leader>y "*y
 " same goes for pasting from outside into vim
-nnoremap <leader>p "+p
+nnoremap <leader>p "*p
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -125,6 +125,8 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" for highlighting tabs in set list mode
+set listchars=tab:➪-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -175,7 +177,13 @@ set tabstop=2
 
 " Linebreak on 500 characters
 set lbr
-set tw=500
+set tw=80
+
+" XML formatting using libxml
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
+" JSON formatting using python json module
+au FileType json setlocal equalprg=python\ -mjson.tool\ 2>/dev/null
 
 set ai "Auto indent
 set si "Smart indent

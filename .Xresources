@@ -1,3 +1,4 @@
+
 xterm*foreground: rgb:da/c4/cb
 !xterm*background: black
 XTerm*background: rgb:0a/01/07
@@ -11,7 +12,6 @@ XTerm*background: rgb:0a/01/07
 xterm*faceName: DejaVu Sans Mono:style=Regular:size=10:antialias=true
 xterm*font: 7x13
 xterm*dynamicColors: true
-xterm*utf8: 2
 xterm*eightBitInput: true
 xterm*saveLines: 8096
 xterm*scrollKey: true
@@ -48,13 +48,13 @@ xterm*selectToClipboard: true
 !black
 !URxvt*color0:       base00
 ! red
-URxvt*color1:       base08
+!!URxvt*color1:       base08
 ! green
 !URxvt*color2:       base0B
 ! yellow
 !URxvt*color3:       base0A
 ! blue
-URxvt*color4:       base0D
+!!URxvt*color4:       base0D
 ! magenta
 !URxvt*color5:       base0E
 ! cyan
@@ -70,7 +70,7 @@ URxvt*color4:       base0D
 ! bright yellow
 !URxvt*color11:      base02 
 ! bright blue
-URxvt*color12:      base04
+!!URxvt*color12:      base04
 ! bright magenta
 !URxvt*color13:      base06
 ! bright cyan
@@ -79,140 +79,29 @@ URxvt*color12:      base04
 !URxvt*color15:      base07
 
 
+! Molokai theme
+URxvt*background: #101520
+URxvt*foreground: #d0e0d5
+URxvt*color0: #101020
+URxvt*color1: #b6286b
+URxvt*color2: #66aa11
+URxvt*color3: #c47f2c
+URxvt*color4: #30309b
+URxvt*color5: #7e40a5
+URxvt*color6: #3579a8
+URxvt*color7: #9999aa
+URxvt*color8: #303030
+URxvt*color9: #ff40a0
+URxvt*color10: #80ff00
+URxvt*color11: #ffba68
+URxvt*color12: #5f5fee
+URxvt*color13: #bb88dd
+URxvt*color14: #4eb4fa
+URxvt*color15: #d0e0d5
 
 
-! URxvt*termName:                       string
-! URxvt*geometry:                       geometry
-! URxvt*chdir:                          string
-! URxvt*reverseVideo:                   boolean
-! URxvt*loginShell:                     boolean
-! URxvt*jumpScroll:                     boolean
-! URxvt*skipScroll:                     boolean
-! URxvt*pastableTabs:                   boolean
-! URxvt*scrollstyle:                    mode
-!! URxvt*scrollBar:                      false
-! URxvt*scrollBar_right:                boolean
-! URxvt*scrollBar_floating:             boolean
-! URxvt*scrollBar_align:                mode
-! URxvt*thickness:                      number
-! URxvt*scrollTtyOutput:                boolean
-! URxvt*scrollTtyKeypress:              boolean
-! URxvt*scrollWithBuffer:               boolean
-! URxvt*inheritPixmap:                  boolean
 urxvt*depth:32
 URxvt*transparent: True
-! URxvt*tintColor:	White
-!URxvt*shading: 60
-!URxvt*blurRadius: 5
-! URxvt*fading:                         number
-! URxvt*fadeColor:                      color
-! URxvt*utmpInhibit:                    boolean
-! URxvt*urgentOnBell:                   boolean
-! URxvt*visualBell:                     boolean
-! URxvt*mapAlert:                       boolean
-!! URxvt*meta8:                          true
-!! URxvt*mouseWheelScrollPage:           true
-! URxvt*tripleclickwords:               boolean
-! URxvt*insecure:                       boolean
-! URxvt*cursorUnderline:                boolean
-!! URxvt*cursorBlink:                    true
-! URxvt*pointerBlank:                   boolean
-!! URxvt*background:                     #000000
-!! URxvt*foreground:                     #eeffee
-! URxvt*color0:                         color
-! URxvt*color1:                         color
-! URxvt*color2:                         color
-! URxvt*color3:                         color
-! URxvt*color4:                         color
-! URxvt*color5:                         color
-! URxvt*color6:                         color
-! URxvt*color7:                         color
-! URxvt*color8:                         color
-! URxvt*color9:                         color
-! URxvt*color10:                        color
-! URxvt*color11:                        color
-! URxvt*color12:                        color
-! URxvt*color13:                        color
-! URxvt*color14:                        color
-! URxvt*color15:                        color
-! URxvt*colorBD:                        color
-! URxvt*colorIT:                        color
-! URxvt*colorUL:                        color
-! URxvt*colorRV:                        color
-! URxvt*underlineColor:                 color
-! URxvt*scrollColor:                    color
-! URxvt*troughColor:                    color
-! URxvt*highlightColor:                 color
-! URxvt*highlightTextColor:             color
-! URxvt*cursorColor:                    color
-! URxvt*cursorColor2:                   color
-! URxvt*pointerColor:                   color
-! URxvt*pointerColor2:                  color
-! URxvt*borderColor:                    color
-! URxvt*iconFile:                       file
-!! URxvt*font:                          xft:misc\-dejavu\ sans:size=8
-! URxvt*font: xft:misc-dejavu\ sans\ mono\-medium\-o\-normal:size=8
-!! URxvt*boldFont:                      xft:misc\-dejavu:bold:size=8
-!! URxvt*italicFont:                    xft:misc\-dejavu:italic:size=8
-! URxvt*boldItalicFont:                 fontname
-! URxvt*intensityStyles:                boolean
-! URxvt*inputMethod:                    name
-! URxvt*preeditType:                    style
-! URxvt*imLocale:                       string
-! URxvt*imFont:                         fontname
-! URxvt*title:                          string
-! URxvt*iconName:                       string
-! URxvt*saveLines:                      number
-! URxvt*buffered:                       boolean
-! URxvt*depth:                          32
-! URxvt*visual:                         number
-! URxvt*transient-for:                  windowid
-! URxvt*override-redirect:              boolean
-! URxvt*hold:                           boolean
-! URxvt*externalBorder:                 number
-! URxvt*internalBorder:                 number
-! URxvt*borderLess:                     boolean
-! URxvt*lineSpace:                      number
-!! URxvt*letterSpace:                    -4
-! URxvt*skipBuiltinGlyphs:              boolean
-! URxvt*pointerBlankDelay:              number
-! URxvt*backspacekey:                   string
-! URxvt*deletekey:                      string
-! URxvt*print-pipe:                     string
-! URxvt*modifier:                       modifier
-! URxvt*cutchars:                       string
-! URxvt*answerbackString:               string
-! URxvt*secondaryScreen:                boolean
-! URxvt*secondaryScroll:                boolean
-! URxvt*perl-lib:                       string
-! URxvt*perl-eval:                      perl-eval
-! URxvt*perl-ext-common:                string
-! URxvt*perl-ext:                       string
-! URxvt*iso14755:                       boolean
-! URxvt*iso14755_52:                    boolean
-! URxvt*xrm:                            string
-! URxvt*keysym.sym:                     keysym
-! URxvt*background.border:              boolean
-! URxvt*background.expr:                string
-! URxvt*background.interval:            seconds
-! URxvt*bell-command:                   string
-! URxvt*matcher.button:                 string
-! URxvt*matcher.launcher:               string
-! URxvt*matcher.launcher.*:             string
-! URxvt*matcher.pattern.*:              string
-! URxvt*matcher.rend.*:                 string
-! URxvt*remote-clipboard.fetch:         string
-! URxvt*remote-clipboard.store:         string
-! URxvt*searchable-scrollback:          string
-! URxvt*selection-autotransform.*:      string
-! URxvt*selection-pastebin.cmd:         string
-! URxvt*selection-pastebin.url:         string
-! URxvt*selection.pattern-0:            string
-! URxvt*tab-bg:                         colour
-! URxvt*tab-fg:                         colour
-! URxvt*tabbar-bg:                      colour
-! URxvt*tabbar-fg:                      colour
-! URxvt*url-launcher:                   string
 
 
 ! Compile xft: Attempt to find a visual with the given bit depth; option -depth.
@@ -225,10 +114,10 @@ URxvt*transparent: True
 ! URxvt*geometry: geom
 
 ! Use the specified colour as the windows background colour [default White]; option -bg.
-URxvt*background: rgba:1000/1000/1000/eeee
+!URxvt*background: rgba:1000/1000/1000/eeee
 
 ! Use the specified colour as the windows foreground colour [default Black]; option -fg.
-URxvt*foreground: #e0d0b0
+!URxvt*foreground: #e0d0b0
 
 ! Use the specified colour for the colour value n, where 0-7 corresponds to low-intensity (normal) colours
 ! URxvt*colorn: colour
@@ -284,18 +173,56 @@ URxvt*fading: 50
 ! The colour of the border around the text area and between the scrollbar and the text.
 ! URxvt*borderColor: colour
 
+
+! XFT settings
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintfull 
+Xft.lcdfilter: lcddefault
+Xft.autohint: true
+
+
+
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when
-!URxvt*font: xft:DejaVu Sans Mono for Powerline:size=10
-URxvt*font: xft:DejaVu Sans Mono:size=10
+!DejaVu Sans
+URxvt*font: xft:Liberation Mono for Powerline:pixelsize=13:antialias=true:hinting=true, \
+	xft:DejaVu Sans Mono for Powerline:size=10:antialias=true:hinting=true, \
+	xft:Liberation Mono:size=9:antialias=true:hinting=true, \
+	xft:WenQuanYi Bitmap Song:size=8, \
+  xft:FreeSerif:style=Regular, \
+  xft:unifont:style=Medium:antialias=false, \
+	xft:Source Han Sans JP Regular:size=10:antialias=true:hinting=true, \
+	xft:Symbola:pixelsize=16:antialias=true:hinting=true
 
 !
-URxvt*boldFont: xft:DejaVu Sans Mono:size=10:bold
+URxvt*boldFont: xft:Liberation Mono for Powerline:pixelsize=13:antialias=true:hinting=true:bold, \
+	xft:DejaVu Sans Mono for Powerline:size=10:bold:antialias=true:hinting=true, \
+	xft:Liberation Mono:size=9:bold, \
+	xft:Source Han Sans JP Bold:size=10:antialias=true:hinting=true, \
+	xft:Symbola:size=10:antialias=true:hinting=true:bold
+
 
 ! 
-URxvt*italicFont: xft:DejaVu Sans Mono:size=10:italic
+URxvt*italicFont:xft:Liberation Mono for Powerline:pixelsize=13:italic:antialias=true:hinting=true, \
+	xft:DejaVu Sans Mono for Powerline:size=9:italic:antialias=true:hinting=true, \
+	xft:Liberation Mono:size=9:antialias=true:hinting=true:italic, \
+	xft:Source Han Sans JP Light:size=10:antialias=true:hinting=true:italic, \
+	xft:Symbola:size=10:antialias=true:hinting=true:italic
+
 
 ! The font list to use for displaying bold, italic or bold italic characters, respectively.
-URxvt*boldItalicFont: xft:DejaVu Sans Mono:size=10:bold:italic
+URxvt*boldItalicFont: xft:Liberation Mono:size=10:bold:italic
+
+! pixels to insert between characters
+URxvt*letterSpace: 0
+! Specifies number of lines (pixel height) to insert between each row of the display [default 0]; option
+URxvt*lineSpace: -2
+
+
+!# update X server:
+!$ xrdb -merge .Xresources
 
 ! When font styles are not enabled, or this option is enabled (True, option -is, the default), bold/blink
 ! URxvt*intensityStyles: boolean
@@ -366,13 +293,10 @@ URxvt*scrollBar: False
 ! URxvt*borderLess: boolean
 
 ! Compile frills: Disable the usage of the built-in block graphics/line drawing characters and just rely on
-! URxvt*skipBuiltinGlyphs: boolean
+! URxvt*skipBuiltinGlyphs: true
 
 ! Specifies the terminal type name to be set in the TERM environment variable; option -tn.
 URxvt*termName: rxvt
-
-! Specifies number of lines (pixel height) to insert between each row of the display [default 0]; option
-URxvt*lineSpace: 0
 
 ! True: handle Meta (Alt) + keypress to set the 8th bit. False: handle Meta (Alt) + keypress as an escape
 ! URxvt*meta8: boolean
@@ -498,7 +422,7 @@ URxvt.keysym.Control-Right:\033[1;5C
 !URxvt.keysym.Control-Right:\033[0C
 
 ! Configuration for urxvt-perls
-URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.perl-ext-common:default,clipboard,url-select,keyboard-select,font-size
 URxvt.perl-ext:      default,clipboard,url-select,keyboard-select
 URxvt.url-select.launcher:  firefox
 URxvt.url-select.underline: true
@@ -507,9 +431,17 @@ URxvt.keysym.Control-u:           perl:url-select:select_next
 URxvt.keysym.M-a:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
 !URxvt.keysym.Control-a:           perl:keyboard-select:activate
-URxvt.keysym.Control-S-c:           perl:clipboard:copy
-URxvt.keysym.Control-S-v:           perl:clipboard:paste
-#URxvt.keysym.Control-S-v:         perl:clipboard:paste_escaped
+URxvt.keysym.C-S-c:           perl:clipboard:copy
+URxvt.keysym.C-S-v:           perl:clipboard:paste
+!URxvt.keysym.Control-S-v:         perl:clipboard:paste_escaped
+
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+urxvt.print-pipe: "cat > /dev/null"
 
 URxvt*keysym.Home: \033[7~
 URxvt*keysym.End: \033[8~

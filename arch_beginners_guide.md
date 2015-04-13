@@ -105,7 +105,30 @@ password hash:
 
     echo -n password_here | iconv -t utf16le | openssl md4
 
-## yay!
+working config file for standard eduroam (`/etc/netctl/eduroam`, working at campus, adw academy, ...):
+
+	Description='Eduroam-profile'
+	Interface=wlp2s0
+	Connection=wireless
+	Security=wpa-configsection
+	IP=dhcp
+	WPAConfigSection=(
+	 'ssid="eduroam"'
+	 'proto=RSN WPA'
+	 'key_mgmt=WPA-EAP'
+	 'auth_alg=OPEN'
+	 'eap=PEAP'
+	 'anonymous_identity="anonymous@zedat.fu-berlin.de"'
+	 'identity="username@zedat.fu-berlin.de"'
+	 'ca_path="/etc/ssl/certs"'
+	 'ca_path2="/etc/ssl/certs"'
+	 'phase1="peaplevel=0"'
+	 'phase2="auth=MSCHAPV2"'
+	 'password=hash:********'
+	 'priority=2'
+	)
+
+*yay!*
 
 ### graphical user interface
 	pacman -S i3

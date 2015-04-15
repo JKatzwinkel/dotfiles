@@ -341,7 +341,7 @@ package `keychain`. Add to shell profile:
 
 
 
-#### pacman tips
+#### package management
 
 ##### pkgfile
 package `pkgfile`: search files in repo packages. `pkgfile -u` syncs database,
@@ -387,12 +387,17 @@ show versions of installed packages:
 		pacman -Qm
 		pacman -Qe
 
+##### aura
+
+AUR package manager. Install package `aura-bin` (AUR), e.g. using `yaourt`. 
+
 
 #### Must-have applications
 
 ##### Command line
 
-	* `archey`
+	* `archey` (AUR)
+	* `
 
 ##### Desktop Applications
 
@@ -416,6 +421,13 @@ in `~/.config/dwb/default/custom_keys`, e.g.:
 	Control @Page_Down@ :focus_next
 	@Home@ :scroll_top
 	@End@ :scroll_bottom
+
+Problem: unsigned certificates. To trust an SSL connection, we can download the certificate and append it to 
+`/etc/ssl/certs/ca-certificates.crt`:
+
+	gnutls-cli --print-cert [-p port] domain.name | vim -
+
+Then isolate certificate block and copy it into `ca-certificates.crt`.
 
 ######### Extensions
 

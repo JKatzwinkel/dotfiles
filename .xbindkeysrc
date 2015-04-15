@@ -61,7 +61,7 @@
 
 # mute/unmute
 "amixer -D default -- set Master toggle"
-  XF86AudioLowerVolume
+ XF86AudioMute 
 
 
 # firefox

@@ -424,7 +424,7 @@ URxvt.keysym.Control-Right:\033[1;5C
 ! Configuration for urxvt-perls
 URxvt.perl-ext-common:default,clipboard,url-select,keyboard-select,font-size
 URxvt.perl-ext:      default,clipboard,url-select,keyboard-select
-URxvt.url-select.launcher:  firefox
+URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 URxvt.keysym.Control-u:           perl:url-select:select_next
 ! URxvt.keysym.M-Escape:      perl:keaboard-select:activate

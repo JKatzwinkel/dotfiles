@@ -25,7 +25,6 @@ colors
 HISTFILE=~/.histfile
 HISTSIZE=15000
 SAVEHIST=15000
-setopt appendhistory autocd extendedglob notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
@@ -60,14 +59,20 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="random"
+#ZSH_THEME="random"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git nyan archlinux thor python fasd battery zsh-syntax-highlighting)
+plugins=(git nyan archlinux thor python fasd battery zsh-syntax-highlighting
+grep)
 
 source $ZSH/oh-my-zsh.sh
 
+
+
+setopt append_history bang_hist auto_cd extended_glob notify nonomatch
+
+unsetopt inc_append_history sharehistory
 
 # zsh-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets)
@@ -105,14 +110,16 @@ PROMPT="%{$fg[yellow]%}%*-\
 %{$reset_color%}@\
 %{$fg[cyan]%}%M-\
 %{$fg_bold[white]%}%3~\
-%{$reset_color%}$ "
+%{$reset_color%}%% "
 
 
 
 
 
 # set editors, pager, ...
+export LESS="-R"
 export PAGER=most
+export SYSTEMD_PAGER=less
 export EDITOR=vim
 export GIT_EDITOR=vim
 export GOPATH=~/tx/go
@@ -196,7 +203,11 @@ bindkey "\e[1;5D" emacs-backward-word
 # alias for running skype as separate skype user
 alias skype='xhost +local: && su skype -c skype'
 
+# FASD
 eval "$(fasd --init auto)"
+
+# keychain
+eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa)
 
 
 # RVM
@@ -204,4 +215,19 @@ eval "$(fasd --init auto)"
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.gem/ruby/2.2.0/bin" # ruby gem binaries
+export PATH="$PATH:/usr/local/games"  
 
+export DITA_HOME=/opt/dita
+export ANT_HOME=/usr/share/apache-ant
+export JAVA_HOME=/usr/lib/jvm/default
+export PATH=${ANT_HOME}/bin:${JAVA_HOME}/bin:${DITA_HOME}:${PATH}
+
+#export CLASSPATH=.:/usr/share/java:$CLASSPATH:$PATH
+export CLASSPATH=${DITA_HOME}/lib:$DITA_HOME/lib/dost.jar:$DITA_HOME/lib/xml-resolver.jar:$CLASSPATH
+export CLASSPATH=/usr/share/java/avalon-framework/avalon-framework.jar:$CLASSPATH
+export CLASSPATH=/usr/share/java/batik/batik-all.jar:$CLASSPATH
+export CLASSPATH=/usr/share/java/fop/fop.jar:$CLASSPATH
+
+
+#unset GREP_OPTIONS

@@ -38,6 +38,44 @@
 "    -> Helper functions
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"NeoBundle Scripts-----------------------------
+if has('vim_starting')
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+
+" You can specify revision/branch/tag.
+NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+"NeoBundle 'ywjno/vim-tomorrow-theme'
+NeoBundle 'squarefrog/tomorrow-night.vim'
+
+" airline
+NeoBundle 'bling/vim-airline'
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin off
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"End NeoBundle Scripts-------------------------
 
 set nocompatible
 
@@ -49,7 +87,7 @@ set history=700
 
 " Enable filetype plugins
 "filetype plugin on
-"filetype indent on
+filetype indent on
 
 " Set to auto read when a file is changed from the outside
 "set autoread
@@ -73,6 +111,9 @@ nnoremap <leader>p "*p
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" support mouse
+set mouse=a
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -134,9 +175,14 @@ set listchars=tab:➪-
 " Enable syntax highlighting
 syntax enable
 
-colorscheme torte
+"colorscheme torte
 " /usr/share/vim/vim73/colors
+
+"set background=dark
+colorscheme Monokai
+"colorscheme Tomorrow-Night
 set background=dark
+"colorscheme tomorrow-night
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -177,7 +223,7 @@ set tabstop=2
 
 " Linebreak on 500 characters
 set lbr
-set tw=80
+set tw=500
 
 " XML formatting using libxml
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
@@ -254,6 +300,23 @@ autocmd BufReadPost *
 set viminfo^=%
 
 
+"
+" airline
+" http://makandracards.com/jan0sch/18283-enable-powerline-fonts-with-rxvt-unicode-and-vim-airline
+""""""""""""""
+let g:airline_powerline_fonts = 1
+
+" buffer bar
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" more tips on effective buffer use:
+" https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
+" 
+
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
@@ -265,7 +328,6 @@ set showcmd
 " Format the status line
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ \ \ %=Pos:\ %l,%v\ \%r%P
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings

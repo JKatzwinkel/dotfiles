@@ -213,6 +213,8 @@ eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa)
 # RVM
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
 
+# command not found hook brought by pkgfile
+[[ -s "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && . "/usr/share/doc/pkgfile/command-not-found.zsh"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.gem/ruby/2.2.0/bin" # ruby gem binaries

@@ -94,6 +94,8 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=white'
 
 
 
+### PROMPTS
+###########
 
 
 local git_info='$(git_prompt_info)'
@@ -104,13 +106,13 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$reset_color%}:%{$fg[green]%}o%{$reset_color%}]"
 
 local battery_info='$(battery_pct)'
 PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
-RPROMPT="${git_info}[%h%{$fg[yellow]%}:%?%{$reset_color%}][${battery_info}]"
-PROMPT="%{$fg[yellow]%}%*-\
+RPROMPT="${git_info}[%h%{$fg[yellow]%}%(?..:%?)%{$reset_color%}][${battery_info}]"
+PROMPT="%{$fg[yellow]%}%(?..%{$fg[red]%})%*-\
 %{$fg_bold[green]%}%n\
 %{$reset_color%}@\
 %{$fg[cyan]%}%M-\
 %{$fg_bold[white]%}%3~\
-%{$reset_color%}%% "
+%{$reset_color%}%(?..%{$fg[red]%})%% %{$reset_color%}"
 
 
 

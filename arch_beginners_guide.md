@@ -77,6 +77,11 @@ https://bbs.archlinux.org/viewtopic.php?id=180549
 	reboot
 
 
+
+## Post-Installation
+
+Good moves are also documented in [this](http://tutos.readthedocs.org/en/latest/source/Arch.html).
+
 ### add wireless
 **ERST NACH REBOOT!!!!!** sonst konfligiert wifi-menu mit dem auszerhalb der chroot-umgebung laufenden wireless profile!
 	pacman -S iw wpa_supplicant dialog
@@ -131,11 +136,22 @@ working config file for standard eduroam (`/etc/netctl/eduroam`, working at camp
 *yay!*
 
 ### graphical user interface
+
+#### window manager: i3
+
 	pacman -S i3
 in `.xinitrc`:
 	exec i3
 Bei trouble mapping keys:
 	xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
+
+##### stuff for i3
+
+[rofi](https://github.com/DaveDavenport/rofi) (`rofi-git`). Better than `dmenu`. Settings go into `.Xresources`.
+Rofi-based mpd client??? [clerk](https://github.com/carnager/clerk). Interesting
+
+[i3blocks](). Show custom script output in i3 status bar.
+
 
 
 ### alsa:
@@ -179,6 +195,9 @@ https://bbs.archlinux.org/viewtopic.php?id=142657
 https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture
 
 
+
+## Terminals
+
 ### urxvt 
 
 #### keybindings:
@@ -201,8 +220,20 @@ read [XKB](https://wiki.archlinux.org/index.php/X_KeyBoard_extension) and [xmodm
 wiki articles, install `xorg-xev`, `xorg-xkbutils`.
 
 
+### Termite
+
+[Termite](https://wiki.archlinux.org/index.php/Talk:Termite) has a vim-like command mode and a hint overlay like
+`dwb` etc. and some more interesting [features](https://github.com/thestinger/termite/blob/master/README.rst).
+It also supports [Fontconfig](https://wiki.archlinux.org/index.php/Font_configuration), where URxvt only
+supports [Xft](http://en.wikipedia.org/wiki/Xft).
+
+
 
 ### fonts
+
+Random references: [1](http://www.jaysonrowe.com/2013/04/font-configuration-in-arch-linux.html)
+
+Fontconfig:
 
 	fc-list -v # show verbose fonts info
 	fc-cache  -fv # whenever new fonts have been put in /usr/share/fonts/...
@@ -246,10 +277,33 @@ update X server: `xrdb -merge .Xresources`
 Here is some devs writing about urxvt: http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod#Rendering_Font_amp_Look_and_Feel_Iss
 
 #### infinality
+
 [Infinality](https://wiki.archlinux.org/index.php/font_configuration#Infinality) is a patchset
 improving `freetype2` font rendering: `freetype2-infinality-git`.  Available also, already with 
 configurations via AUR is
-`fontconfig-infinality-ultimate-git` (might be necessary to edit dependencies). It is also 
+`fontconfig-infinality-ultimate-git` (might be necessary to edit dependencies). 
+
+##### pacman
+
+Its also available via
+`pacman` when the repo is added to `pacman.conf`:
+
+	[infinality-bundle]
+	Server = http://bohoomil.com/repo/$arch
+
+The developers key is also required. Get it with `pacman-key -r 962DDE58`. It should arrive us follows:
+
+	$ gpg --fingerprint 962DDE58
+	pub   rsa2048/962DDE58 2013-04-22
+				Key fingerprint = A924 4FB5 E93F 11F0 E975  337F AE68 66C7 962D DE58
+	uid       [ unknown] bohoomil (dev key) <bohoomil@zoho.com>
+	sub   rsa2048/C83B4AD8 2013-04-22
+
+Now we can install the meta package `infinality-bundle`.
+
+##### grip
+
+It is also 
 recommended to install and `grip-git` (AUR) for live fonts preview.
 
 	$ fc-presets sets # select e.g. "combi"
@@ -257,6 +311,8 @@ recommended to install and `grip-git` (AUR) for live fonts preview.
 	$ fc-cache -fv
 
 Yay! Way better looking fonts in firefox and such!
+
+
 
 
 
@@ -331,7 +387,7 @@ install `udisks2` and [`udevil`](https://github.com/IgnorantGuru/udevil/blob/mas
 	systemctl enable devmon@<user>.service
 	systemctl start devmon@<user>
 
-Then, plug and play..
+Then, plug and play... Umount with `devmon -c`.
 
 
 #### keychain
@@ -398,6 +454,22 @@ AUR package manager. Install package `aura-bin` (AUR), e.g. using `yaourt`.
 
 	* `archey` (AUR)
 	* `
+
+
+##### VIM
+
+##### Plugin Managers
+
+[NeoBundle](https://github.com/Shougo/neobundle.vim).
+[Pathogen](https://github.com/tpope/vim-pathogen) (clone plugins from git into `.vim/bundle`).
+
+
+##### Plugins
+
+[Unite](https://github.com/Shougo/unite.vim)
+[VOom](https://github.com/vim-scripts/VOoM): for markup/programming language structure viewing etc.
+
+
 
 ##### Desktop Applications
 

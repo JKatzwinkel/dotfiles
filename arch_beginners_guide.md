@@ -135,9 +135,11 @@ working config file for standard eduroam (`/etc/netctl/eduroam`, working at camp
 
 *yay!*
 
-### graphical user interface
 
-#### window manager: i3
+
+## X
+
+### i3 
 
 	pacman -S i3
 in `.xinitrc`:
@@ -145,14 +147,39 @@ in `.xinitrc`:
 Bei trouble mapping keys:
 	xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
 
-##### stuff for i3
+#### stuff for i3
 
 [rofi](https://github.com/DaveDavenport/rofi) (`rofi-git`). Better than `dmenu`. Settings go into `.Xresources`.
-Rofi-based mpd client??? [clerk](https://github.com/carnager/clerk). Interesting
-
-[i3blocks](). Show custom script output in i3 status bar.
+Rofi-based mpd client??? [clerk](https://github.com/carnager/clerk). Interesting. Run `rofi -show run`.
 
 
+
+##### jazz up i3 status bar
+
+###### i3blocks
+Show custom script output in i3 status bar.
+[i3blocks](https://github.com/vivien/i3blocks) overvides the `i3status`
+configuration and defines widget-like blocks that invoke specified commands
+and can be configured seperately so that some get updated more frequently than
+others, for example. There is also a
+[wiki](https://github.com/vivien/i3blocks/wiki/Blocklets) and there are many
+examples. Sits on GTK+3.
+Special bonus: supplies its font configurations (multiple fallback fonts can be
+listed) to other X applications like the terminal exmulator via `pango`. This
+way it can be possible to have fancy unicode glyphs be rendered in the shell
+that were not shown before. Yay!
+
+
+#### Compton
+
+[Compton]() might be able to manage stuff like graying out windows without
+focus (which URxvt can by itself, but termite can not) and getting rid of
+tearing / vsync issues. [Here](http://pastebin.com/S8m1jnY3) is some
+example config.
+
+
+
+## sound
 
 ### alsa:
 https://bbs.archlinux.org/viewtopic.php?id=125092
@@ -195,8 +222,16 @@ https://bbs.archlinux.org/viewtopic.php?id=142657
 https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture
 
 
+### having fun hearing sound
 
-## Terminals
+`mocp`, `cmus`, `mpd`, `ncmpc`, `mpv`, `mps`, `mps-youtube`, ...
+
+
+
+
+
+
+## Terminal
 
 ### urxvt 
 
@@ -312,6 +347,11 @@ recommended to install and `grip-git` (AUR) for live fonts preview.
 
 Yay! Way better looking fonts in firefox and such!
 
+
+### Termite
+
+heiszer tip von niels: [termite](https://wiki.archlinux.org/index.php/Termite)
+kann so sachen wie follow links overlay (wie dwb, vimperator, qutie...)
 
 
 

@@ -153,6 +153,16 @@ listed) to other X applications like the terminal exmulator via `pango`. This
 way it can be possible to have fancy unicode glyphs be rendered in the shell
 that were not shown before. Yay!
 
+
+#### Compton
+
+[Compton]() might be able to manage stuff like graying out windows without
+focus (which URxvt can by itself, but termite can not) and getting rid of
+tearing / vsync issues. [Here](http://pastebin.com/S8m1jnY3) is some
+example config.
+
+
+
 ## sound
 
 ### alsa:

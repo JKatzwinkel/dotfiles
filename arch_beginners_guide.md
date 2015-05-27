@@ -152,9 +152,14 @@ Bei trouble mapping keys:
 [rofi](https://github.com/DaveDavenport/rofi) (`rofi-git`). Better than `dmenu`. Settings go into `.Xresources`.
 Rofi-based mpd client??? [clerk](https://github.com/carnager/clerk). Interesting. Run `rofi -show run`.
 
+###### random resources
+
+look, [config files](https://github.com/akrasic/i3-config)!
 
 
 ##### jazz up i3 status bar
+
+Show title of focused window in i3bar [1](https://faq.i3wm.org/question/1537/show-title-of-focused-window-in-status-bar/).
 
 ###### i3blocks
 Show custom script output in i3 status bar.
@@ -172,10 +177,14 @@ that were not shown before. Yay!
 
 #### Compton
 
-[Compton]() might be able to manage stuff like graying out windows without
+[Compton](https://wiki.archlinux.org/index.php/Compton) might be able to manage stuff like graying out windows without
 focus (which URxvt can by itself, but termite can not) and getting rid of
-tearing / vsync issues. [Here](http://pastebin.com/S8m1jnY3) is some
-example config.
+tearing / vsync issues. 
+
+Discussion and samples config [here](https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton/)
+
+Compton can totally improve rendering. There is a [performance guide](https://github.com/chjj/compton/wiki/perf-guide),
+and even a [vsync guide](https://github.com/chjj/compton/wiki/vsync-guide). 
 
 
 

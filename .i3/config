@@ -28,7 +28,7 @@ floating_modifier $mod
 #bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+Return exec xterm -rw
 #bindsym Mod1+Ctrl+t exec xterm -rw
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 bindsym Mod1+Ctrl+t exec urxvt
 
 # kill focused window
@@ -36,8 +36,8 @@ bindsym $mod+Shift+q kill
 bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -b -i -l 5
-bindsym Mod1+F2 exec dmenu_run -b -i -l 5
+##bindsym $mod+d exec dmenu_run -b -i -l 5
+bindsym $mod+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -176,10 +176,11 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
 bar {
-        status_command i3status
-				binding_mode_indicator yes
-				position top
+	status_command i3status
+	position top
+	binding_mode_indicator yes
 				colors {
 					background #534636
 					focused_workspace #534696 #3b3228 #e0d8d6
@@ -189,20 +190,33 @@ bar {
 				}
 }
 
+#bar {
+#        status_command i3status
+#				binding_mode_indicator yes
+#				position top
+#				colors {
+#					background #534636
+#					focused_workspace #534696 #3b3228 #e0d8d6
+#					active_workspace #534666 #5f676a #e0d8d6
+#					inactive_workspace #4b4026 #534636 #947b5b
+#					urgent_workspace #534636 #dc322f #e9e1dd
+#				}
+#}
+
 
 # appearance
 # Color Schema
 							# Border Background Text Indicator
-client.focused #5346a6 #534686 #f5eeeb #f5eeeb
+client.focused #5366b6 #535686 #f5eeeb #f5eeeb
 client.focused_inactive #16110e #120d10 #7e705a #7e705a
 client.unfocused #0b0905 #0b0905  #7e705a #7e705a
 client.urgent #ff3300 #222222 #cccccc #f5eeeb
 # windows
-hide_edge_borders vertical
-new_window pixel 1
+#hide_edge_borders vertical
+new_window pixel 3
 # show window title
 bindsym $mod+t border normal
-bindsym $mod+y border 1pixel
+bindsym $mod+y border pixel
 
 # workspace assignments
 assign [class="Firefox"] 2
@@ -218,6 +232,11 @@ bindsym $mod+Shift+s [class="Subl"] focus
 # i3-msg -t get_workspaces, extract active workspace num
 # i3-msg -t get_tree, search for orientation in active workspace
 
-exec conky -d
 
+# start compton
+exec --no-startup-id compton --config ~/.config/compton.conf&
+# start conky
+exec conky -d
+# start rofi (configured in .Xresources)
+exec rofi
 

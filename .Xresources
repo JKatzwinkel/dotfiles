@@ -115,6 +115,8 @@ URxvt*transparent: True
 
 ! Use the specified colour as the windows background colour [default White]; option -bg.
 !URxvt*background: rgba:1000/1000/1000/eeee
+! should work with compton
+URxvt*background: [75]#101520
 
 ! Use the specified colour as the windows foreground colour [default Black]; option -fg.
 !URxvt*foreground: #e0d0b0

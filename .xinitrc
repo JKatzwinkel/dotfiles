@@ -28,6 +28,12 @@ xbindkeys
 
 #xmodmap ~/.Xmodmap
 
+# set 'desktop' (X root window) background color
+#hsetroot -solid \#254444 
+#hsetroot -solid \#503444 
+hsetroot -solid \#30232a 
+
+# set 'desktop' background if config is available
 eval $(cat ~/.fehbg)
 
 # exec gnome-session

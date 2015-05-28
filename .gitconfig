@@ -3,7 +3,8 @@
 	diff = auto
 	status = auto
 [user]
-	name = J. Katzwinkel
-	email = jkatzwinkel@git.hub
+	name = JKatzwinkel
+	email = JKatzwinkel@users.noreply.github.com
 [alias]
 	graph = log --graph --decorate --all --name-status
+	what = "!sh -c 'git diff $1^ $1' -"

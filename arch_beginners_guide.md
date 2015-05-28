@@ -270,7 +270,21 @@ wiki articles, install `xorg-xev`, `xorg-xkbutils`.
 `dwb` etc. and some more interesting [features](https://github.com/thestinger/termite/blob/master/README.rst).
 It also supports [Fontconfig](https://wiki.archlinux.org/index.php/Font_configuration), where URxvt only
 supports [Xft](http://en.wikipedia.org/wiki/Xft).
+It has no built-in dimming function for inactive windows, but for that, we can use `compton`.
+There are also issues with `dircolors` required for colored `ls` output, which might disable 
+`ls` colors in ssh-shells entirely. In local shells, this can be worked around, as described
+at [arch wiki](https://wiki.archlinux.org/index.php/Termite#Colored_ls_output):
 
+
+> For colored `ls` output it is necessary to use a custom `LS_COLORS` environment variable, which can be set with a dircolors file. Generate one with:
+
+	$ dircolors -p > ~/.dircolors
+
+> Then edit `~/.dircolors` file, and append
+
+	TERM xterm-termite
+
+Termite config file itself is at `.config/termite/config`. 
 
 
 ### fonts

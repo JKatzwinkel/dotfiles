@@ -211,6 +211,11 @@ eval "$(fasd --init auto)"
 # keychain
 eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa)
 
+# termite: open new terminal in current directory
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
+fi
 
 # RVM
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"

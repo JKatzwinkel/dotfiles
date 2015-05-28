@@ -234,7 +234,7 @@ bindsym $mod+Shift+s [class="Subl"] focus
 
 
 # start compton
-exec --no-startup-id compton --config ~/.config/compton.conf&
+exec --no-startup-id compton --config ~/.config/compton.conf -b
 # start conky
 exec conky -d
 # start rofi (configured in .Xresources)

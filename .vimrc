@@ -66,6 +66,13 @@ NeoBundle 'squarefrog/tomorrow-night.vim'
 
 " airline
 NeoBundle 'bling/vim-airline'
+
+" syntastic
+NeoBundle 'scrooloose/syntastic'
+
+" Unite
+NeoBundle 'Shougo/unite.vim'
+
 " Required:
 call neobundle#end()
 
@@ -76,6 +83,11 @@ filetype plugin off
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
+
+
+"Pathogen -------------------------------------
+execute pathogen#infect()
+"----------------------------------------------
 
 set nocompatible
 
@@ -198,6 +210,18 @@ set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
+
+" Linting:
+" code pythonicalness checking using pylint for :make command
+au FileType python setlocal makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
+au FileType python setlocal errorformat=%f:%l:\ %m
+au FileType python setlocal expandtab
+au FileType python setlocal tabstop=4
+
+"""""""""""
+" Syntastic
+"
+let g:syntastic_python_pylint_args='-d C0302,F0401,E0611,R0912,C0103,R0914 -f parseable -r n -i y'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

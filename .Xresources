@@ -433,8 +433,8 @@ URxvt.keysym.Control-u:           perl:url-select:select_next
 URxvt.keysym.M-a:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
 !URxvt.keysym.Control-a:           perl:keyboard-select:activate
-URxvt.keysym.C-S-c:           perl:clipboard:copy
-URxvt.keysym.C-S-v:           perl:clipboard:paste
+URxvt.keysym.Control-S-c:           perl:clipboard:copy
+URxvt.keysym.Control-S-v:           perl:clipboard:paste
 !URxvt.keysym.Control-S-v:         perl:clipboard:paste_escaped
 
 URxvt.keysym.C-S-Up:   perl:font-size:incglobal

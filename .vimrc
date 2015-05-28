@@ -106,13 +106,14 @@ nmap <leader>w :w!<cr>
 vnoremap <leader>y "*y
 " same goes for pasting from outside into vim
 nnoremap <leader>p "*p
+nnoremap <leader>P "*P
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" support mouse
-set mouse=a
+" support mouse [in normal mode]
+set mouse=n
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
@@ -266,7 +267,10 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Close the current buffer
-map <leader>bd :Bclose<cr>
+map <leader>d :Bclose<cr>
+" Navigate buffers
+map <leader>bn :bn<cr>
+map <leader>bp :bp<cr>
 
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>

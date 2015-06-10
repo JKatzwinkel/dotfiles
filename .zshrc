@@ -209,6 +209,7 @@ bindkey "\e[1;5D" emacs-backward-word
 # zle can create widgets from functions.
 # more about user defined widgets:
 # http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#User_002dDefined-Widgets
+# http://sgeb.io/articles/zsh-zle-closer-look-custom-widgets/
 
 # define function
 function prev_dir {

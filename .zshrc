@@ -25,6 +25,7 @@ colors
 HISTFILE=~/.histfile
 HISTSIZE=15000
 SAVEHIST=15000
+# activate emacs keybindings
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
@@ -135,6 +136,7 @@ export MPD_HOST=192.168.0.8
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
+# make zle widgets from functions
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 #bindkey "^[[A" up-line-or-beginning-search # Up
@@ -201,6 +203,27 @@ bindkey "\e[1;5D" emacs-backward-word
 #bindkey "\e[0C" emacs-forward-word
 #bindkey "\e[0D" emacs-backward-word 
 #bindkey "^H" backward-delete-word
+
+# custom keybindings with zle
+# the zle manual is at `man zshzle`.
+# zle can create widgets from functions.
+# more about user defined widgets:
+# http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#User_002dDefined-Widgets
+
+# define function
+function prev_dir {
+  popd > /dev/null
+  zle reset-prompt
+}
+
+# create zle widgets
+zle -N prev_dir
+
+
+# To see the escape sequence for a shortcut, run `cut`, then hit keys. For instance,
+# Alt+LeftArrow yields ^[[1;3D
+bindkey "\e[1;3D" prev_dir
+
 
 # alias for running skype as separate skype user
 alias skype='xhost +local: && su skype -c skype'

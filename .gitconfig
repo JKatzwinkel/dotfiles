@@ -8,3 +8,5 @@
 [alias]
 	graph = log --graph --decorate --all --name-status
 	what = "!sh -c 'git diff $1^ $1' -"
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all

@@ -120,6 +120,8 @@ vnoremap <leader>y "*y
 nnoremap <leader>p "*p
 nnoremap <leader>P "*P
 
+" enable modeline processing even though it is somehow enabled anyway, just to be sure
+set modeline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -236,29 +238,59 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" learn more about these options at http://tedlogan.com/techblog3.html
+
 " Use spaces instead of tabs
 " set expandtab
 
 " Be smart when using tabs ;)
 " set smarttab
 
-" 1 tab == 2 spaces
-set shiftwidth=2
+" this is how many characters wide tabs are displayed in vim
 set tabstop=2
+" this is by how many characters text gets indented when using the > command
+set shiftwidth=2
+" this is how by how many characters the cursor advances when <Tab> is hit in insert mode
+set softtabstop=2
 
-" Linebreak on 500 characters
-set lbr
+" set default max line length to a large value so that vim doesn't automatically insert
+" EOLs after 80 characters
 set tw=500
+" tip: use modeline in files where line length is preferred to be limited to 80 chars:
+" /* vim: tw=80 */
+"
+" auto indent:
+" Copy indent from current line when starting a new line (typing <CR>
+" in Insert mode or when using the "o" or "O" command).  If you do not
+" type anything on the new line except <BS> or CTRL-D and then type
+" <Esc>, CTRL-O or <CR>, the indent is deleted again.
+set ai
 
+" smart indent
+" helps with indentation based on input, e.g. when typing a '}', indentation is
+" aligned to the matching '{'.
+" inserts an extra indent after lines ending with keywords or trigger characters like
+" {, if, while and such. They can be displayed by calling :set cinwords?
+set si
+
+" in insert mode:
+" don't remove indentation when typing '#' (annoying when writing python)
+inoremap # X#
+
+" dont wrap lines longer than the window width for display
+set nowrap 
+" note: if wrap were enabled, you could define where and how to wrap lines for display
+" by setting lbr, which will make vim wrap lines at characters that can be shown with
+" :set breakat?
+
+""" some filetype-sensitive settings:
+
+"" defining external tools to be used as handlers for the = command
 " XML formatting using libxml
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
-
 " JSON formatting using python json module
 au FileType json setlocal equalprg=python\ -mjson.tool\ 2>/dev/null
 
-set ai "Auto indent
-set si "Smart indent
-set nowrap "dont Wrap lines
 
 
 """"""""""""""""""""""""""""""
@@ -506,7 +538,6 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 
-
 " Search for the ... arguments separated with whitespace (if no '!'),
 " " or with non-word characters (if '!' added to command).
 function! SearchMultiLine(bang, ...)
@@ -517,3 +548,19 @@ function! SearchMultiLine(bang, ...)
 endfunction
 command! -bang -nargs=* -complete=tag S call SearchMultiLine(<bang>0, <f-args>)|normal! /<C-R>/<CR>
 
+
+" Append modeline after last line in buffer.
+" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
+" files.
+function! AppendModeline()
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
+        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), l:modeline)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+" from http://vim.wikia.com/wiki/Modeline_magic
+" to append a modeline containing the current settings, type <leader>ml
+
+
+/* vim: set ts=2 sw=2 tw=500 noet :*/

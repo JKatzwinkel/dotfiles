@@ -291,6 +291,12 @@ au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 " JSON formatting using python json module
 au FileType json setlocal equalprg=python\ -mjson.tool\ 2>/dev/null
 
+" Note: filetype-specifig local settings like the ones above can also be put in
+" their own files to keep .vimrc clean.
+" python settings would go into ~/.vim/ftplugin/python.vim and hence overwrite
+" python settings in .vimrc, but can themselves be overwritten by
+" ~/.vim/after/ftplugin/python.vim
+" [http://vim.wikia.com/wiki/Keep_your_vimrc_file_clean]
 
 
 """"""""""""""""""""""""""""""
@@ -549,18 +555,25 @@ endfunction
 command! -bang -nargs=* -complete=tag S call SearchMultiLine(<bang>0, <f-args>)|normal! /<C-R>/<CR>
 
 
-" Append modeline after last line in buffer.
+" Append modeline after last line in buffer,
+" containing current settings like tabs/indentation, filetype
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
 " files.
 function! AppendModeline()
-  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
-        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set ft=%s :",
+        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no',
+				\ &filetype)
   let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
   call append(line("$"), l:modeline)
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 " from http://vim.wikia.com/wiki/Modeline_magic
-" to append a modeline containing the current settings, type <leader>ml
+" to run this, type <leader>ml
+" note: commentstring is /*%s*/ by default, which might not the ideal thing to put into
+" files we want to be read by e.g. vim or the python interpreter, so...
+au FileType vim setlocal commentstring=\"%s
+au FileType python setlocal commentstring=#%s
+au FileType latex setlocal commentstring=\%%s
 
 
-/* vim: set ts=2 sw=2 tw=500 noet :*/
+" vim: set ts=2 sw=2 tw=500 noet ft=vim :

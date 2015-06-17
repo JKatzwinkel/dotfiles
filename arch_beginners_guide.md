@@ -515,8 +515,14 @@ AUR package manager. Install package `aura-bin` (AUR), e.g. using `yaourt`.
 
 ##### Command line
 
+###### System/Hardware Info
+
 	* `archey` (AUR)
-	* `
+	* `hwinfo`
+	* `dmidecode` (z.b. `-t processor`)
+	* `lscpu`
+	* `lshw` (z.b. `-class processor`)
+	* `tig` (for git)
 
 
 ##### VIM

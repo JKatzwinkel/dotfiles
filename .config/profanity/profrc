@@ -30,7 +30,17 @@ otr.warn=true
 mouse=false
 
 [colours]
-main.text=gray
+main.text=white
+main.text.them=bold_white
+input.text=bold_green
+
+statusbar=bold_black
+statusbar.text=white
+statusbar.brackets=magenta
+statusbar.active=bold_white
+statusbar.new=green
+
+unsubscribed=yellow
 
 
 [logging]

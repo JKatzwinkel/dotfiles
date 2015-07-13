@@ -247,6 +247,11 @@ fi
 # command not found hook brought by pkgfile
 [[ -s "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && . "/usr/share/doc/pkgfile/command-not-found.zsh"
 
+# base16 colorscheme
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-shapeshifter.dark.sh" # solarized, isotope, monokai
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.gem/ruby/2.2.0/bin" # ruby gem binaries
 export PATH="$PATH:/usr/local/games"  

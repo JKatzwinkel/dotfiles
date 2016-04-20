@@ -182,7 +182,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 bar {
-	status_command i3status
+	status_command py3status -i ~/.i3/status_modules -n 1 -t 0
 	position top
 	binding_mode_indicator yes
 				colors {

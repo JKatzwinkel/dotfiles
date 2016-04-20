@@ -20,7 +20,7 @@ policy=manual
 log=on
 
 [notifications]
-remind=60
+remind=120
 invite=true
 sub=true
 message=true
@@ -31,3 +31,7 @@ typing=true
 typing.current=false
 message.text=true
 room.text=true
+
+[connection]
+receipts.request=true
+receipts.send=true

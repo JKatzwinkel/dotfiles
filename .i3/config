@@ -218,9 +218,13 @@ client.urgent #ff3300 #222222 #cccccc #f5eeeb
 # windows
 #hide_edge_borders vertical
 new_window pixel 3
+
 # show window title
 bindsym $mod+t border normal
 bindsym $mod+y border pixel
+
+# assign workspace name
+bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
 # workspace assignments
 assign [class="Firefox"] 2

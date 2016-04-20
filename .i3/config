@@ -236,6 +236,14 @@ assign [class="Dwb"] 2
 # jump to sublime editor instance
 bindsym $mod+Shift+s [class="Subl"] focus
 
+# when window opens, do not steal focus, set it urgent instead
+focus_on_window_activation urgent
+
+# special configs for certain applications
+# (use `xprop` to get class/role/... info)
+# float not tile
+for_window [class="Archiv-Editor"] floating enable
+
 #TODO: indicate split mode in i3status bar
 # i3-msg -t get_workspaces, extract active workspace num
 # i3-msg -t get_tree, search for orientation in active workspace

@@ -12,9 +12,9 @@ font = Liberation Mono for Powerline 9
 			 # DejaVu Sans Mono for Powerline 9 
 			 # Liberation Mono 9
 			 # Symbola 9
-scrollback_lines = 12000
+scrollback_lines = 24000
 search_wrap = true
-#icon_name = terminal
+icon_name = terminal
 #geometry = 640x480
 
 # "system", "on" or "off"
@@ -68,7 +68,7 @@ foreground = #dcdccc
 background = #3f3f3f
 active_foreground = #e68080
 active_background = #3f3f3f
-padding = 2
+padding = 8
 border = #3f3f3f
 border_width = 0.5
 roundness = 2.0
@@ -170,3 +170,4 @@ color15 = #d0e0d5
 
 
 
+/* vim: set ts=2 sw=2 tw=80 noet ft=config :*/

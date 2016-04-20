@@ -29,7 +29,7 @@ own_window no
 own_window_transparent yes
 own_window_hints undecorated, below, sticky, skip_taskbar, skip_pager
 own_window_class Conky
-own_window_type override
+#own_window_type override
 own_window_argb_visual yes
 double_buffer yes
 update_interval 3

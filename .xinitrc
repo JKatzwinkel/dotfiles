@@ -41,4 +41,8 @@ eval $(cat ~/.fehbg)
 # exec startxfce4
 # ...or the Window Manager of your choice
 exec i3
+#exec herbstluftwm --locked
+
+# start flux to dim background light
+xflux -l 52.5 -g 13.4
 

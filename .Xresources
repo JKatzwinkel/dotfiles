@@ -158,7 +158,7 @@ URxvt*jumpScroll: True
 ! URxvt*skipScroll: boolean
 
 ! Fade the text by the given percentage when focus is lost; option -fade.
-URxvt*fading: 50
+URxvt*fading: 24
 
 ! Fade to this colour, when fading is used (see fading:). The default colour is black; option -fadecolor.
 ! URxvt*fadeColor: colour

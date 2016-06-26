@@ -55,6 +55,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
+" a tig-like commit viewer extension for fugitive:
+NeoBundle 'int3/vim-extradite'
+NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 
@@ -72,6 +75,10 @@ NeoBundle 'scrooloose/syntastic'
 
 " Unite
 NeoBundle 'Shougo/unite.vim'
+
+" Scala
+NeoBundle 'derekwyatt/vim-scala'
+
 
 " Required:
 call neobundle#end()
@@ -119,6 +126,8 @@ vnoremap <leader>y "*y
 " same goes for pasting from outside into vim
 nnoremap <leader>p "*p
 nnoremap <leader>P "*P
+
+vmap <C-c> "+y
 
 " enable modeline processing even though it is somehow enabled anyway, just to be sure
 set modeline
@@ -223,8 +232,11 @@ au FileType python setlocal tabstop=4
 """""""""""
 " Syntastic
 "
-let g:syntastic_python_pylint_args='-d C0302,F0401,E0611,R0912,C0103,R0914 -f parseable -r n -i y'
+let g:syntastic_python_pylint_args='-d C0302,F0401,E0611,R0912,C0103,R0914 -f parseable -r n'
 
+
+" recognize markdown files
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -573,7 +585,10 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 " files we want to be read by e.g. vim or the python interpreter, so...
 au FileType vim setlocal commentstring=\"%s
 au FileType python setlocal commentstring=#%s
-au FileType latex setlocal commentstring=\%%s
+au FileType tex setlocal commentstring=\%%s
+au FileType sh setlocal commentstring=#%s
+au FileType markdown setlocal commentstring=<!---%s\ -->
+
 
 
 " vim: set ts=2 sw=2 tw=500 noet ft=vim :

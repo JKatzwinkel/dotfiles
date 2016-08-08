@@ -206,6 +206,26 @@ default sound card in `/usr/share/alsa/alsa.conf` schreiben:
 				card PCH
 	}
 
+oder sowas wie
+
+	pcm.!default {
+			type plug
+			slave.pcm {
+					@func getenv
+					vars [ ALSAPCM ]
+					default "hw:PCH"
+			}
+	}
+
+`defaults.pcm.card` musz auch `1` sein:
+
+	defaults.ctl.card 1
+	defaults.pcm.card 1
+	defaults.pcm.device 0
+	defaults.pcm.subdevice -1
+	defaults.pcm.nonblock 1
+	defaults.pcm.compat 0
+
 `PCH` ist der name der karte, den man mithilfe von `aplay -l` herausbekommt:
 
 	**** List of PLAYBACK Hardware Devices ****

@@ -135,7 +135,9 @@ working config file for standard eduroam (`/etc/netctl/eduroam`, working at camp
 
 *yay!*
 
+### filesystems
 
+  * vfat: `dosfstools`
 
 ## X
 
@@ -148,6 +150,8 @@ Bei trouble mapping keys:
 	xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
 
 #### stuff for i3
+
+[i3-gaps](https://github.com/Airblader/i3): fork with additional features, like gaps between windows.
 
 [rofi](https://github.com/DaveDavenport/rofi) (`rofi-git`). Better than `dmenu`. Settings go into `.Xresources`.
 Rofi-based mpd client??? [clerk](https://github.com/carnager/clerk). Interesting. Run `rofi -show run`.
@@ -254,6 +258,16 @@ https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture
 ### having fun hearing sound
 
 `mocp`, `cmus`, `mpd`, `ncmpc`, `mpv`, `mps`, `mps-youtube`, ...
+
+##### cmus
+
+there is a standalone last.fm scrobbler compatible with their new API which can
+be connected to cmus:
+[cmusfm](https://github.com/Arkq/cmusfm).
+
+It is put in usage by cmus with `set
+status_display_program=/usr/local/bin/cmusfm`. `libnotify`-popups can be  activated
+in `.config/cmus/cmusfm.conf`.
 
 
 

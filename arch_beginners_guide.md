@@ -278,6 +278,8 @@ in `.config/cmus/cmusfm.conf`.
 
 ### urxvt 
 
+I.e. `urxvt-unicode-patched` from AUR.
+
 #### keybindings:
 "a terminal has no knowledge of a Ctrl-Arrow keypress, BUT if you use a terminal emulator 
 (like xterm or rxvt under X11) you can assign an X keyboard event to a string sequence like `^[[5D` that 
@@ -447,6 +449,10 @@ implementation `fcron`: `systemctl enable/start fcron.service`. `fcrontab -e`
 		/org/freedesktop/UPower/devices/DisplayDevice
 	upower -i /org/freedesktop/UPower/devices/battery_BAT0
 
+
+Change default behaviour of power button, closed lid etc:
+
+  /etc/systemd/logind.conf
 
 
 #### thinkpad

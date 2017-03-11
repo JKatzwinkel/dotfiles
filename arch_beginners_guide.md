@@ -294,6 +294,8 @@ keybindings work in urxvt, it seems sufficient to map keys as required in `.Xres
 then bind the mapped input in `.xinitrc` or the shell''s rc (*e.g. `\033[1;5D` as `"\e[1;5D"`*).
 
 
+
+
 ##### keycodes misc:
 
 read [XKB](https://wiki.archlinux.org/index.php/X_KeyBoard_extension) and [xmodmap](https://wiki.archlinux.org/index.php/Xmodmap)
@@ -529,6 +531,8 @@ package `pkgfile`: search files in repo packages. `pkgfile -u` syncs database,
 		pacman -D --asdep	# Mark one or more installed packages as non explicitly installed
 
 (from [arch wiki](https://wiki.archlinux.org/index.php/Pacman_tips))
+
+    pactree --reverse <package>
 
 ##### expac (databasae extraction utility)
 

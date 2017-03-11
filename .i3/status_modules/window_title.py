@@ -1,22 +1,20 @@
 # -*- coding: utf-8 -*-
 """
-Display the current window title.
+Display current window title.
 
-Requires:
-    - i3-py (https://github.com/ziberna/i3-py)
-    # pip install i3-py
+Prints the name of focused window at frequent intervals.
 
-If payload from server contains wierd utf-8
-(for example one window have something bad in title) - the plugin will
-give empty output UNTIL this window is closed.
-I can't fix or workaround that in PLUGIN, problem is in i3-py library.
+Configuration parameters:
+    cache_timeout: How often we refresh this module in seconds (default 0.5)
+    format: display format for window_title (default '{title}')
+    max_width: If width of title is greater, shrink it and add '...'
+        (default 120)
 
 @author shadowprince
 @license Eclipse Public License
 """
 
-import i3
-from time import time
+from json import loads
 
 
 def find_focused(tree):
@@ -30,10 +28,7 @@ def find_focused(tree):
             return tree
         else:
             return find_focused(tree['nodes'] + tree['floating_nodes'])
-
-
-def output(name, cls):
-    return '{} ({})'.format(name, cls)
+    return ''
 
 
 class Py3status:
@@ -41,43 +36,32 @@ class Py3status:
     """
     # available configuration parameters
     cache_timeout = 0.5
-    max_width = 120  # if width of title is greater, shrink it and add '...'
+    format = '{title}'
+    max_width = 120
 
     def __init__(self):
-        self.text = ''
+        self.title = ''
 
-    def window_title(self, i3s_output_list, i3s_config):
-        window = find_focused(i3.get_tree())
+    def window_title(self):
+        tree = loads(self.py3.command_output('i3-msg -t get_tree'))
+        window = find_focused(tree)
 
-        transformed = False
-        if window and 'name' in window and window['name'] != self.text:
-            name = (
-                len(window['name']) > self.max_width
-                and "…" + window['name'][-(self.max_width-1):]
-                or window['name']
-            )
-            cls = window['window_properties']['class']
-            transformed = True
-            self.text = output(name, cls)
+        if not window or window.get('name') is None or window.get('type') == 'workspace':
+            title = ''
+        elif len(window['name']) > self.max_width:
+            title = u"...{}".format(window['name'][-(self.max_width - 3):])
+        else:
+            title = window['name']
 
-        response = {
-            'cached_until': time() + i3s_config.get('cache_timeout',0),
-            'full_text': self.text,
-            'transformed': transformed,
-            'color': i3s_config['color_good']
+        return {
+            'cached_until': self.py3.time_in(self.cache_timeout),
+            'full_text': self.py3.safe_format(self.format, {'title': title}),
         }
-        return response
+
 
 if __name__ == "__main__":
     """
-    Test this module by calling it directly.
+    Run module in test mode.
     """
-    from time import sleep
-    x = Py3status()
-    config = {
-        'color_good': '#00FF00',
-        'color_bad': '#FF0000',
-    }
-    while True:
-        print(x.window_title([], config))
-        sleep(1)
+    from py3status.module_test import module_test
+    module_test(Py3status)

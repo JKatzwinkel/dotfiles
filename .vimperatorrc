@@ -5,4 +5,19 @@ set hintchars=fjdkslagvnrucmeixwqz
 set wildmode=list:full
 
 "link font
-highlight Hint font:"DejaVu Sans Mono";font-size:110%;color:red;font-weight:bold;background-color:yellow;padding:2px;font-variant:small-caps;
+highlight Hint font-family:"Hack",sans-serif;font-size:110%;color:red;font-weight:bold;background-color:yellow;padding:2px;font-variant:small-caps;
+
+"cmd line font
+highlight CmdLine font-size: 14px; font-weight: normal; font-family:"Hack", monospace; padding: 0 0;
+
+js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
+
+
+highlight CompGroup          font-size: 11px; color: #111;
+highlight CompTitle          font-size: 11px; letter-spacing: 2px; color: #333; background: #CCC;
+highlight CompItem           padding: 0 0; font-family: "Hack", monospace;
+highlight CompItem[selected] background-color: #DDD;
+highlight CompDesc           color: #888;
+
+"status line
+highlight StatusLine       font-size: 11px; font-weight: normal; color: #222; background: #EEE;

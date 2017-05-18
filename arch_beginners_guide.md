@@ -403,7 +403,7 @@ Here is some devs writing about urxvt: http://pod.tst.eu/http://cvs.schmorp.de/r
 [Infinality](https://wiki.archlinux.org/index.php/font_configuration#Infinality) is a patchset
 improving `freetype2` font rendering: `freetype2-infinality-git`.  Available also, already with 
 configurations via AUR is
-`fontconfig-infinality-ultimate-git` (might be necessary to edit dependencies). 
+`fontconfig-infinality-ultimate-git` (might be necessary to edit dependencies).
 
 ##### pacman
 
@@ -433,6 +433,26 @@ recommended to install and `grip-git` (AUR) for live fonts preview.
 	$ fc-cache -fv
 
 Yay! Way better looking fonts in firefox and such!
+
+#### freetype
+
+Because infinality maintainer bohoomil disappeared in january 2017, it cannot be used alongside harfbuzz anymore.
+We need to switch to freetype2.
+[Here](https://gist.github.com/cryzed/e002e7057435f02cc7894b9e748c5671) is how.
+
+    ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
+		ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
+		ln -s /etc/fonts/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d # if necessary!
+
+install `fonts-meta-extended-lt`.
+find optional deps of `pacman -Qi fonts-meta-base fonts-meta-extended-lt`
+and install them with `--asdeps` flag.
+
+
+add to `/etc/profile.d/jre.sh`:
+
+		# https://wiki.archlinux.org/index.php/java#Better_font_rendering
+		export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 
 
 ### Termite

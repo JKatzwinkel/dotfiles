@@ -628,6 +628,11 @@ AUR package manager. Install package `aura-bin` (AUR), e.g. using `yaourt`.
 [Unite](https://github.com/Shougo/unite.vim)
 [VOom](https://github.com/vim-scripts/VOoM): for markup/programming language structure viewing etc.
 
+[fugitive](https://github.com/tpope/vim-fugitive): Git wrapper.
+For status panel, type `:Gstatus`, while in there, use arrow keys oder `<C-n>/<C-p>` to stage/unstage files by hitting `-`. Type `cc` to commit.
+For blame interactive vertical split, use `:Gblame`. Hit `o` to open commit to blame for a certain line!
+For split-view of unstaged changes, enter `:Gdiff`.
+
 
 
 ##### Desktop Applications

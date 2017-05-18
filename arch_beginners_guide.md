@@ -199,8 +199,8 @@ and even a [vsync guide](https://github.com/chjj/compton/wiki/vsync-guide).
 ## sound
 
 ### alsa:
-https://bbs.archlinux.org/viewtopic.php?id=125092
-https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card
+ - [forum](https://bbs.archlinux.org/viewtopic.php?id=125092)
+ - [wiki](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card)
 
 default sound card in `/usr/share/alsa/alsa.conf` schreiben:
 

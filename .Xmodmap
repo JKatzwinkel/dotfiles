@@ -1,3 +1,12 @@
+! Each keysym column in the table corresponds to a particular combination of modifier keys:
+! 
+!   1. Key
+!   2. Shift+Key
+!   3. mode_switch+Key
+!   4. mode_switch+Shift+Key
+!   5. AltGr+Key
+!   6. AltGr+Shift+Key
+
 keycode 63 = KP_Multiply
 keycode 79 = Home KP_7
 keycode 80 = Up KP_8
@@ -14,4 +23,14 @@ keycode 90 = Insert KP_0
 keycode 91 = Delete KP_Decimal
 keycode 112 = Prior
 keycode 117 = Next
+! Map PrtSc key to context menu
+keycode 107 = Menu 3270_PrintScreen Menu
 
+! Support umlauts: Press Fn key + aous
+! keycode 151 =  Mode_switch NoSymbol Mode_switch
+! clear mod5
+! add mod5 = ISO_Level3_Shift
+! keycode  30 = u U udiaeresis Udiaeresis
+! keycode  32 = o O odiaeresis Odiaeresis
+! keycode  38 = a A adiaeresis Adiaeresis
+! keycode  39 = s S ssharp S

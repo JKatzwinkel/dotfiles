@@ -21,12 +21,12 @@ xset -dpms
 xset s 300
 
 # kill X
-setxkbmap -option terminate:ctrl_alt_bksp
+setxkbmap us altgr-intl -option terminate:ctrl_alt_bksp -option keypad:oss -option nbsp:level3 -option shift:breaks_caps -option caps:internal
 
 #conky -d
 xbindkeys
 
-#xmodmap ~/.Xmodmap
+xmodmap ~/.Xmodmap
 
 # set 'desktop' (X root window) background color
 #hsetroot -solid \#254444 

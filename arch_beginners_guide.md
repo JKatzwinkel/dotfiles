@@ -143,11 +143,15 @@ working config file for standard eduroam (`/etc/netctl/eduroam`, working at camp
 
 ### i3 
 
-	pacman -S i3
+	  pacman -S i3
+
 in `.xinitrc`:
-	exec i3
+
+  	exec i3
+	
 Bei trouble mapping keys:
-	xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
+
+    xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
 
 #### stuff for i3
 
@@ -281,6 +285,7 @@ in `.config/cmus/cmusfm.conf`.
 I.e. `urxvt-unicode-patched` from AUR.
 
 #### keybindings:
+
 "a terminal has no knowledge of a Ctrl-Arrow keypress, BUT if you use a terminal emulator 
 (like xterm or rxvt under X11) you can assign an X keyboard event to a string sequence like `^[[5D` that 
 you then use in bindkey..."
@@ -293,13 +298,34 @@ but keep in mind: `xmodmap` overwrites `setxkbmap` and is generally not recommen
 keybindings work in urxvt, it seems sufficient to map keys as required in `.Xresources` and
 then bind the mapped input in `.xinitrc` or the shell''s rc (*e.g. `\033[1;5D` as `"\e[1;5D"`*).
 
+For more information on keycodes, keysyms and `xmodmap`, read arch wiki entry on [xmodmap](https://wiki.archlinux.org/index.php/xmodmap).
 
+##### `xbindkeys`
+
+Assign commands to certain *keysym*s in `xbindkeys` config file `.xbindkeysrc` like this (command first, keysym in next line):
+
+		# adjust backlight using package xorg-xbacklight
+		"xbacklight -inc 10"
+			XF86MonBrightnessUp
+		"xbacklight -dec 10"
+			XF86MonBrightnessDown
+
+		# make screenshot (requires gnome-screenshot tool)
+		"gnome-screenshot"
+			Shift + Menu
+
+`xbindkeys` must be called in `.xinitrc`, obviously. Find a list of all assigneable keysyms [here](http://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap).
+To find out the correct keysyms to assign a command to, run `xbindkeys -k` and press key(s) in question.
 
 
 ##### keycodes misc:
 
 read [XKB](https://wiki.archlinux.org/index.php/X_KeyBoard_extension) and [xmodmap](https://wiki.archlinux.org/index.php/Xmodmap)
 wiki articles, install `xorg-xev`, `xorg-xkbutils`.
+
+We choose keyboard layout, variant and options with `setxkbmap`. Read `man xkeyboard-config` for details.
+When using layout `us`, one might consider to use variant `altgr-intl` in order to access 3rd level characters like 
+umlauts or €-sign with AltGr-key. Check current settings with `setxkbmap -query` oder `setxkbmap -print -verbose 10`.
 
 
 ### Termite

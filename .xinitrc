@@ -33,8 +33,11 @@ xmodmap ~/.Xmodmap
 #hsetroot -solid \#503444 
 hsetroot -solid \#30232a 
 
+# start flux to dim background light
+xflux -l 52.5 -g 13.4 -k 2200
+
 # set 'desktop' background if config is available
-eval $(cat ~/.fehbg)
+[[ -f ~/.fehbg ]] && sh ~/.fehbg
 
 # exec gnome-session
 # exec startkde
@@ -43,6 +46,4 @@ eval $(cat ~/.fehbg)
 exec i3
 #exec herbstluftwm --locked
 
-# start flux to dim background light
-xflux -l 52.5 -g 13.4
 

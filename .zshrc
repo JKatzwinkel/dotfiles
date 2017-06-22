@@ -247,6 +247,9 @@ fi
 # command not found hook brought by pkgfile
 [[ -s "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && . "/usr/share/doc/pkgfile/command-not-found.zsh"
 
+# alias for largest packages
+alias pacman_largest='expac -HM "%011m\t%-20n\t%10d"| sort -n | tail -20'
+
 # base16 colorscheme
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-shapeshifter.dark.sh" # solarized, isotope, monokai

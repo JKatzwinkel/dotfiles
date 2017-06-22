@@ -189,7 +189,9 @@ Xft.autohint: true
 
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when
 !DejaVu Sans
-URxvt*font: xft:Liberation Mono for Powerline:pixelsize=13:antialias=true:hinting=true, \
+URxvt*font: \
+	xft:Hack:pixelsize=12:antialias=true:hinting=true,\
+	xft:Liberation Mono for Powerline:pixelsize=13:antialias=true:hinting=true, \
 	xft:DejaVu Sans Mono for Powerline:size=10:antialias=true:hinting=true, \
 	xft:Liberation Mono:size=9:antialias=true:hinting=true, \
 	xft:WenQuanYi Bitmap Song:size=8, \
@@ -199,7 +201,9 @@ URxvt*font: xft:Liberation Mono for Powerline:pixelsize=13:antialias=true:hintin
 	xft:Symbola:pixelsize=16:antialias=true:hinting=true
 
 !
-URxvt*boldFont: xft:Liberation Mono for Powerline:pixelsize=13:antialias=true:hinting=true:bold, \
+URxvt*boldFont: \
+	xft:Hack:pixelsize=12:bold:antialias=true:hinting=true,\
+	xft:Liberation Mono for Powerline:pixelsize=13:antialias=true:hinting=true:bold, \
 	xft:DejaVu Sans Mono for Powerline:size=10:bold:antialias=true:hinting=true, \
 	xft:Liberation Mono:size=9:bold, \
 	xft:Source Han Sans JP Bold:size=10:antialias=true:hinting=true, \
@@ -207,7 +211,9 @@ URxvt*boldFont: xft:Liberation Mono for Powerline:pixelsize=13:antialias=true:hi
 
 
 ! 
-URxvt*italicFont:xft:Liberation Mono for Powerline:pixelsize=13:italic:antialias=true:hinting=true, \
+URxvt*italicFont:\
+	xft:Hack:pixelsize=12:italic:antialias=true:hinting=true,\
+	xft:Liberation Mono for Powerline:pixelsize=13:italic:antialias=true:hinting=true, \
 	xft:DejaVu Sans Mono for Powerline:size=9:italic:antialias=true:hinting=true, \
 	xft:Liberation Mono:size=9:antialias=true:hinting=true:italic, \
 	xft:Source Han Sans JP Light:size=10:antialias=true:hinting=true:italic, \

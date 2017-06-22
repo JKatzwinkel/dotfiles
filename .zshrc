@@ -270,5 +270,6 @@ export CLASSPATH=/usr/share/java/avalon-framework/avalon-framework.jar:$CLASSPAT
 export CLASSPATH=/usr/share/java/batik/batik-all.jar:$CLASSPATH
 export CLASSPATH=/usr/share/java/fop/fop.jar:$CLASSPATH
 
+. ~/.zprofile
 
 #unset GREP_OPTIONS

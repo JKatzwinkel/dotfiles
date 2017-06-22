@@ -250,6 +250,31 @@ oder sowas wie
 		Subdevices: 0/1
 		Subdevice #0: subdevice #0
 
+#### pulseaudio emulieren
+
+Manche applications brauchen pulseaudio um sound abzuspielen, z.b. firefox (ab version 52).
+Um kein pulseaudio installieren zu muessen, kann man [emulator](https://github.com/i-rinat/apulse)
+benutzen (installieren aus AUR). Zum diesen nutzt man dann zum starten des fragliche programms, 
+z.b. `apulse firefox`, `apulse skype` etc.
+
+Man musz aber auch folgendes zu seiner alsa-conf (z.b. `/usr/share/alsa/alsa.conf`) hinzufuegen:
+
+		pcm.!default {
+				type plug
+				slave.pcm "asymed"
+		}
+
+
+		pcm.asymed {
+				type asym
+				playback.pcm {
+						@func getenv
+						vars [ ALSAPCM ]
+						default "dmix"
+				}
+				capture.pcm "dsnoop"
+		}
+
 
 #### Software-mixing in alsa aktivieren
 

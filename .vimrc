@@ -79,6 +79,8 @@ NeoBundle 'Shougo/unite.vim'
 " Scala
 NeoBundle 'derekwyatt/vim-scala'
 
+" JS indent
+NeoBundle 'pangloss/vim-javascript'
 
 " Required:
 call neobundle#end()

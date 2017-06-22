@@ -20,7 +20,7 @@ set $mod Mod4
 # chose a FreeType font, such as:
 #font pango:DejaVu Sans 10
 #font pango:Ubuntu Bold 11
-font pango:monofur for Powerline Bold 11
+font pango:monofur for Powerline Bold 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -251,8 +251,8 @@ for_window [class="Archiv-Editor"] floating enable
 # i3 gaps  https://github.com/Airblader/i3
 smart_gaps on
 smart_borders on
-gaps inner 18
-gaps outer 7
+gaps inner 14
+gaps outer 4
 
 # start compton
 exec --no-startup-id compton --config ~/.config/compton.conf -cCf -G -b

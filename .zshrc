@@ -68,12 +68,10 @@ export ZSH=$HOME/.oh-my-zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git nyan archlinux thor python fasd battery zsh-syntax-highlighting
-grep)
+
+plugins=(git nyan archlinux thor python fasd battery zsh-syntax-highlighting grep emoji emoji-clocki zsh-navigation-tools urltools)
 
 source $ZSH/oh-my-zsh.sh
-
-
 
 setopt append_history bang_hist auto_cd extended_glob notify nonomatch
 

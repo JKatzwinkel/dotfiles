@@ -118,7 +118,9 @@ PROMPT="%{$fg[yellow]%}%(?..%{$fg[red]%})%*-\
 %{$reset_color%}%(?..%{$fg[red]%})%% %{$reset_color%}"
 
 
+# OH MY GIT
 
+[[ -s "$HOME/.local/share/oh-my-git/prompt.sh" ]] && . $HOME/.local/share/oh-my-git/prompt.sh 
 
 
 # set editors, pager, ...
@@ -226,10 +228,6 @@ zle -N prev_dir
 # To see the escape sequence for a shortcut, run `cut`, then hit keys. For instance,
 # Alt+LeftArrow yields ^[[1;3D
 bindkey "\e[1;3D" prev_dir
-
-
-# alias for running skype as separate skype user
-alias skype='xhost +local: && su skype -c skype'
 
 # FASD
 eval "$(fasd --init auto)"

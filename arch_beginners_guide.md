@@ -638,6 +638,7 @@ AUR package manager. Install package `aura-bin` (AUR), e.g. using `yaourt`.
 	* `lscpu`
 	* `lshw` (z.b. `-class processor`)
 	* `tig` (for git)
+	* `iotop` (hdd I/O)
 
 
 ##### VIM

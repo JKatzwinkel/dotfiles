@@ -264,6 +264,11 @@ export ANT_HOME=/usr/share/apache-ant
 export JAVA_HOME=/usr/lib/jvm/default
 export PATH=${ANT_HOME}/bin:${JAVA_HOME}/bin:${DITA_HOME}:${PATH}
 
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/projects
+source /usr/bin/virtualenvwrapper.sh
+
 #export CLASSPATH=.:/usr/share/java:$CLASSPATH:$PATH
 export CLASSPATH=${DITA_HOME}/lib:$DITA_HOME/lib/dost.jar:$DITA_HOME/lib/xml-resolver.jar:$CLASSPATH
 export CLASSPATH=/usr/share/java/avalon-framework/avalon-framework.jar:$CLASSPATH
@@ -273,3 +278,9 @@ export CLASSPATH=/usr/share/java/fop/fop.jar:$CLASSPATH
 . ~/.zprofile
 
 #unset GREP_OPTIONS
+
+PATH="/home/thor/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/thor/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/thor/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/thor/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/thor/perl5"; export PERL_MM_OPT;

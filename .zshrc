@@ -23,8 +23,8 @@ colors
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=15000
-SAVEHIST=15000
+HISTSIZE=20000
+SAVEHIST=20000
 # activate emacs keybindings
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -40,7 +40,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+		# this has nothing to do with colors, but will show latest files in downloads dir
+		alias dwn='ls --color=always -rtlh ~/downloads | tail -n 15'
 fi
+
+
+[[ -e /usr/bin/highlight ]] && alias cats='highlight -O ansi'
 
 
 _pwd () {
@@ -49,7 +54,6 @@ _pwd () {
 	((${#_wdir}>20)) && _wdir="${_wdir:0:5}...${_wdir:$(( ${#_wdir}-12 ))}";
 	echo "$_wdir"
 }
-
 
 
 # oh-my-zsh:

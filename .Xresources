@@ -54,7 +54,7 @@ xterm*selectToClipboard: true
 ! yellow
 !URxvt*color3:       base0A
 ! blue
-!!URxvt*color4:       base0D
+!URxvt*color4:       base0D
 ! magenta
 !URxvt*color5:       base0E
 ! cyan
@@ -81,7 +81,7 @@ xterm*selectToClipboard: true
 
 ! Molokai theme
 URxvt*background: #101520
-URxvt*foreground: #d0e0d5
+URxvt*foreground: #edfff3
 URxvt*color0: #101020
 URxvt*color1: #b6286b
 URxvt*color2: #66aa11
@@ -90,14 +90,14 @@ URxvt*color4: #30309b
 URxvt*color5: #7e40a5
 URxvt*color6: #3579a8
 URxvt*color7: #9999aa
-URxvt*color8: #303030
+URxvt*color8: #757575
 URxvt*color9: #ff40a0
 URxvt*color10: #80ff00
 URxvt*color11: #ffba68
 URxvt*color12: #5f5fee
 URxvt*color13: #bb88dd
 URxvt*color14: #4eb4fa
-URxvt*color15: #d0e0d5
+URxvt*color15: #edfff3
 
 
 urxvt*depth:32
@@ -116,7 +116,7 @@ URxvt*transparent: True
 ! Use the specified colour as the windows background colour [default White]; option -bg.
 !URxvt*background: rgba:1000/1000/1000/eeee
 ! should work with compton
-URxvt*background: [75]#101520
+!URxvt*background: [75]#101520
 
 ! Use the specified colour as the windows foreground colour [default Black]; option -fg.
 !URxvt*foreground: #e0d0b0
@@ -158,7 +158,7 @@ URxvt*jumpScroll: True
 ! URxvt*skipScroll: boolean
 
 ! Fade the text by the given percentage when focus is lost; option -fade.
-URxvt*fading: 24
+URxvt*fading: 10
 
 ! Fade to this colour, when fading is used (see fading:). The default colour is black; option -fadecolor.
 ! URxvt*fadeColor: colour

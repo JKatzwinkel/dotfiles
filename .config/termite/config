@@ -37,7 +37,8 @@ size_hints = true
 cursor = #ffbc9c
 foreground = #dcdccc
 foreground_bold = #ffffff
-background = #1f1f1f
+#background = #1f1f1f
+background = rgba(16, 21, 31, 0.25)
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
@@ -90,7 +91,7 @@ roundness = 2.0
 foreground = #657b83
 foreground_bold = #073642
 #foreground_dim = #888888
-background = #fdf6e3
+#background = #fdf6e3
 cursor = #586e75
 
 # if unset, will reverse foreground and background
@@ -122,7 +123,7 @@ color15 = #fdf6e3
 foreground = #839496
 foreground_bold = #eee8d5
 #foreground_dim = #888888
-background = #002b36
+#background = #002b36
 cursor = #93a1a1
 
 # if unset, will reverse foreground and background
@@ -149,7 +150,7 @@ color15 = #fdf6e3
 
 # Molokai scheme from .Xresources
 [colors]
-background = #101520
+#background = #101520
 foreground = #d0e0d5
 foreground_dim = #888888
 color0 = #101020
@@ -160,7 +161,7 @@ color4 = #30309b
 color5 = #7e40a5
 color6 = #3579a8
 color7 = #9999aa
-color8 = #303030
+color8 = #606060
 color9 = #ff40a0
 color10 = #80ff00
 color11 = #ffba68

@@ -80,6 +80,8 @@
 	XF86AudioStop
 "cmus-remote -n"
 	XF86AudioNext
+"cmus-remote -r"
+  XF86AudioPrev
 
 
 # adjust backlight using package xorg-xbacklight

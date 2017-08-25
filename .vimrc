@@ -82,6 +82,11 @@ NeoBundle 'derekwyatt/vim-scala'
 " JS indent
 NeoBundle 'pangloss/vim-javascript'
 
+" Pandoc
+NeoBundle 'vim-pandoc/vim-pandoc'
+"NeoBundle 'vim-pandoc/vim-pandoc-syntax'
+
+
 " Required:
 call neobundle#end()
 
@@ -473,7 +478,7 @@ map <leader>N :cp<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pressing ,ss will toggle and untoggle spell checking
+" Pressing ;ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
 " Shortcuts using <leader>

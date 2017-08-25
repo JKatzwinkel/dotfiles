@@ -93,7 +93,7 @@
 
 # make screenshot (requires gnome-screenshot tool)
 "gnome-screenshot"
-	Shift + Menu
+	control + Menu
 
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s

@@ -24,7 +24,7 @@ keycode 91 = Delete KP_Decimal
 keycode 112 = Prior
 keycode 117 = Next
 ! Map PrtSc key to context menu
-keycode 107 = Menu 3270_PrintScreen Menu
+keycode 107 = Menu Menu Menu
 
 ! Support umlauts: Press Fn key + aous
 ! keycode 151 =  Mode_switch NoSymbol Mode_switch

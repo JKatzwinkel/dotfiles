@@ -727,3 +727,14 @@ Commented list of extensions (use `dwbem -i` to install, `dwbem -r` to remove, `
 Install extension `adblock_subscriptions`, restart `dwb`, enable adblocker with `:set adblocker true`, execute `:adblock_subscribe:, 
 choose blacklist hit Enter and load list by calling `:adblock_update`.
 
+
+
+
+#### very useful tools
+
+ - `inotifywait`: monitor file and run command on specific modifications
+
+    # compile latex file every time it is written to disk
+    while inotifywait -e modify cv.tex; do pdflatex cv.tex; done
+
+ 

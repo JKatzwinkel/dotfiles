@@ -86,12 +86,14 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'vim-pandoc/vim-pandoc'
 "NeoBundle 'vim-pandoc/vim-pandoc-syntax'
 
+" vimtex
+NeoBundle 'lervag/vimtex'
 
 " Required:
 call neobundle#end()
 
 " Required:
-filetype plugin off
+"filetype plugin off
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
@@ -113,7 +115,7 @@ set history=700
 
 " Enable filetype plugins
 "filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Set to auto read when a file is changed from the outside
 "set autoread
@@ -240,10 +242,19 @@ au FileType python setlocal tabstop=4
 " Syntastic
 "
 let g:syntastic_python_pylint_args='-d C0302,F0401,E0611,R0912,C0103,R0914 -f parseable -r n'
+let g:Syntastic_java_checkers=[]
 
 
 " recognize markdown files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+
+""""""""""""
+" vimtex
+"
+
+let g:vimtex_complete_recursive_bib = 1
+let g:tex_flavor = 'latex'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo

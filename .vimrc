@@ -1,3 +1,28 @@
+"
+" to debug unexpected settings, use 
+"  :verbose [option]?
+" so to find out eg why spell is always activated even though there's a set nospell in here, run
+"  :verbose set spell?
+" and it tells you where that option is set.
+"
+"
+" what are setting scopes?
+"
+"  :help internal-variables
+" 
+"                 (nothing) In a function: local to a function; otherwise: global 
+" buffer-variable    b:     Local to the current buffer.                          
+" window-variable    w:     Local to the current window.                          
+" tabpage-variable   t:     Local to the current tab page.                        
+" global-variable    g:     Global.                                               
+" local-variable     l:     Local to a function.                                  
+" script-variable    s:     Local to a :source'ed Vim script.                     
+" function-argument  a:     Function argument (only inside a function).           
+" vim-variable       v:     Global, predefined by Vim.
+"
+"
+" more on variables: http://learnvimscriptthehardway.stevelosh.com/chapters/19.html
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: 
 "       Amir Salihefendic
@@ -131,6 +156,7 @@ nmap <leader>w :w!<cr>
 " after compiling vim with support for +xterm_clipboard, we can directly copy to both of 
 " the clipboard available to X11, by putting them into the "* and "+ registers.
 " Yanking to the outside world should be even more comfortable than that:
+" (to check if vim was compiled with xterm_clipboard option, look at :version or :echo has('xterm_clipboard')
 vnoremap <leader>y "*y
 " same goes for pasting from outside into vim
 nnoremap <leader>p "*p
@@ -498,6 +524,13 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
+set nospell
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Folding
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set foldlevel=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc

@@ -96,7 +96,7 @@ NeoBundle 'squarefrog/tomorrow-night.vim'
 NeoBundle 'bling/vim-airline'
 
 " syntastic
-NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'scrooloose/syntastic'
 
 " Unite
 NeoBundle 'Shougo/unite.vim'
@@ -278,7 +278,7 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 """"""""""""
 " vimtex
 "
-
+let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_complete_recursive_bib = 1
 let g:tex_flavor = 'latex'
 

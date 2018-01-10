@@ -525,7 +525,8 @@ map <leader>sa zg
 map <leader>s? z=
 
 set nospell
-
+" to prevent pandoc plugin to enable spell checking anyway, remove module "spell" from 
+" g:pandoc#modules#enabled list in ~/.vim/bundle/vim-pandoc/plugin/pandoc.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Folding

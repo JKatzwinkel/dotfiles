@@ -337,6 +337,21 @@ in `.config/cmus/cmusfm.conf`.
 
 I.e. `urxvt-unicode-patched` from AUR.
 
+#### Perl
+
+when upgrading perl, warnings might show that there is data in perl directories that will no longer be used by interpreter. Those directories are:
+
+    /usr/lib/perl5/core_perl
+    /usr/lib/perl5/site_perl
+    /usr/lib/perl5/vendor_perl
+
+to find those packages who stored data in there that won't be used by interpreter, we run.
+
+    pacman -Qqo /usr/lib/perl5/{core,site,vendor}_perl
+
+
+
+
 #### keybindings:
 
 "a terminal has no knowledge of a Ctrl-Arrow keypress, BUT if you use a terminal emulator 
@@ -410,10 +425,10 @@ Random references: [1](http://www.jaysonrowe.com/2013/04/font-configuration-in-a
 
 Fontconfig:
 
-	fc-list -v # show verbose fonts info
-	fc-cache  -fv # whenever new fonts have been put in /usr/share/fonts/...
+		fc-list -v # show verbose fonts info
+		fc-cache  -fv # whenever new fonts have been put in /usr/share/fonts/...
 
-	fc-list :spacing=mono family style # show monospace font family names and styles [?]
+		fc-list :spacing=mono family style # show monospace font family names and styles [?]
 
 
 in `.Xresources`: `URxvt*font: xft:Font Family Name:size=11:antialias=true:hinting=true, xft:Fallback Font:...`
@@ -449,7 +464,7 @@ is a fonts diskussion on reddit.
 
 update X server: `xrdb -merge .Xresources`
 
-Here is some devs writing about urxvt: http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod#Rendering_Font_amp_Look_and_Feel_Iss
+Here is some devs writing [about urxvt](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod#Rendering_Font_amp_Look_and_Feel_Iss)
 
 #### infinality
 
@@ -457,8 +472,6 @@ Here is some devs writing about urxvt: http://pod.tst.eu/http://cvs.schmorp.de/r
 improving `freetype2` font rendering: `freetype2-infinality-git`.  Available also, already with 
 configurations via AUR is
 `fontconfig-infinality-ultimate-git` (might be necessary to edit dependencies).
-
-##### pacman
 
 Its also available via
 `pacman` when the repo is added to `pacman.conf`:
@@ -487,7 +500,7 @@ recommended to install and `grip-git` (AUR) for live fonts preview.
 
 Yay! Way better looking fonts in firefox and such!
 
-#### freetype
+#### freetype 
 
 Because infinality maintainer bohoomil disappeared in january 2017, it cannot be used alongside harfbuzz anymore.
 We need to switch to freetype2.

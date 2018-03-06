@@ -258,7 +258,7 @@ oder sowas wie
 	defaults.pcm.nonblock 1
 	defaults.pcm.compat 0
 
-`PCH` ist der name der karte, den man mithilfe von `aplay -l` herausbekommt:
+`PCH` ist der name der karte, den man mithilfe von `aplay -l` herausbekommt (capture device analog mit `arecord -l`):
 
 	**** List of PLAYBACK Hardware Devices ****
 	card 0: HDMI [HDA Intel HDMI], device 3: HDMI 0 [HDMI 0]
@@ -299,6 +299,9 @@ Man musz aber auch folgendes zu seiner alsa-conf (z.b. `/usr/share/alsa/alsa.con
 				}
 				capture.pcm "dsnoop"
 		}
+
+Edit: ok offenbar nicht wirklich, jedenfalls wird das bei update rausgeloescht und sound in firefox und sogar externes mikro
+in telegram geht trotzdem.
 
 
 #### Software-mixing in alsa aktivieren

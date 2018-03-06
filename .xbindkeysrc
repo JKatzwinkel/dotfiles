@@ -70,6 +70,9 @@
 "apulse firefox"
 	XF86WWW
 
+# tw
+"firefox www.twitter.com"
+  XF86Calculator
 
 # audio player: cmus
 # play/pause

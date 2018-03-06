@@ -162,7 +162,7 @@ vnoremap <leader>y "*y
 nnoremap <leader>p "*p
 nnoremap <leader>P "*P
 
-vmap <C-c> "+y
+"vmap <C-c> "+y
 
 " enable modeline processing even though it is somehow enabled anyway, just to be sure
 set modeline
@@ -281,6 +281,8 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_complete_recursive_bib = 1
 let g:tex_flavor = 'latex'
+
+map <C-c> <C-x><C-o>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo

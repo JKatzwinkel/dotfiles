@@ -5,6 +5,7 @@
 [user]
 	name = JKatzwinkel
 	email = JKatzwinkel@users.noreply.github.com
+	signingkey = 5B8373746CB103223946C55689CD879BF27C413D
 [alias]
 	graph = log --graph --decorate --all --name-status
 	what = "!sh -c 'git diff $1^ $1' -"

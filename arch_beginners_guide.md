@@ -783,4 +783,19 @@ choose blacklist hit Enter and load list by calling `:adblock_update`.
     # compile latex file every time it is written to disk
     while inotifywait -e modify cv.tex; do pdflatex cv.tex; done
 
+
+## Latex
+
+es gibt `pdflatex` in `texlive-bin` ist klar.
+
+commands: 
+
+- `mktexlsr`: make ls-R databases
+- `kpsewhich`: zeigt an wo sich lokal bestimmtes paket aufhaelt
+- `kpsewhich -var-value TEXINPUTS`
+- `kpsewhich -var-value TEXMFLOCAL`
+- `tlmgr` kram installieren halt
+- `tlmgr init-usertree`
+
  
+<!--- vim: set ts=2 sw=2 tw=0 noet ft=markdown : -->

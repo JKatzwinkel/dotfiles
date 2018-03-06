@@ -639,8 +639,11 @@ package `pkgfile`: search files in repo packages. `pkgfile -u` syncs database,
 		sudo pacman -Scc		# Clean cache - delete all the package files in the cache
 		pacman -Ql		# List all files installed by a given package
 		pacman -Qo		# Show package(s) owning the specified file(s)
+		pacman -Qqo		# same but with more concise output
 		pacman -D --asexp	# Mark one or more installed packages as explicitly installed 
 		pacman -D --asdep	# Mark one or more installed packages as non explicitly installed
+		pacman -Qqettm # package list without version numbers, only explicitly installed not required directly by other package and from AUR
+		pacman -Qqettn # same but native instead foreign (AUR)
 
 (from [arch wiki](https://wiki.archlinux.org/index.php/Pacman_tips))
 
@@ -670,6 +673,8 @@ AUR package manager. Install package `aura-bin` (AUR), e.g. using `yaourt`.
 #### Must-have applications
 
 ##### Command line
+
+ - `ranger` plus [`git-annex`](https://git-annex.branchable.com/tips/git-annex_extensions_for_ranger__44___the_file_manager/)
 
 ###### System/Hardware Info
 

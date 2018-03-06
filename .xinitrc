@@ -43,7 +43,8 @@ xflux -l 52.5 -g 13.4 -k 2200
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
-LD_PRELOAD=/usr/lib/libasan.so exec i3
+#LD_PRELOAD=/usr/lib/libasan.so exec i3
+exec i3
 #exec herbstluftwm --locked
 
 

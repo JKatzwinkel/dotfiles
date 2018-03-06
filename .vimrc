@@ -642,5 +642,11 @@ au FileType sh setlocal commentstring=#%s
 au FileType markdown setlocal commentstring=<!---%s\ -->
 
 
+" CTAGS
+"
+
+set tags=./tags;,tags;
+
+
 
 " vim: set ts=2 sw=2 tw=500 noet ft=vim :

@@ -31,8 +31,10 @@ Bei `key could not be imported`:
 ### Locale anpassen: 
 eintrag `en_US.UTF-8 UTF-8` in `/etc/locale.gen` uncommenten.
 Locales generaten:
+
 	locale-gen
-locale.conf` erzeugen:
+
+`locale.conf` erzeugen:
 
 	echo LANG=en_US.UTF-8 > /etc/locale.conf
 exportieren:
@@ -250,6 +252,7 @@ oder sowas wie
 		Subdevices: 0/1
 		Subdevice #0: subdevice #0
 
+
 #### pulseaudio emulieren
 
 Manche applications brauchen pulseaudio um sound abzuspielen, z.b. firefox (ab version 52).
@@ -321,13 +324,13 @@ useful:
 
 but keep in mind: `xmodmap` overwrites `setxkbmap` and is generally not recommended. To make
 keybindings work in urxvt, it seems sufficient to map keys as required in `.Xresources` and
-then bind the mapped input in `.xinitrc` or the shell''s rc (*e.g. `\033[1;5D` as `"\e[1;5D"`*).
+then bind the mapped input in `.xinitrc` or the shell''s rc *(e.g. `\033[1;5D` as `"\e[1;5D"`)*.
 
 For more information on keycodes, keysyms and `xmodmap`, read arch wiki entry on [xmodmap](https://wiki.archlinux.org/index.php/xmodmap).
 
 ##### `xbindkeys`
 
-Assign commands to certain *keysym*s in `xbindkeys` config file `.xbindkeysrc` like this (command first, keysym in next line):
+Assign commands to certain *keysym* s in `xbindkeys` config file `.xbindkeysrc` like this (command first, keysym in next line):
 
 		# adjust backlight using package xorg-xbacklight
 		"xbacklight -inc 10"
@@ -352,7 +355,7 @@ We choose keyboard layout, variant and options with `setxkbmap`. Read `man xkeyb
 When using layout `us`, one might consider to use variant `altgr-intl` in order to access 3rd level characters like 
 umlauts or €-sign with AltGr-key. Check current settings with `setxkbmap -query` oder `setxkbmap -print -verbose 10`.
 
-
+ 
 ### Termite
 
 [Termite](https://wiki.archlinux.org/index.php/Talk:Termite) has a vim-like command mode and a hint overlay like

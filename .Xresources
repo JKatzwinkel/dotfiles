@@ -430,21 +430,21 @@ URxvt.keysym.Control-Right:\033[1;5C
 !URxvt.keysym.Control-Right:\033[0C
 
 ! Configuration for urxvt-perls
-URxvt.perl-ext-common:default,clipboard,url-select,keyboard-select,font-size
-URxvt.perl-ext:      default,clipboard,url-select,keyboard-select
-URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,font-size
+URxvt.perl-ext:             default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  /usr/bin/xdg-open
 URxvt.url-select.underline: true
-URxvt.keysym.Control-u:           perl:url-select:select_next
+URxvt.keysym.Control-u:     perl:url-select:select_next
 ! URxvt.keysym.M-Escape:      perl:keaboard-select:activate
-URxvt.keysym.M-a:      perl:keyboard-select:activate
+URxvt.keysym.M-a:           perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
-! URxvt.keysym.Control-a:           perl:keyboard-select:activate
-URxvt.keysym.Control-S-c:           perl:clipboard:copy
-URxvt.keysym.Control-S-v:           perl:clipboard:paste
-! URxvt.keysym.Control-S-v:         perl:clipboard:paste_escaped
+! URxvt.keysym.Control-a:     perl:keyboard-select:activate
+URxvt.keysym.Control-S-c:   perl:clipboard:copy
+URxvt.keysym.Control-S-v:   perl:clipboard:paste
+! URxvt.keysym.Control-S-v:   perl:clipboard:paste_escaped
 
-URxvt.keysym.C-S-Up:   perl:font-size:incglobal
-URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.keysym.C-S-Up:        perl:font-size:incglobal
+URxvt.keysym.C-S-Down:      perl:font-size:decglobal
 
 URxvt.iso14755: false
 URxvt.iso14755_52: false
@@ -467,6 +467,7 @@ rofi.modi : window,run,ssh
 rofi.key-window: mod1+Tab
 rofi.key-run: mod1+F2
 rofi.key-ssh: mod1+F12
+rofi.terminal: urxvt
 rofi.auto-select:		false
 rofi.color-enabled: true
 rofi.fg:                             #ccb18b
@@ -491,6 +492,6 @@ rofi.bw:			1
 rofi.case-sensitive:		false
 rofi.font: Monaco for Powerline 10
 rofi.lines:           10
-rofi.columns:         1
+rofi.columns:         2
 rofi.width: 100
 

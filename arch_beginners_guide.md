@@ -157,7 +157,29 @@ Bei trouble mapping keys:
 
 #### stuff for i3
 
+
+##### i3-gaps:
+
 [i3-gaps](https://github.com/Airblader/i3): fork with additional features, like gaps between windows.
+
+build like [this](https://github.com/Airblader/i3/wiki/Compiling-&-Installing):
+
+		# compile & install
+		autoreconf --force --install
+		rm -rf build/
+		mkdir -p build && cd build/
+
+		# Disabling sanitizers is important for non-release versions!
+		# The prefix and sysconfdir are, obviously, dependent on the distribution.
+		#../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+		../configure
+		make
+		sudo make install
+
+Sanitizers ausschalten wirklich voll wichtig sonst startet i3 nur noch bei angabe von `LD_PRELOAD=<libasan.so path>` und braucht
+utopische mengen arbeitsspeicher.
+
+##### rofi
 
 [rofi](https://github.com/DaveDavenport/rofi) (`rofi-git`). Better than `dmenu`. Settings go into `.Xresources`.
 Rofi-based mpd client??? [clerk](https://github.com/carnager/clerk). Interesting. Run `rofi -show run`.

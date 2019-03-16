@@ -97,6 +97,7 @@ NeoBundle 'bling/vim-airline'
 
 " syntastic
 "NeoBundle 'scrooloose/syntastic'
+NeoBundle 'andviro/flake8-vim'
 
 " Unite
 NeoBundle 'Shougo/unite.vim'
@@ -113,6 +114,9 @@ NeoBundle 'vim-pandoc/vim-pandoc'
 
 " vimtex
 NeoBundle 'lervag/vimtex'
+
+" nerdtree
+NeoBundle 'scrooloose/nerdtree'
 
 " Required:
 call neobundle#end()
@@ -269,6 +273,12 @@ au FileType python setlocal tabstop=4
 "
 let g:syntastic_python_pylint_args='-d C0302,F0401,E0611,R0912,C0103,R0914 -f parseable -r n'
 let g:Syntastic_java_checkers=[]
+" always populate location list so we can navigate with :lnext and :lprev (or :ll if there is only 1 result)
+let g:syntastic_always_populate_loc_list = 1
+
+" flake8
+"
+let g:PyFlakeOnWrite = 1
 
 
 " recognize markdown files
@@ -452,6 +462,25 @@ set showcmd
 " Format the status line
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ \ \ %=Pos:\ %l,%v\ \%r%P
+
+
+" for syntastic
+" https://medium.com/@hpux/vim-and-eslint-16fa08cc580f
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" linting for javascript 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'eslint %'
+
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings

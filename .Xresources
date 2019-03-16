@@ -17,7 +17,7 @@ xterm*saveLines: 8096
 xterm*scrollKey: true
 xterm*scrollBar: false
 xterm*multiScroll: true
-xterm*cursorBlink: true
+xterm*cursorBlink: false
 xterm*utf8: true
 xterm*utf8Fonts: true
 xterm*alwaysUseMods: true

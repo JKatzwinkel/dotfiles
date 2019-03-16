@@ -42,6 +42,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 		# this has nothing to do with colors, but will show latest files in downloads dir
 		alias dwn='ls --color=always -rtlh ~/downloads | tail -n 15'
+		alias tmux="TERM=screen-256color-bce tmux"
 fi
 
 
@@ -69,7 +70,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(git nyan archlinux thor python fasd battery zsh-syntax-highlighting grep emoji emoji-clocki zsh-navigation-tools urltools)
+plugins=(git nyan archlinux thor python fasd battery zsh-syntax-highlighting grep emoji emoji-clocki \
+	zsh-navigation-tools urltools pipenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -279,8 +281,22 @@ export CLASSPATH=/usr/share/java/fop/fop.jar:$CLASSPATH
 
 #unset GREP_OPTIONS
 
-PATH="/home/thor/perl5/bin${PATH:+:${PATH}}"; export PATH;
+# PERL
+PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"; export PATH;
+# YARN
+PATH="${HOME}/.yarn/bin${PATH:+:${PATH}}"; export PATH;
+
+
+
 PERL5LIB="/home/thor/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/thor/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/thor/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/thor/perl5"; export PERL_MM_OPT;
+
+# ranger
+export RANGER_LOAD_DEFAULT_RC=FALSE
+
+
+export PATH="/home/thor/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

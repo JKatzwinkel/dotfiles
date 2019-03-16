@@ -56,12 +56,18 @@ dann denselben hostname in `/etc/hosts` an den localhost eintrag hintenranhaenge
 
 
 ### password & user
-	passwd # wenn wir root pw wollen
-	useradd -m -G wheel -s /bin/zsh <user>
-	passwd <user>
-	su
-	visudo # /etc/sudoers file, darin uncommenten:
-		%wheel      ALL=(ALL) ALL
+
+    passwd # wenn wir root pw wollen
+    useradd -m -G wheel -s /bin/zsh <user>
+    passwd <user>
+    su
+    
+		visudo 
+		
+		# oeffnet /etc/sudoers file, 
+		# darin uncommenten:
+
+    %wheel      ALL=(ALL) ALL
 
 ### bootloader
 wenns denn sein musz:
@@ -349,6 +355,10 @@ to find those packages who stored data in there that won't be used by interprete
 
     pacman -Qqo /usr/lib/perl5/{core,site,vendor}_perl
 
+find all include directories perl uses:
+
+    perl -E 'map {say $_} @INC'
+
 
 
 
@@ -533,6 +543,9 @@ kann so sachen wie follow links overlay (wie dwb, vimperator, qutie...)
 
 backlight: package `xorg-xbacklight`, usage: `xbacklight -inc/dec 10`.
 
+webcam:
+
+    mplayer tv:// -tv driver=v4l2:width=1071:height=600:device=/dev/video0 -fps 10 -vf screenshot
 
 ### input devices
 
@@ -549,6 +562,10 @@ Arch cups is way newer than debian cups etc. So in order to talk to your debian 
 
 to `/etc/cups/client.conf`. Also, in `/etc/cups/cups-files.conf`, add `printadmin` to `SystemGroup`
 and then add yourself to that group (`gpasswd -a username printadmin`) and group `lp`.
+
+damit bei `lpstat` und `lpinfo` kein `bad file descriptor` kommt, macht man in `/etc/cups/client.conf` auszerdem rein:
+
+    ServerName /var/run/cups/cups.sock
 
 
 ### cron
@@ -644,6 +661,8 @@ package `pkgfile`: search files in repo packages. `pkgfile -u` syncs database,
 		pacman -D --asdep	# Mark one or more installed packages as non explicitly installed
 		pacman -Qqettm # package list without version numbers, only explicitly installed not required directly by other package and from AUR
 		pacman -Qqettn # same but native instead foreign (AUR)
+		pacman -Rns $(pacman -Qtdq) # remove orphans and their configuration files
+
 
 (from [arch wiki](https://wiki.archlinux.org/index.php/Pacman_tips))
 

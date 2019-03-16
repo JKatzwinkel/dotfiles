@@ -1,2 +1,2 @@
 #!/bin/sh
-'feh' '--image-bg' 'black' '--bg-center' '/home/thor/trees-misty-nature-woods-wallpapers-background-green-rising-categories-shrubbery-192607.jpg' 
+feh --bg-center '/home/thor/Screenshot from 2019-01-15 17-46-15.png' 

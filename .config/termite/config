@@ -25,7 +25,7 @@ cursor_blink = off
 cursor_shape = block
 
 # $BROWSER is used by default
-browser = firefox
+browser = chromium
 
 # set size hints for the window
 size_hints = true

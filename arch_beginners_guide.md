@@ -709,6 +709,17 @@ For split-view of unstaged changes, enter `:Gdiff`.
 
 ##### Desktop Applications
 
+##### Default Applications
+
+The settings for default applications associated to known mimetypes seem to be defined in
+`.config/mimeapps.list` (and apparently formerly in `.local/share/applications/mimeapps.list`.
+
+On the other hand, it is recommended to use `xdg-utils` to take care of that stuff.
+
+    xdg-mime default nautilus.desktop inode/directory
+
+
+
 ###### DWB
 
 *D*ynamic *W*ebkit *M*anager [official site](http://portix.bitbucket.org/dwb/) ::

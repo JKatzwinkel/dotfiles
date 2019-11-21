@@ -14,6 +14,8 @@ Configuration parameters:
 STATUS_ICON = {
         'playing': '',
         'paused': '',
+        'stopped': '⏹',
+        None: '-',
 }
 
 PROGRESS_ICON = [
@@ -27,6 +29,7 @@ PROGRESS_ICON = [
         '🌖',
         '🌕',
 ]
+
 
 def status_dict(output):
     d = {}
@@ -47,23 +50,27 @@ class Py3status:
     max_width = 32
 
     def __init__(self):
-        self.offset = 0
+        pass
 
     def window_title(self):
-        tree = status_dict(self.py3.command_output('cmus-remote -Q'))
+        try:
+            tree = status_dict(self.py3.command_output('cmus-remote -Q'))
+        except Exception:
+            tree = {}
 
+        progress = '-'
+        title = '-'
         status = STATUS_ICON.get(tree.get('status'))
+
+        if 'artist' in tree and 'title' in tree:
+            title = '{} - {}'.format(
+                    tree.get('artist', ''),
+                    tree.get('title', '')
+            )
 
         if 'position' in tree and 'duration' in tree:
             progress = 9 * int(tree.get('position')) // int(tree.get('duration'))
             progress = PROGRESS_ICON[progress]
-
-        title = '{} - {}'.format(
-                tree.get('artist', ''),
-                tree.get('title', '')
-        )
-
-        self.offset += 1
 
         return {
             'cached_until': self.py3.time_in(self.cache_timeout),

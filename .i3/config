@@ -274,7 +274,7 @@ gaps inner 13
 gaps outer 3
 
 # start compton
-exec --no-startup-id compton --config ~/.config/compton.conf -cCf -G -b
+exec --no-startup-id picom --config ~/.config/picom.conf -cCf -G -b
 # start conky
 exec conky -d
 # start rofi (configured in .Xresources)

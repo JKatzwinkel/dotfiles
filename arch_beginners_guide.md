@@ -224,7 +224,7 @@ Discussion and samples config [here](https://faq.i3wm.org/question/3279/do-i-nee
 Compton can totally improve rendering. There is a [performance guide](https://github.com/chjj/compton/wiki/perf-guide),
 and even a [vsync guide](https://github.com/chjj/compton/wiki/vsync-guide). 
 
-
+**update 21.11.2019**: compton heiszt jetzt `picom`
 
 ## sound
 

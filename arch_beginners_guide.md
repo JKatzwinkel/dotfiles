@@ -329,6 +329,8 @@ Equalizer aufmachen mit:
 
     alsamixer -D equal
 
+Geht natuerlich nicht wenn man pulseaudio hat weil man dann keine `.asoundrc` haben darf vergeszen warum.
+
 #### pulseaudio emulieren
 
 Manche applications brauchen pulseaudio um sound abzuspielen, z.b. firefox (ab version 52).
@@ -366,6 +368,15 @@ https://bbs.archlinux.org/viewtopic.php?id=142657
 https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture
 
 
+### pulseaudio
+
+wegen bluetooth braucht man pulseaudtio, ie:
+
+- `pulseaudio-bluetooth`
+- `pulseaudio-alsa`
+
+Es darf aber dann keine `.asoundrc` vorhanden sein.
+
 ### having fun hearing sound
 
 `mocp`, `cmus`, `mpd`, `ncmpc`, `mpv`, `mps`, `mps-youtube`, ...
@@ -384,6 +395,17 @@ in `.config/cmus/cmusfm.conf`.
 
 
 
+
+
+- ### bluetooth
+
+wichtig (wenn `rfkill list` softblock auf bluetooth sagt):
+
+    sudo rfkill unblock bluetooth
+
+dann in `bluetoothctl` scannen mit `scan on` und pairen mit `pair MAC` (vorher `power on`)
+
+start and enable `bluealsa` und `
 
 ## Terminal
 
@@ -874,6 +896,7 @@ commands:
 - `kpsewhich -var-value TEXMFLOCAL`
 - `tlmgr` kram installieren halt
 - `tlmgr init-usertree`
+
 
  
 <!--- vim: set ts=2 sw=2 tw=0 noet ft=markdown : -->

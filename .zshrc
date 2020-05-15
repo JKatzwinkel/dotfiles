@@ -70,8 +70,29 @@ export ZSH=$HOME/.oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(git nyan archlinux thor python fasd battery zsh-syntax-highlighting grep emoji emoji-clocki \
-	zsh-navigation-tools urltools pipenv)
+plugins=(
+	git
+	archlinux
+	python
+	fasd
+	battery
+	zsh-syntax-highlighting
+	emoji
+	emoji-clock
+	zsh-navigation-tools
+	urltools
+	pipenv
+	poetry
+	zsh-autosuggestions
+	keybase
+	gradle
+)
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=96
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
 source $ZSH/oh-my-zsh.sh
 
@@ -307,6 +328,8 @@ PERL_MM_OPT="INSTALL_BASE=/home/thor/perl5"; export PERL_MM_OPT;
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
 
-export PATH="/home/thor/.pyenv/bin:$PATH"
+export PATH="${HOME}/.pyenv/bin:${HOME}/.local/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+. /usr/share/powerline/bindings/zsh/powerline.zsh

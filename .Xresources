@@ -9,7 +9,7 @@ XTerm*background: rgb:0a/01/07
 !xterm*faceName: DejaVu Sans Mono:style=Regular:size=10
 !xterm*faceName: Liberation Mono:style=Regular:size=10
 !xterm*font: -*-dina-medium-r*-*-16-*-*-*-*-*-*-*-*
-xterm*faceName: DejaVu Sans Mono:style=Regular:size=10:antialias=true
+xterm*faceName: Liberation Mono For Powerline:style=Regular:size=10:antialias=true
 xterm*font: 7x13
 xterm*dynamicColors: true
 xterm*eightBitInput: true
@@ -79,7 +79,7 @@ xterm*selectToClipboard: true
 !URxvt*color15:      base07
 
 
-! Molokai theme
+!Molokai theme
 URxvt*background: #101520
 URxvt*foreground: #edfff3
 URxvt*color0: #101020
@@ -99,6 +99,7 @@ URxvt*color13: #bb88dd
 URxvt*color14: #4eb4fa
 URxvt*color15: #edfff3
 
+URxvt*color16: #ab7502
 
 urxvt*depth:32
 URxvt*transparent: True
@@ -181,52 +182,31 @@ Xft.dpi: 96
 Xft.antialias: true
 Xft.rgba: rgb
 Xft.hinting: true
-Xft.hintstyle: hintfull 
+Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
-Xft.autohint: true
+Xft.autohint: false
 
 
+! nerd fonts: must use Mono variant in order for fontawesome icons to show correctly (ie in ranger devicons)
 
-! Select the fonts to be used. This is a comma separated list of font names that are checked in order when
-!DejaVu Sans
-URxvt*font: \
-	xft:Hack:pixelsize=12:antialias=true:hinting=true,\
-	xft:Liberation Mono for Powerline:pixelsize=13:antialias=true:hinting=true, \
-	xft:DejaVu Sans Mono for Powerline:size=10:antialias=true:hinting=true, \
-	xft:Liberation Mono:size=9:antialias=true:hinting=true, \
-	xft:WenQuanYi Bitmap Song:size=8, \
-  xft:FreeSerif:style=Regular, \
-  xft:unifont:style=Medium:antialias=false, \
-	xft:Source Han Sans JP Regular:size=10:antialias=true:hinting=true, \
-	xft:Symbola:pixelsize=16:antialias=true:hinting=true
-
-!
-URxvt*boldFont: \
-	xft:Hack:pixelsize=12:bold:antialias=true:hinting=true,\
-	xft:Liberation Mono for Powerline:pixelsize=13:antialias=true:hinting=true:bold, \
-	xft:DejaVu Sans Mono for Powerline:size=10:bold:antialias=true:hinting=true, \
-	xft:Liberation Mono:size=9:bold, \
-	xft:Source Han Sans JP Bold:size=10:antialias=true:hinting=true, \
-	xft:Symbola:size=10:antialias=true:hinting=true:bold
-
-
-! 
-URxvt*italicFont:\
-	xft:Hack:pixelsize=12:italic:antialias=true:hinting=true,\
-	xft:Liberation Mono for Powerline:pixelsize=13:italic:antialias=true:hinting=true, \
-	xft:DejaVu Sans Mono for Powerline:size=9:italic:antialias=true:hinting=true, \
-	xft:Liberation Mono:size=9:antialias=true:hinting=true:italic, \
-	xft:Source Han Sans JP Light:size=10:antialias=true:hinting=true:italic, \
-	xft:Symbola:size=10:antialias=true:hinting=true:italic
-
-
+! nerd fonts hack installed from package nerd-fonts-hack
+!URxvt*font: xft:Hack Nerd Font Mono:style=Regular:size=10
+!URxvt*boldFont: xft:Hack Nerd Font Mono:style=Bold:size=10
+!URxvt*italicFont: xft:Hack Nerd Font Mono:style=Italic:size=10
 ! The font list to use for displaying bold, italic or bold italic characters, respectively.
-URxvt*boldItalicFont: xft:Liberation Mono:size=10:bold:italic
+!URxvt*boldItalicFont: xft:Hack Nerd Font Mono:size=11:bold:italic
+
+! nerd fonts iosevka installed from package nerd-fonts-iosevka
+URxvt*font: xft:Iosevka Nerd Font Mono:style=Light:size=11
+URxvt*boldFont: xft:Iosevka Nerd Font Mono:style=Bold:size=11
+URxvt*italicFont: xft:Iosevka Nerd Font Mono:style=Light Italic:size=11
+! The font list to use for displaying bold, italic or bold italic characters, respectively.
+URxvt*boldItalicFont: xft:Iosevka Nerd Font Mono:style=Bold Italic:size=11
 
 ! pixels to insert between characters
-URxvt*letterSpace: 0
+URxvt*letterSpace: 1
 ! Specifies number of lines (pixel height) to insert between each row of the display [default 0]; option
-URxvt*lineSpace: -2
+URxvt*lineSpace: -4
 
 
 !# update X server:
@@ -304,7 +284,7 @@ URxvt*scrollBar: False
 ! URxvt*skipBuiltinGlyphs: true
 
 ! Specifies the terminal type name to be set in the TERM environment variable; option -tn.
-URxvt*termName: rxvt
+URxvt*termName: rxvt-unicode-256color
 
 ! True: handle Meta (Alt) + keypress to set the 8th bit. False: handle Meta (Alt) + keypress as an escape
 ! URxvt*meta8: boolean

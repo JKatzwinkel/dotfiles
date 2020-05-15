@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --bg-center '/home/thor/Screenshot from 2019-01-15 17-46-15.png' 
+feh --no-fehbg --bg-center '/home/thor/Screenshot from 2019-01-15 17-46-15.png' 

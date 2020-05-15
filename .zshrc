@@ -97,7 +97,19 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=white'
 
 
 
-
+# colors, a lot of colors!
+function clicolors() {
+    i=1
+    for color in {000..255}; do;
+        c=$c"$FG[$color]$color✔$reset_color  ";
+        if [ `expr $i % 8` -eq 0 ]; then
+            c=$c"\n"
+        fi
+        i=`expr $i + 1`
+    done;
+    echo $c | sed 's/%//g' | sed 's/{//g' | sed 's/}//g' | sed '$s/..$//';
+    c=''
+}
 
 ### PROMPTS
 ###########
@@ -172,6 +184,9 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Right]}"    ]]  && bindkey  "${key[Right]}"    forward-char
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
+
+#bindkey "^[[7~"	beginning-of-line
+#bindkey "^[[8~" end-of-line
 
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
@@ -252,10 +267,11 @@ fi
 # alias for largest packages
 alias pacman_largest='expac -HM "%011m\t%-20n\t%10d"| sort -n | tail -20'
 
-# base16 colorscheme
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-shapeshifter.dark.sh" # solarized, isotope, monokai
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.gem/ruby/2.2.0/bin" # ruby gem binaries
@@ -265,11 +281,6 @@ export DITA_HOME=/opt/dita
 export ANT_HOME=/usr/share/apache-ant
 export JAVA_HOME=/usr/lib/jvm/default
 export PATH=${ANT_HOME}/bin:${JAVA_HOME}/bin:${DITA_HOME}:${PATH}
-
-# virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/projects
-source /usr/bin/virtualenvwrapper.sh
 
 #export CLASSPATH=.:/usr/share/java:$CLASSPATH:$PATH
 export CLASSPATH=${DITA_HOME}/lib:$DITA_HOME/lib/dost.jar:$DITA_HOME/lib/xml-resolver.jar:$CLASSPATH
@@ -285,7 +296,6 @@ export CLASSPATH=/usr/share/java/fop/fop.jar:$CLASSPATH
 PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"; export PATH;
 # YARN
 PATH="${HOME}/.yarn/bin${PATH:+:${PATH}}"; export PATH;
-
 
 
 PERL5LIB="/home/thor/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;

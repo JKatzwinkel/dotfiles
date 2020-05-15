@@ -47,7 +47,7 @@ $if mode=emacs
 "\e[5C": forward-word
 "\e[5D": backward-word
 
-$if term=rxvt
+$if term=tmux-256color
 "\e[8~": end-of-line
 "\eOc": forward-word
 "\eOd": backward-word

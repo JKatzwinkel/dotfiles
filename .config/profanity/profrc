@@ -4,6 +4,27 @@ history=true
 
 mouse=false
 
+statuses.console=all
+statuses.chat=all
+
+beep=true
+flash=true
+splash=true
+wrap=true
+resource.title=true
+resource.message=true
+occupants=true
+roster=true
+roster.offline=true
+roster.resource=true
+privileges=true
+presence=true
+intype=true
+statuses.muc=all
+roster.by=presence
+occupants.size=15
+roster.size=25
+
 [logging]
 chlog=true
 

@@ -96,8 +96,8 @@ NeoBundle 'squarefrog/tomorrow-night.vim'
 NeoBundle 'bling/vim-airline'
 
 " syntastic
-"NeoBundle 'scrooloose/syntastic'
-NeoBundle 'andviro/flake8-vim'
+NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'andviro/flake8-vim'
 
 " Unite
 NeoBundle 'Shougo/unite.vim'

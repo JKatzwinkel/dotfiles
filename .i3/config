@@ -31,6 +31,7 @@ floating_modifier $mod
 #bindsym $mod+Return exec xterm -rw
 #bindsym Mod1+Ctrl+t exec xterm -rw
 bindsym $mod+Return exec termite
+bindsym $mod+Shift+z exec termite
 bindsym Mod1+Ctrl+t exec urxvt
 
 # kill focused window
@@ -39,7 +40,8 @@ bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
 ##bindsym $mod+d exec dmenu_run -b -i -l 5
-bindsym $mod+d exec rofi -show run
+bindsym $mod+c exec rofi -show run
+bindsym $mod+d exec rofi -show window
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.

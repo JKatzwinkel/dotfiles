@@ -299,6 +299,36 @@ oder sowas wie
 		Subdevice #0: subdevice #0
 
 
+#### equalizer
+
+paket `alsaequal` (AUR).
+Dann am besten in `~/.asoundrc` als default soundkarte setzen:
+
+		defaults.ctl.card 1
+		defaults.pcm.card 1
+
+		ctl.equal {
+			type equal;
+		}
+
+		pcm.plugequal {
+			type equal;
+			slave.pcm "plug:dmix";
+		}
+
+		pcm.!default {
+			type plug;
+			slave.pcm plugequal;
+		}
+
+Dann alsa neu starten:
+
+    alsactl restore
+
+Equalizer aufmachen mit:
+
+    alsamixer -D equal
+
 #### pulseaudio emulieren
 
 Manche applications brauchen pulseaudio um sound abzuspielen, z.b. firefox (ab version 52).

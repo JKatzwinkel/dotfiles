@@ -143,6 +143,24 @@ working config file for standard eduroam (`/etc/netctl/eduroam`, working at camp
 
 *yay!*
 
+Fuer akademie eduroam sieht ein biszchen anders aus:
+
+		WPAConfigSection=(
+		 'ssid="eduroam"'
+		 'key_mgmt=WPA-EAP'
+		 'pairwise=CCMP'
+		 'group=CCMP TKIP'
+		 'eap=TTLS'
+		 'identity="username"'
+		 'anonymous_identity="anonymous@bbaw.de"'
+		 'domain_suffix_match="eduroam2.bbaw.de"'
+		 'phase2="auth=PAP"'
+		 'password=""'
+		 'ca_path="/etc/ssl/certs"'
+		)
+
+passwort hashen geht hier nicht wegen PAP
+
 ### filesystems
 
   * vfat: `dosfstools`

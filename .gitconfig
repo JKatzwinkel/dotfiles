@@ -11,6 +11,7 @@
 	what = "!sh -c 'git diff $1^ $1' -"
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	lel = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim blue)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	ll = log --graph --decorate --date=format:'%d.%m%a%H:%M' --format=format:'%C(magenta)%ad %C(yellow)%h%C(reset) %C(bold green)%d%C(reset) %<(100,trunc)%s' --all
 [tig]
 	line-graphics = utf-8

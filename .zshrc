@@ -42,7 +42,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 		# this has nothing to do with colors, but will show latest files in downloads dir
 		alias dwn='ls --color=always -rtlh ~/downloads | tail -n 15'
-		alias tmux="TERM=screen-256color-bce tmux"
+		alias tmx='tmux attach -t'
+		alias txl='tmux list-sessions'
 fi
 
 

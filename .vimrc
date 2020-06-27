@@ -679,5 +679,14 @@ au FileType markdown setlocal commentstring=<!---%s\ -->
 set tags=./tags;,tags;
 
 
+" for tmux options -g xterm-keys on
+" https://ericdevries.dev/post/vim-ctrl-arrow-deletes-lines/
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
 
 " vim: set ts=2 sw=2 tw=500 noet ft=vim :

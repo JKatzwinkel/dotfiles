@@ -2,6 +2,16 @@
 	iw dev
 	wifi-menu wlpXXX
 
+### bruechige connection
+
+manchmal (neuerdings seit sommer 2020) faengt die verbindung einfach ploetzlich an dauernd aus und kurz
+wieder an zu gehen. workaround ist komplett das `netctl` profil zu loeschen und neu anzulegen.
+
+    sudo rm /etc/netctl/WifiProfile
+		sudo systemctl disable netctl@WifiProfile.service
+		sudo systemctl daemon-reload
+		sudo wifi-menu
+
 ### mount partition
 	lsblk -f
 	mount /dev/sda2 /mnt

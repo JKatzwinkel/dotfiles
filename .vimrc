@@ -96,7 +96,7 @@ NeoBundle 'squarefrog/tomorrow-night.vim'
 NeoBundle 'bling/vim-airline'
 
 " syntastic
-NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'scrooloose/syntastic'
 "NeoBundle 'andviro/flake8-vim'
 
 " Unite
@@ -116,7 +116,7 @@ NeoBundle 'vim-pandoc/vim-pandoc'
 NeoBundle 'lervag/vimtex'
 
 " nerdtree
-NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'scrooloose/nerdtree'
 
 " Required:
 call neobundle#end()
@@ -127,6 +127,7 @@ call neobundle#end()
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+" to uninstall disabled plugins, however, `NeoBundleClean` needs to be run.
 "End NeoBundle Scripts-------------------------
 
 

@@ -63,6 +63,8 @@
 "amixer -D default -- set Master toggle"
  XF86AudioMute 
 
+"amixer -D default -- set Capture toggle"
+ XF86AudioMicMute
 
 # firefox
 "apulse firefox"

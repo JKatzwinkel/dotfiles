@@ -908,5 +908,18 @@ commands:
 - `tlmgr init-usertree`
 
 
- 
+### manual install
+
+since `texlive-bin` via pacman is a bit fucked up in some ways, manual installation of the most recent release might be in order:
+
+- https://www.tug.org/texlive/quickinstall.html
+- https://www.tug.org/texlive/acquire-netinstall.html
+
+download `tar.gz` file and unpack the `install-tl-current\_year` directory it contains. run `install-tl`. change `TEXLIVE\_DIR` to whatever is best.
+after installation, texlive installation location should be put in the `PATH`, so append this to `~/.profile`:
+
+		export PATH="/mnt/stuff/texlive/2019/bin/x86_64-linux/:$PATH"
+		export MANPATH="/mnt/stuff/texlive/2019/texmf-dist/doc/man:$MANPATH"
+		export INFOPATH="/mnt/stuff/texlive/2019/texmf-dist/doc/info:$INFOPATH"
+
 <!--- vim: set ts=2 sw=2 tw=0 noet ft=markdown : -->

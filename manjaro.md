@@ -46,6 +46,29 @@ fuer equalizer `pulseeffects` installieren.
 
 # editors
 
+## vim
+
+`vim-plug`: https://github.com/junegunn/vim-plug
+
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+in `.vimrc`:
+
+    call plug#begin()
+    Plug 'preservim/NERDTree'
+    call plug#end()
+
+Dann: 
+
+    :PlugInstall
+
+seit vim 8 gibt es native plugin management was quasi dasselbe macht wie frueher pathogen:
+- https://shapeshed.com/vim-packages/
+- https://opensource.com/article/20/2/how-install-vim-plugins
+
+damit man den ganzen stresz mit git submodules im `.vim/pack/bla` verzeichnis nicht hat, nimmt man `vim-plug`.
+
+
 ## spacevim
 
 spacevim installieren mit 

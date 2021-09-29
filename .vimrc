@@ -77,6 +77,7 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
+NeoBundle 'dense-analysis/ale'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
@@ -169,6 +170,11 @@ nnoremap <leader>P "*P
 
 "vmap <C-c> "+y
 
+" toggle PASTE mode (pasting from clipboard in PASTE mode prevents indentation from being all fucked up)
+" map to <Ctrl-Shift-j>
+set pastetoggle=<C-J>
+
+
 " enable modeline processing even though it is somehow enabled anyway, just to be sure
 set modeline
 
@@ -248,12 +254,21 @@ colorscheme Monokai
 set background=dark
 "colorscheme tomorrow-night
 
+" General colors
 " Set extra options when running in GUI mode
-if has("gui_running")
+if has('gui_running') || has('nvim') 
     set guioptions-=T
     set guioptions+=e
     set t_Co=256
     set guitablabel=%M\ %t
+    hi Normal 		guifg=#f6f3e8 guibg=#201c1f
+else
+    " Set the terminal default background and foreground colors, thereby
+    " improving performance by not needing to set these colors on empty cells.
+		" IMPORTANT FOR KITTY!!!
+    hi Normal guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
+    let &t_ti = &t_ti . "\033]10;#f6f3e8\007\033]11;#201c1f\007"
+    let &t_te = &t_te . "\033]110\007\033]11;#201c1f\007"
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -272,7 +287,7 @@ au FileType python setlocal tabstop=4
 """""""""""
 " Syntastic
 "
-let g:syntastic_python_pylint_args='-d C0302,F0401,E0611,R0912,C0103,R0914 -f parseable -r n'
+"let g:syntastic_python_pylint_args='-d C0302,F0401,E0611,R0912,C0103,R0914 -f parseable -r n'
 let g:Syntastic_java_checkers=[]
 " always populate location list so we can navigate with :lnext and :lprev (or :ll if there is only 1 result)
 let g:syntastic_always_populate_loc_list = 1
@@ -347,7 +362,7 @@ set si
 inoremap # X#
 
 " dont wrap lines longer than the window width for display
-set nowrap 
+set nowrap
 " note: if wrap were enabled, you could define where and how to wrap lines for display
 " by setting lbr, which will make vim wrap lines at characters that can be shown with
 " :set breakat?
@@ -419,7 +434,7 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
@@ -450,7 +465,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " more tips on effective buffer use:
 " https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
-" 
+"
 
 """"""""""""""""""""""""""""""
 " => Status line
@@ -472,7 +487,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-" linting for javascript 
+" linting for javascript
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -480,8 +495,12 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'eslint %'
 
-
-
+" linting for python
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'python': ['flake8', 'pylint'],
+\}
+let g:ale_linters_explicit = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -557,7 +576,7 @@ map <leader>sa zg
 map <leader>s? z=
 
 set nospell
-" to prevent pandoc plugin to enable spell checking anyway, remove module "spell" from 
+" to prevent pandoc plugin to enable spell checking anyway, remove module "spell" from
 " g:pandoc#modules#enabled list in ~/.vim/bundle/vim-pandoc/plugin/pandoc.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

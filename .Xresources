@@ -197,14 +197,14 @@ Xft.autohint: false
 !URxvt*boldItalicFont: xft:Hack Nerd Font Mono:size=11:bold:italic
 
 ! nerd fonts iosevka installed from package nerd-fonts-iosevka
-URxvt*font: xft:Iosevka Nerd Font Mono:style=Light:size=11
-URxvt*boldFont: xft:Iosevka Nerd Font Mono:style=Bold:size=11
-URxvt*italicFont: xft:Iosevka Nerd Font Mono:style=Light Italic:size=11
+URxvt*font: xft:Iosevka Nerd Font:style=Regular:size=11, 
+URxvt*boldFont: xft:Iosevka Nerd Font:style=Bold:size=11
+URxvt*italicFont: xft:Iosevka Nerd Font:style=Light Italic:size=11
 ! The font list to use for displaying bold, italic or bold italic characters, respectively.
-URxvt*boldItalicFont: xft:Iosevka Nerd Font Mono:style=Bold Italic:size=11
+URxvt*boldItalicFont: xft:Iosevka Nerd Font:style=Bold Italic:size=11
 
 ! pixels to insert between characters
-URxvt*letterSpace: 1
+URxvt*letterSpace: -1
 ! Specifies number of lines (pixel height) to insert between each row of the display [default 0]; option
 URxvt*lineSpace: -4
 

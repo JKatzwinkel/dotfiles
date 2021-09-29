@@ -41,7 +41,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 		# this has nothing to do with colors, but will show latest files in downloads dir
-		alias dwn='ls --color=always -rtlh ~/downloads | tail -n 15'
+		alias dwn='ls --color=always -rtlh ~/Downloads | tail -n 15'
 		alias tmx='tmux attach -t'
 		alias txl='tmux list-sessions'
 fi
@@ -86,7 +86,7 @@ plugins=(
 	poetry
 	zsh-autosuggestions
 	keybase
-	gradle
+	#gradle
 )
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -329,8 +329,10 @@ PERL_MM_OPT="INSTALL_BASE=/home/thor/perl5"; export PERL_MM_OPT;
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
 
-export PATH="${HOME}/.pyenv/bin:${HOME}/.local/bin:$PATH"
+export PATH="${HOME}/.pyenv/versions/:${HOME}/.pyenv/bin/:${HOME}/.local/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 . /usr/share/powerline/bindings/zsh/powerline.zsh
+
+export PATH="$HOME/.poetry/bin:$PATH"

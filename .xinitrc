@@ -18,10 +18,9 @@ xset fp rehash
 
 #display power management
 xset -dpms
-xset s 300
+xset s off
 
-# kill X
-setxkbmap us altgr-intl -option terminate:ctrl_alt_bksp -option keypad:oss -option nbsp:level3 -option shift:breaks_caps -option caps:internal
+setxkbmap us intl-unicode -option terminate:ctrl_alt_bksp -option keypad:oss -option nbsp:level3 -option shift:breaks_caps -option caps:internal
 
 #conky -d
 xbindkeys

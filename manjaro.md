@@ -148,6 +148,13 @@ keine ahnung wie man serioes shell completions aktiviert also kopiere ich einfac
 den inhalt von https://raw.githubusercontent.com/pyenv/pyenv/master/completions/pyenv.zsh
 in `.oh-my-zsh/plugins/pyenv/pyenv.plugin.zsh` rein.
 
+wenn bestimmte (aeltere) python versionen nicht installiert werden koennen weil builf fehlschlaegt mit make error 139
+oder so (`if test "xupgrade" != "xno"  ; then \`) musz man evtl `clang` installieren und so machen:
+
+    CC=clang pyenv install 3.6.13
+
+- https://github.com/pyenv/pyenv/issues/1889#issuecomment-833587851
+
 
 # swap
 

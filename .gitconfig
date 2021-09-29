@@ -15,3 +15,5 @@
 	ll = log --graph --decorate --date=format:'%d.%m%a%H:%M' --format=format:'%C(magenta)%ad %C(yellow)%h%C(reset) %C(bold green)%d%C(reset) %<(100,trunc)%s' --all
 [tig]
 	line-graphics = utf-8
+[init]
+	defaultBranch = main

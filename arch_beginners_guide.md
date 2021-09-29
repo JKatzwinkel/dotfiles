@@ -401,7 +401,13 @@ It is put in usage by cmus with `set
 status_display_program=/usr/local/bin/cmusfm`. `libnotify`-popups can be  activated
 in `.config/cmus/cmusfm.conf`.
 
+After upgrade/rebuild of `cmusfm`, it might be necessary to kill the process so that
+cmus can start it anew: https://github.com/Arkq/cmusfm/issues/40#issuecomment-844705692
 
+Connection success and optional recreation of API key can be done like this:
+```
+  cmusfm init
+```
 
 
 
@@ -482,7 +488,7 @@ read [XKB](https://wiki.archlinux.org/index.php/X_KeyBoard_extension) and [xmodm
 wiki articles, install `xorg-xev`, `xorg-xkbutils`.
 
 We choose keyboard layout, variant and options with `setxkbmap`. Read `man xkeyboard-config` for details.
-When using layout `us`, one might consider to use variant `altgr-intl` in order to access 3rd level characters like 
+When using layout `us`, one might consider to use variant `intl-unicode` in order to access 3rd level characters like 
 umlauts or €-sign with AltGr-key. Check current settings with `setxkbmap -query` oder `setxkbmap -print -verbose 10`.
 
  
@@ -816,6 +822,9 @@ The settings for default applications associated to known mimetypes seem to be d
 On the other hand, it is recommended to use `xdg-utils` to take care of that stuff.
 
     xdg-mime default nautilus.desktop inode/directory
+		xdg-mime default /usr/share/applications/chromium.desktop x-scheme-handler/http
+		xdg-mime default /usr/share/applications/chromium.desktop x-scheme-handler/https
+		xdg-settings get default-url-scheme-handler http
 
 
 
@@ -921,5 +930,27 @@ after installation, texlive installation location should be put in the `PATH`, s
 		export PATH="/mnt/stuff/texlive/2019/bin/x86_64-linux/:$PATH"
 		export MANPATH="/mnt/stuff/texlive/2019/texmf-dist/doc/man:$MANPATH"
 		export INFOPATH="/mnt/stuff/texlive/2019/texmf-dist/doc/info:$INFOPATH"
+
+
+# docker
+
+docker data directory location aendern (in `/etc/docker/daemon.json`):
+```json
+{
+  "data-root": "/mnt/path/var/lib/docker"
+}
+```
+addressbereich aendern (`/etc/docker/daemon.json`):
+```json
+{
+	"default-address-pools": [
+		{
+			"base": "192.168.0.0/16",
+			"size": 24
+		}
+	]
+}
+```
+
 
 <!--- vim: set ts=2 sw=2 tw=0 noet ft=markdown : -->

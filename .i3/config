@@ -135,7 +135,7 @@ bindsym KP_Right workspace next
 bindsym Mod1+Ctrl+Right workspace next
 
 bindsym Shift+KP_Left move container to workspace prev
-bindsym ShiftKP_Right move container to workspace next
+bindsym Shift+KP_Right move container to workspace next
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1

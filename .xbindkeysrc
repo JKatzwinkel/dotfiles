@@ -40,7 +40,7 @@
 # Examples of commands:
 
 "xbindkeys_show" 
-  control+shift + q
+  control+shift + x
 
 # set directly keycode (here control + f with my keyboard)
 # conflicts with search keybinding in sublime
@@ -73,7 +73,7 @@
 	XF86WWW
 
 # tw
-"firefox www.twitter.com"
+"vivaldi-stable www.twitter.com"
   XF86Calculator
 
 # audio player: cmus

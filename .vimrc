@@ -81,6 +81,7 @@ NeoBundle 'dense-analysis/ale'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
 " a tig-like commit viewer extension for fugitive:
 NeoBundle 'int3/vim-extradite'
 NeoBundle 'tpope/vim-unimpaired'
@@ -94,7 +95,8 @@ NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 NeoBundle 'squarefrog/tomorrow-night.vim'
 
 " airline
-NeoBundle 'bling/vim-airline'
+" NeoBundle 'bling/vim-airline'
+NeoBundle 'itchyny/lightline.vim'
 
 " syntastic
 " NeoBundle 'scrooloose/syntastic'
@@ -115,6 +117,9 @@ NeoBundle 'vim-pandoc/vim-pandoc'
 
 " vimtex
 NeoBundle 'lervag/vimtex'
+
+" TOML syntax
+NeoBundle 'cespare/vim-toml'
 
 " nerdtree
 " NeoBundle 'scrooloose/nerdtree'
@@ -237,7 +242,7 @@ set t_vb=
 set tm=500
 
 " for highlighting tabs in set list mode
-set listchars=tab:➪-
+set listchars=eol:¬,tab:->,trail:~,extends:>,precedes:<,space:␣
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts

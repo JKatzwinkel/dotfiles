@@ -447,30 +447,17 @@ rofi.modi : window,run,ssh
 rofi.key-window: mod1+Tab
 rofi.key-run: mod1+F2
 rofi.key-ssh: mod1+F12
-rofi.terminal: urxvt
-rofi.auto-select:		false
+rofi.terminal: kitty
+rofi.auto-select: false
 rofi.color-enabled: true
-rofi.fg:                             #ccb18b
-rofi.bg:                             #1f1f1
-rofi.color-normal:                   #fdf6e3,#002b36,#eee8d5,#586e75,#eee8d5
+! State:           'bg',     'fg',   'bgalt',  'hlbg',  'hlfg'
+rofi.color-normal: #261b21,#d5d1a5,#291d21,#6d244a,#ff84c3
 rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#dc322f,#fdf6e3
-rofi.color-active:                   #fdf6e3,#268bd2,#eee8d5,#268bd2,#fdf6e3
-rofi.color-window:                   #fdf6e3,#002b36
-rofi.fg-active:                      #268BD2
-rofi.fg-urgent:                      #DC322F
-rofi.hlfg-active:                    #FDF6E3
-rofi.hlfg-urgent:                    #FDF6E3
-rofi.bg-active:                      
-rofi.bg-urgent:                      
-rofi.hlbg-active:                    #268BD2
-rofi.hlbg-urgent:                    #DC322F
-rofi.bgalt:                          #1f1f1f
-rofi.hlfg:                           #EEE8D5
-rofi.hlbg:                           #586E75
-rofi.bc:                             #c0b18b
-rofi.bw:			1
-rofi.case-sensitive:		false
-rofi.font: Monaco for Powerline 10
+rofi.color-active: #261b21,#ff84c3,#291d21,#6d244a,#ff84c3
+rofi.color-window: #261b21,#6d244a
+rofi.bw:      1
+rofi.case-sensitive:    false
+rofi.font: Fira Code
 rofi.lines:           10
 rofi.columns:         2
 rofi.width: 100

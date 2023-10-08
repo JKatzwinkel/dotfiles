@@ -503,7 +503,8 @@ let g:syntastic_javascript_eslint_exe = 'eslint %'
 " linting for python
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'python': ['flake8', 'pylint'],
+\   'python': ['flake8', 'pylint', 'mypy'],
+\   'yaml': ['yamllint']
 \}
 let g:ale_linters_explicit = 1
 

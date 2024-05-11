@@ -121,6 +121,8 @@ NeoBundle 'lervag/vimtex'
 " TOML syntax
 NeoBundle 'cespare/vim-toml'
 
+NeoBundle 'NoahTheDuke/vim-just'
+
 " nerdtree
 " NeoBundle 'scrooloose/nerdtree'
 

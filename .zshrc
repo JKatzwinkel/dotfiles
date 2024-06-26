@@ -333,6 +333,6 @@ export PATH="${HOME}/.pyenv/versions/:${HOME}/.pyenv/bin/:${HOME}/.local/bin:$PA
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-. /usr/share/powerline/bindings/zsh/powerline.zsh
+eval "$(starship init zsh)"
 
 export PATH="$HOME/.poetry/bin:$PATH"

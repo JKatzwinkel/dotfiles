@@ -15,6 +15,7 @@ $golang\
 $gradle\
 $haskell\
 $java\
+$python\
 $julia\
 $nodejs\
 $nim\
@@ -104,6 +105,7 @@ style = "bg:#86BBD8 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [gradle]
+symbol = ""
 style = "bg:#86BBD8 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
@@ -113,9 +115,19 @@ style = "bg:#86BBD8 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
-symbol = " "
+symbol = ""
 style = "bg:#86BBD8 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:#86BBD8 fg:#000000"
+format = """
+[ $symbol ($version)]($style)\
+[](bg:#c0caff fg:#86bbd8)\
+[($virtualenv)](bold fg:#ffffff bg:#c0caff)\
+[](bg:#86bbd8 fg:#c0caff)\
+"""
 
 [julia]
 symbol = " "

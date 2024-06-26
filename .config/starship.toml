@@ -28,9 +28,7 @@ $time\
 """
 
 # Disable the blank line at the start of the prompt
-# add_newline = false
-
-
+add_newline = false
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
@@ -50,16 +48,21 @@ disabled = true # Disabled by default
 [directory]
 style = "bold bg:#DA627D fg:#FFFFFF"
 format = "[ $path ]($style)"
-truncation_length = 3
+truncation_length = 2
 truncation_symbol = "…/"
+truncate_to_repo = false
+repo_root_style = "bold bg:#DA627D fg:#FFFFFF"
+before_repo_root_style = "bg:#DA627D fg:#EFBFCF"
+repo_root_format = """[ $before_root_path]($before_repo_root_style)[$repo_root]\
+($repo_root_style)[$path]($style)[$read_only]($read_only_style)"""
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"documents" = "󰈙"
+"Downloads" = ""
+"audio" = "󰓃"
+"music" = ""
 # Keep in mind that the order matters. For example:
 # "Important Documents" = " 󰈙 "
 # will not be replaced, because "Documents" was already substituted before.

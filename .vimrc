@@ -181,9 +181,11 @@ nnoremap <leader>P "*P
 " map to <Ctrl-Shift-j>
 set pastetoggle=<C-J>
 
-
 " enable modeline processing even though it is somehow enabled anyway, just to be sure
 set modeline
+
+" show max line length ruler according to current textwidth
+set colorcolumn=-0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -332,10 +334,10 @@ set noswapfile
 " learn more about these options at http://tedlogan.com/techblog3.html
 
 " Use spaces instead of tabs
-" set expandtab
+set expandtab
 
 " Be smart when using tabs ;)
-" set smarttab
+set smarttab
 
 " this is how many characters wide tabs are displayed in vim
 set tabstop=2

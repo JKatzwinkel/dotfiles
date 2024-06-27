@@ -25,11 +25,19 @@ $scala\
 $docker_context\
 [](fg:#06969A bg:#33658A)\
 $time\
+$status\
 [ ](fg:#33658A)\
 """
 
 # Disable the blank line at the start of the prompt
 add_newline = false
+
+[status]
+symbol = '☠'
+format = """[](fg:#33648a bg:#ff0000)\
+[ $symbol $common_meaning \\($status\\) ](bold fg:#ffffff bg:#ff0000)\
+[](bg:#33648a fg:#ff0000)"""
+disabled = false
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
@@ -108,6 +116,7 @@ format = '[ $symbol ($version) ]($style)'
 symbol = ""
 style = "bg:#86BBD8 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
+version_format = '${raw}'
 
 [haskell]
 symbol = " "
@@ -118,6 +127,7 @@ format = '[ $symbol ($version) ]($style)'
 symbol = ""
 style = "bg:#86BBD8 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
+version_format = '${raw}'
 
 [python]
 symbol = ""
@@ -128,6 +138,7 @@ format = """
 [($virtualenv)](bold fg:#ffffff bg:#c0caff)\
 [](bg:#86bbd8 fg:#c0caff)\
 """
+version_format = '${raw}'
 
 [julia]
 symbol = " "

@@ -1,5 +1,4 @@
 format = """
-[](#9A348E)\
 $os\
 $username\
 [](bg:#DA627D fg:#9A348E)\
@@ -23,6 +22,7 @@ $rust\
 $scala\
 [](fg:#86BBD8 bg:#06969A)\
 $docker_context\
+$package\
 [](fg:#06969A bg:#33658A)\
 $time\
 $status\
@@ -45,7 +45,7 @@ disabled = false
 show_always = true
 style_user = "bg:#9A348E fg:#ff86ea"
 style_root = "bg:#9A348E"
-format = '[$user ]($style)'
+format = '[ $user ]($style)'
 disabled = false
 
 # An alternative to the username module which displays a symbol that
@@ -104,8 +104,15 @@ style = "bg:#FCA17D fg:#802030 bold"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#FCA17D fg:#FF0000"
+style = "bg:#FCA17D fg:#dd0000"
 format = '[$all_status$ahead_behind ]($style)'
+stashed = '󰓌'
+staged = ''
+ahead = '🠉'
+behind = '🠋'
+modified = '󰏫'
+conflicted = ''
+untracked = ''
 
 [golang]
 symbol = " "
@@ -136,9 +143,10 @@ format = """
 [ $symbol ($version)]($style)\
 [](bg:#c0caff fg:#86bbd8)\
 [($virtualenv)](bold fg:#ffffff bg:#c0caff)\
-[](bg:#86bbd8 fg:#c0caff)\
-"""
+[](bg:#86bbd8 fg:#c0caff)"""
 version_format = '${raw}'
+detect_extensions = []
+python_binary = ['python']
 
 [julia]
 symbol = " "
@@ -164,6 +172,12 @@ format = '[ $symbol ($version) ]($style)'
 symbol = " "
 style = "bg:#86BBD8 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
+
+[package]
+symbol = '󰏖 '
+style = 'bg:#06969a fg:#c0caff'
+format = '[ $symbol$version ]($style)'
+version_format = '${raw}'
 
 [time]
 disabled = false

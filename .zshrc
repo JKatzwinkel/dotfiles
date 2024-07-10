@@ -40,10 +40,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-		# this has nothing to do with colors, but will show latest files in downloads dir
-		alias dwn='ls --color=always -rtlh ~/Downloads | tail -n 15'
-		alias tmx='tmux attach -t'
-		alias txl='tmux list-sessions'
+    # this has nothing to do with colors, but will show latest files in downloads dir
+    alias dwn='ls --color=always -rtlh ~/Downloads | tail -n 15'
+    alias tmx='tmux attach -t'
+    alias txl='tmux list-sessions'
 fi
 
 
@@ -51,10 +51,10 @@ fi
 
 
 _pwd () {
-	local _wdir="$1"
-	[[ "$_wdir" != "${_wdir#$HOME}" ]] && _wdir="~${_wdir#$HOME}";
-	((${#_wdir}>20)) && _wdir="${_wdir:0:5}...${_wdir:$(( ${#_wdir}-12 ))}";
-	echo "$_wdir"
+  local _wdir="$1"
+  [[ "$_wdir" != "${_wdir#$HOME}" ]] && _wdir="~${_wdir#$HOME}";
+  ((${#_wdir}>20)) && _wdir="${_wdir:0:5}...${_wdir:$(( ${#_wdir}-12 ))}";
+  echo "$_wdir"
 }
 
 
@@ -72,21 +72,18 @@ export ZSH=$HOME/.oh-my-zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 plugins=(
-	git
-	archlinux
-	python
-	fasd
-	battery
-	zsh-syntax-highlighting
-	emoji
-	emoji-clock
-	zsh-navigation-tools
-	urltools
-	pipenv
-	poetry
-	zsh-autosuggestions
-	keybase
-	#gradle
+  archlinux
+  docker
+  docker-compose
+  fasd
+  git
+  keybase
+  pipenv
+  # starship
+  urltools
+  zsh-autosuggestions
+  zsh-navigation-tools
+  zsh-syntax-highlighting
 )
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -161,7 +158,7 @@ PROMPT="%{$fg[yellow]%}%(?..%{$fg[red]%})%*-\
 
 # set editors, pager, ...
 export LESS="-R"
-export PAGER=most
+export PAGER=less
 export SYSTEMD_PAGER=less
 export EDITOR=vim
 export GIT_EDITOR=vim
@@ -207,7 +204,7 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
 
-#bindkey "^[[7~"	beginning-of-line
+#bindkey "^[[7~"  beginning-of-line
 #bindkey "^[[8~" end-of-line
 
 # Finally, make sure the terminal is in application mode, when zle is

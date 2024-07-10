@@ -35,7 +35,7 @@ add_newline = false
 [status]
 symbol = '☠'
 format = """[](fg:#33648a bg:#ff0000)\
-[ $symbol $common_meaning \\($status\\) ](bold fg:#ffffff bg:#ff0000)\
+[ $symbol$status ($common_meaning )](bold fg:#ffffff bg:#ff0000)\
 [](bg:#33648a fg:#ff0000)"""
 disabled = false
 
@@ -45,7 +45,7 @@ disabled = false
 show_always = true
 style_user = "bg:#9A348E fg:#ff86ea"
 style_root = "bg:#9A348E"
-format = '[ $user ]($style)'
+format = '[$user]($style)'
 disabled = false
 
 # An alternative to the username module which displays a symbol that
@@ -56,13 +56,13 @@ disabled = true # Disabled by default
 
 [directory]
 style = "bold bg:#DA627D fg:#FFFFFF"
-format = "[ $path ]($style)"
-truncation_length = 2
+format = "[$path]($style)"
+truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = false
 repo_root_style = "bold bg:#DA627D fg:#FFFFFF"
 before_repo_root_style = "bg:#DA627D fg:#EFBFCF"
-repo_root_format = """[ $before_root_path]($before_repo_root_style)[$repo_root]\
+repo_root_format = """[$before_root_path]($before_repo_root_style)[$repo_root]\
 ($repo_root_style)[$path]($style)[$read_only]($read_only_style)"""
 
 # Here is how you can shorten some long paths by text replacement
@@ -72,6 +72,8 @@ repo_root_format = """[ $before_root_path]($before_repo_root_style)[$repo_root]\
 "Downloads" = ""
 "audio" = "󰓃"
 "music" = ""
+"projects" = "🛠"
+java = '󰬷'
 # Keep in mind that the order matters. For example:
 # "Important Documents" = " 󰈙 "
 # will not be replaced, because "Documents" was already substituted before.
@@ -99,19 +101,26 @@ style = "bg:#86BBD8 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:#FCA17D fg:#802030 bold"
-format = '[ $symbol $branch ]($style)'
+format = '[$symbol$branch]($style)'
+
+[git_commit]
+style = "bg:#FCA17D fg:#FFEEEE"
+tag_disabled = false
+tag_max_candidates = 20
 
 [git_status]
 style = "bg:#FCA17D fg:#dd0000"
-format = '[$all_status$ahead_behind ]($style)'
-stashed = '󰓌'
+format = '[$all_status$ahead_behind]($style)'
+stashed = '󰓌${count}'
+deleted = ''
+modified = '󰏫'
 staged = ''
 ahead = '🠉'
 behind = '🠋'
-modified = '󰏫'
-conflicted = ''
+diverged = '🠉🠋'
+conflicted = '⇆󱐌'
 untracked = ''
 
 [golang]
@@ -120,9 +129,9 @@ style = "bg:#86BBD8 fg:#000000"
 format = '[ $symbol ($version) ]($style)'
 
 [gradle]
-symbol = ""
+symbol = " "
 style = "bg:#86BBD8 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+format = '[$symbol($version)]($style)'
 version_format = '${raw}'
 
 [haskell]
@@ -133,14 +142,14 @@ format = '[ $symbol ($version) ]($style)'
 [java]
 symbol = ""
 style = "bg:#86BBD8 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+format = '[$symbol($version)]($style)'
 version_format = '${raw}'
 
 [python]
 symbol = ""
 style = "bg:#86BBD8 fg:#000000"
 format = """
-[ $symbol ($version)]($style)\
+[$symbol($version)]($style)\
 [](bg:#c0caff fg:#86bbd8)\
 [($virtualenv)](bold fg:#ffffff bg:#c0caff)\
 [](bg:#86bbd8 fg:#c0caff)"""
@@ -156,7 +165,7 @@ format = '[ $symbol ($version) ]($style)'
 [nodejs]
 symbol = ""
 style = "bg:#86BBD8 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+format = '[$symbol($version)]($style)'
 
 [nim]
 symbol = "󰆥 "
@@ -166,7 +175,8 @@ format = '[ $symbol ($version) ]($style)'
 [rust]
 symbol = ""
 style = "bg:#86BBD8 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+format = '[$symbol($version)]($style)'
+version_format = '${raw}'
 
 [scala]
 symbol = " "
@@ -176,11 +186,11 @@ format = '[ $symbol ($version) ]($style)'
 [package]
 symbol = '󰏖 '
 style = 'bg:#06969a fg:#c0caff'
-format = '[ $symbol$version ]($style)'
+format = '[$symbol$version]($style)'
 version_format = '${raw}'
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#33658A fg:#bbddff"
-format = '[ ♥ $time ]($style)'
+format = '[♥$time]($style)'

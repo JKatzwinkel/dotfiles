@@ -24,9 +24,15 @@ $scala\
 $docker_context\
 $package\
 [](fg:#06969A bg:#33658A)\
-$time\
 $status\
 [ ](fg:#33658A)\
+"""
+
+right_format = """
+[](fg:#33658A)
+${custom.time}\
+[](fg:#FCA17D bg:#33658a)
+$git_commit\
 """
 
 # Disable the blank line at the start of the prompt
@@ -70,10 +76,13 @@ repo_root_format = """[$before_root_path]($before_repo_root_style)[$repo_root]\
 [directory.substitutions]
 "documents" = "󰈙"
 "Downloads" = ""
-"audio" = "󰓃"
-"music" = ""
+data = ''
+audio = "󰓃"
+music = ""
 "projects" = "🛠"
 java = '󰬷'
+Java = '󰬷'
+'.config' = ''
 # Keep in mind that the order matters. For example:
 # "Important Documents" = " 󰈙 "
 # will not be replaced, because "Documents" was already substituted before.
@@ -106,21 +115,24 @@ style = "bg:#FCA17D fg:#802030 bold"
 format = '[$symbol$branch]($style)'
 
 [git_commit]
-style = "bg:#FCA17D fg:#FFEEEE"
+style = "bg:#FCA17D fg:#802030"
+format = '[𝟇$hash$tag]($style)'
 tag_disabled = false
+only_detached = false
 tag_max_candidates = 20
+tag_symbol = '󰓹'
 
 [git_status]
 style = "bg:#FCA17D fg:#dd0000"
 format = '[$all_status$ahead_behind]($style)'
 stashed = '󰓌${count}'
-deleted = ''
-modified = '󰏫'
-staged = ''
-ahead = '🠉'
-behind = '🠋'
+deleted = '${count}'
+modified = '󰏫${count}'
+staged = '${count}'
+ahead = '🠉${count}'
+behind = '🠋${count}'
 diverged = '🠉🠋'
-conflicted = '⇆󱐌'
+conflicted = '⇆󱐌${count}'
 untracked = ''
 
 [golang]
@@ -190,7 +202,16 @@ format = '[$symbol$version]($style)'
 version_format = '${raw}'
 
 [time]
-disabled = false
+disabled = true
 time_format = "%R" # Hour:Minute Format
 style = "bg:#33658A fg:#bbddff"
 format = '[♥$time]($style)'
+
+[custom.time]
+when = true
+command = '''
+c='󱑖󱑋󱑌󱑍󱑎󱑏󱑐󱑑󱑒󱑓󱑔󱑕'
+s=$(( $(date +%s) + 900 ))
+echo ${c:$(date --date=@${s} +%I):1} $(date +%R)'''
+style = "bg:#33658A fg:#bbddff"
+format = '[$output]($style)'

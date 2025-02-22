@@ -32,7 +32,7 @@ right_format = """
 [](fg:#33658A)
 ${custom.time}\
 [](fg:#FCA17D bg:#33658a)
-$git_commit\
+$git_commit
 """
 
 # Disable the blank line at the start of the prompt
@@ -116,7 +116,7 @@ format = '[$symbol$branch]($style)'
 
 [git_commit]
 style = "bg:#FCA17D fg:#802030"
-format = '[𝟇$hash$tag]($style)'
+format = '[$hash$tag]($style)'
 tag_disabled = false
 only_detached = false
 tag_max_candidates = 20
@@ -212,6 +212,6 @@ when = true
 command = '''
 c='󱑖󱑋󱑌󱑍󱑎󱑏󱑐󱑑󱑒󱑓󱑔󱑕'
 s=$(( $(date +%s) + 900 ))
-echo ${c:$(date --date=@${s} +%I):1} $(date +%R)'''
+echo ${c:$(date --date=@${s} +%I) % 12:1} $(date +%R)'''
 style = "bg:#33658A fg:#bbddff"
 format = '[$output]($style)'

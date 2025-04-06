@@ -83,10 +83,11 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 " a tig-like commit viewer extension for fugitive:
-NeoBundle 'int3/vim-extradite'
+"NeoBundle 'int3/vim-extradite'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'ap/vim-css-color'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }

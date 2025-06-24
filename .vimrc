@@ -81,6 +81,9 @@ NeoBundle 'dense-analysis/ale'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
+" jump between diffs: [c and ]c
+" show/stage/undo diff: ;hp and ;hs and ;hu
+" toggle highlighting: :GitGutterLineHighlightsToggle
 NeoBundle 'airblade/vim-gitgutter'
 " a tig-like commit viewer extension for fugitive:
 "NeoBundle 'int3/vim-extradite'
@@ -231,6 +234,9 @@ set incsearch
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
+
+" lower updatetime (instead of default 4s, good for gitgutter)
+set updatetime=100
 
 " For regular expressions turn magic on
 set magic

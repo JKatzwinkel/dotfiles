@@ -110,14 +110,17 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'Shougo/unite.vim'
 
 " Scala
-NeoBundle 'derekwyatt/vim-scala'
+"NeoBundle 'derekwyatt/vim-scala'
 
 " JS indent
 NeoBundle 'pangloss/vim-javascript'
 
 " Pandoc
-NeoBundle 'vim-pandoc/vim-pandoc'
+" NeoBundle 'vim-pandoc/vim-pandoc'
 "NeoBundle 'vim-pandoc/vim-pandoc-syntax'
+
+" Markdown
+NeoBundle 'plasticboy/vim-markdown'
 
 " vimtex
 NeoBundle 'lervag/vimtex'

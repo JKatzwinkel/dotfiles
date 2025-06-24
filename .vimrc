@@ -515,13 +515,21 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'eslint %'
 
-" linting for python
+" language linters
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'python': ['flake8', 'pylint', 'mypy'],
-\   'yaml': ['yamllint']
+\   'yaml': ['yamllint'],
+\   'groovy': ['npm-groovy-lint']
 \}
 let g:ale_linters_explicit = 1
+let g:ale_groovy_npmgroovylint_options = '-j /usr/lib/jvm/default/bin/java'
+"   'java': ['javac']
+let g:ale_java_javac_options = '-processor lombok'
+let g:ale_python_mypy_options = '--check-untyped-defs --strict'
+
+let g:ctrlp_types = ['mru', 'fil', 'buf']
+let g:ctrlp_extensions = ['autoignore']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings

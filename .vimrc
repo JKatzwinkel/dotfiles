@@ -130,6 +130,8 @@ NeoBundle 'cespare/vim-toml'
 
 NeoBundle 'NoahTheDuke/vim-just'
 
+NeoBundle 'fladson/vim-kitty'
+
 " nerdtree
 " NeoBundle 'scrooloose/nerdtree'
 

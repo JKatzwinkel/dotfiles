@@ -40,9 +40,9 @@ add_newline = false
 
 [status]
 symbol = '☠'
-format = """[](fg:#33648a bg:#ff0000)\
-[ $symbol$status ($common_meaning )](bold fg:#ffffff bg:#ff0000)\
-[](bg:#33648a fg:#ff0000)"""
+format = """[](fg:#33648a bg:#fb3c3c)\
+[ $symbol$status ($common_meaning )](bold fg:#ffffff bg:#fb3c3c)\
+[](bg:#33648a fg:#fb3c3c)"""
 disabled = false
 
 # You can also replace your username with a neat symbol like   or disable this
@@ -76,10 +76,10 @@ repo_root_format = """[$before_root_path]($before_repo_root_style)[$repo_root]\
 [directory.substitutions]
 "documents" = "󰈙"
 "Downloads" = ""
-data = ''
+'/data' = '/'
 audio = "󰓃"
 music = ""
-"projects" = "🛠"
+projects = "󰉊"
 java = '󰬷'
 Java = '󰬷'
 '.config' = ''

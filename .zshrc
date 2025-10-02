@@ -269,7 +269,7 @@ bindkey "\e[1;3D" prev_dir
 eval "$(fasd --init auto)"
 
 # keychain
-eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa)
+eval $(keychain --eval -Q --quiet ~/.ssh/id_rsa)
 
 # termite: open new terminal in current directory
 if [[ $TERM == xterm-termite ]]; then

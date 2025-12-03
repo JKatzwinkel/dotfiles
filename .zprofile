@@ -6,4 +6,5 @@ emulate zsh
 export LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so
 
 alias ydl="youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 "
+alias ytp="mpv --ytdl-raw-options='cookies-from-browser=firefox,format=best[height<720]' "
 export PATH="$HOME/.poetry/bin:$PATH"

@@ -41,8 +41,8 @@ bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
 ##bindsym $mod+d exec dmenu_run -b -i -l 5
-bindsym $mod+c exec rofi -show run
-bindsym Mod1+F2 exec rofi -show run
+bindsym $mod+c exec rofi -show run -no-auto-select
+bindsym Mod1+F2 exec rofi -show run -no-auto-select
 bindsym $mod+d exec rofi -show window -selected-row 1
 bindsym Mod1+Tab exec rofi -show window -selected-row 1
 # There also is the (new) i3-dmenu-desktop which only displays applications

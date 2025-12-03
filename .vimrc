@@ -270,9 +270,7 @@ syntax enable
 "colorscheme torte
 " /usr/share/vim/vim73/colors
 
-"set background=dark
-colorscheme Monokai
-"colorscheme Tomorrow-Night
+colorscheme happy_hacking
 set background=dark
 "colorscheme tomorrow-night
 

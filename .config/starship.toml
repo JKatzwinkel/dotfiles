@@ -1,4 +1,5 @@
 format = """
+$battery\
 $os\
 $username\
 [](bg:#DA627D fg:#9A348E)\
@@ -37,6 +38,38 @@ $git_commit
 
 # Disable the blank line at the start of the prompt
 add_newline = false
+
+[battery]
+charging_symbol = '󰂄'
+discharging_symbol = '󰁹'
+empty_symbol = '󱊡'
+full_symbol = '🔋'
+unknown_symbol = '󰂑'
+format = '[$percentage$symbol]($style)[](fg:#6a24be bg:#9a348e)'
+
+[[battery.display]]
+threshold = 75
+charging_symbol = '󰂊 '
+discharging_symbol = '󰂀'
+style = 'bg:#6a24be fg:#ffbfef'
+
+[[battery.display]]
+threshold = 40
+charging_symbol = '󰂈 '
+discharging_symbol = '󰁽'
+
+[[battery.display]]
+threshold = 20
+charging_symbol = '󰂆 '
+discharging_symbol = '󰁻'
+style = 'bg:#ffe2aa fg:#703010'
+
+[[battery.display]]
+threshold = 10
+charging_symbol = '󰢜 '
+discharging_symbol = '󰁺'
+style = 'bg:#ee1010 fg:#ffe2aa'
+
 
 [status]
 symbol = '☠'

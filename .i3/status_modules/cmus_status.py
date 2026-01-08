@@ -5,33 +5,37 @@ Display cmus current song.
 
 Configuration parameters:
     cache_timeout: How often we refresh this module in seconds (default 0.5)
-    format: display format for window_title (default '{title}')
+    format: display format for window_title (default '{status} {title} {progress}')
     max_width: If width of title is greater, shrink it and add '...'
-        (default 120)
+        (default 32)
 
 """
+from typing import Any
 
 STATUS_ICON = {
         'playing': '',
         'paused': '',
         'stopped': '⏹',
-        None: '-',
+        None: '',
 }
 
 PROGRESS_ICON = [
-        '🌕',
-        '🌔',
-        '🌓',
-        '🌒',
+        '🌚',
         '🌑',
-        '🌘',
-        '🌗',
-        '🌖',
+        '🌘','🌘',
+        '🌗','🌗',
+        '🌖','🌖',
         '🌕',
+        '🌝',
+        '🌕',
+        '🌔','🌔',
+        '🌓','🌓',
+        '🌒','🌒',
+        '🌑',
 ]
 
 
-def status_dict(output):
+def status_dict(output: str) -> dict[str, str]:
     d = {}
     for line in output.split('\n'):
         key, *values = line.split(' ')
@@ -46,19 +50,19 @@ class Py3status:
     """
     # available configuration parameters
     cache_timeout = 0.5
-    format = u'{status} {title} {progress}'
+    format = '{status} {title} {progress}'
     max_width = 32
 
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
-    def window_title(self):
+    def window_title(self) -> dict[str, Any]:
         try:
             tree = status_dict(self.py3.command_output('cmus-remote -Q'))
         except Exception:
             tree = {}
 
-        progress = '-'
+        progress = '󰽤 '
         title = '-'
         status = STATUS_ICON.get(tree.get('status'))
 
@@ -69,8 +73,8 @@ class Py3status:
             )
 
         if 'position' in tree and 'duration' in tree:
-            progress = 9 * int(tree.get('position')) // int(tree.get('duration'))
-            progress = PROGRESS_ICON[progress]
+            i = len(PROGRESS_ICON) * int(tree['position']) // int(tree['duration'])
+            progress = PROGRESS_ICON[i]
 
         return {
             'cached_until': self.py3.time_in(self.cache_timeout),
